@@ -46,7 +46,6 @@ export default function Home() {
         container={containerRef}
         style={{display: particles?"inherit":"none"}}
       />
-      <Toggle on={particles} toggle={toggleParticles} />
       <Description >
         Portfolio
         <p>
