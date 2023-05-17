@@ -21,10 +21,12 @@
     "react-particles": "^2.9.3",
     "tsparticles": "^2.9.3",
     "tsparticles-engine": "^2.9.3",
+    "typeit-react": "^2.6.4",
     "typescript": "5.0.4"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
+    "babel-plugin-styled-components": "^2.1.1",
     "styled-components": "^5.3.10"
   }
 }

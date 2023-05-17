@@ -1,10 +1,24 @@
+import { absCenter } from "@/styles/style_mixins";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const LandingContainer = styled.main`
+export const LandingContainer = styled(motion.main)`
   position: relative;
-  min-height: 100vh; 
+  min-height: 100vh;
+  /* background: radial-gradient(circle at 50%, #333, #fff 50%); */
+  /* color: #d6dbdc */
 `;
 
+export const Hero = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  ${absCenter};
+  transform: translate(-50%, -40%);
+  top: 45%;
+  opacity: 0;
+`;
 
 export const Description = styled.div`
   display: inherit;
@@ -33,34 +47,4 @@ export const Description = styled.div`
     font-weight: 700;
     font-family: var(--font-mono);
   }
-`;
-
-export const Hero = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 4rem 0;
-
-  /* &::before {
-    background: var(--secondary-glow);
-    border-radius: 50%;
-    width: 480px;
-    height: 360px;
-    margin-left: -400px;
-  }
-  &::after {
-    background: var(--primary-glow);
-    width: 240px;
-    height: 180px;
-    z-index: -1;
-  }
-  &::before,
-  &::after {
-    content: "";
-    left: 50%;
-    position: absolute;
-    filter: blur(45px);
-    transform: translateZ(0);
-  } */
 `;
