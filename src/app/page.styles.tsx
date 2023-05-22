@@ -27,19 +27,42 @@ export const AboutSectionContainer = styled(motion.div)`
   height: 100vh;
   scroll-snap-align: center;
   ${centerContent};
-  a {
+  .about-content {
+    width: 100%;
+    height: 200px;
     display: flex;
+    z-index: 2;
     justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
   }
-  p {
+  .about-img {
+    position: relative;
+    width: 200px;
+    overflow: hidden;
+    background-color: #7e6e9e;
+    transform: skewX(-15deg);
+    img {
+      transform: skewX(15deg);
+    }
+  }
+  .about-text {
     position: relative;
     margin: 0;
     padding: 1rem;
     background-color: rgba(var(--callout-rgb), 0.5);
     border: 1px solid rgba(var(--callout-border-rgb), 0.3);
     border-radius: var(--border-radius);
+    width: 60%;
+    height: 100%;
+    transform: skewX(-15deg);
+    p {
+      line-height: 2;
+    }
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
   }
   code {
     font-weight: 700;
