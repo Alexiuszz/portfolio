@@ -8,13 +8,14 @@ interface NavProps {
 }
 const entryAnimation = {
   opacity: [0, 0, 1, 1],
+  backgroundColor:["#d6dbdc0","#d6dbdc0","#d6dbdc0", "#d6dbdc6e"],
   width: ["50%", "50%", "50%", "100%"],
   x: ["-50%", "-50%", "-50%", "-50%"],
-  y: ["-40%", "-50%", "-50%", "-1300%"],
+  y: ["-60%", "-60%", "-50%", "-340%"],
 };
 const splashTransition = {
   duration: 3,
-  times: [0, 0.4, 0.7, 1],
+  times: [0, 0.4, 0.6, 1],
   delay: 0.5,
   ease: [0, 0.71, 0.2, 1.01],
 };

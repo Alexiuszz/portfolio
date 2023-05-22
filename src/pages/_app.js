@@ -4,7 +4,7 @@ import { Libre_Franklin } from "next/font/google";
 const libre = Libre_Franklin({ subsets: ["latin"] });
 export default function App({ Component, pageProps }) {
   return (
-    <main className={libre.className}>
+    <main className={libre.className} style={{overflow:"hidden"}}>
       <Component {...pageProps} />
     </main>
   );

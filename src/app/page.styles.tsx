@@ -1,4 +1,4 @@
-import { absCenter } from "@/styles/style_mixins";
+import { absCenter, centerContent } from "@/styles/style_mixins";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
@@ -7,9 +7,10 @@ export const LandingContainer = styled(motion.main)`
   min-height: 100vh;
   /* background: radial-gradient(circle at 50%, #333, #fff 50%); */
   /* color: #d6dbdc */
+  scroll-snap-align: center;
 `;
 
-export const Hero = styled(motion.div)`
+export const HeroContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,15 +21,12 @@ export const Hero = styled(motion.div)`
   opacity: 0;
 `;
 
-export const Description = styled.div`
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
+export const AboutSectionContainer = styled(motion.div)`
   max-width: var(--max-width);
   width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
+  height: 100vh;
+  scroll-snap-align: center;
+  ${centerContent};
   a {
     display: flex;
     justify-content: center;
