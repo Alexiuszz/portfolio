@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { absCenter } from "../../styles/style_mixins";
 
 export const NavContainer = styled(motion.div)`
-  width: 50%;   
+  width: 60%;   
   height: 100px;
   display: grid;
   ${absCenter};

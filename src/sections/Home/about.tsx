@@ -6,7 +6,7 @@ import LinkButton from "@/components/LinkButton";
 
 function AboutSection() {
   return (
-    <AboutSectionContainer>
+    <AboutSectionContainer id="home-about">
       <div className="about-content">
         <motion.div className="about-img">
           <Image
@@ -17,16 +17,19 @@ function AboutSection() {
         </motion.div>
         <motion.div className="about-text">
           <p>
-            Hello, welcome to domain (pun intended). A little about
-            myself, I&apos;m a 24 year old software programmer from
+            Hello, welcome to my domain (pun intended). A little about
+            myself, I&apos;m a 24 year old software developer from
             Nigeria, currently building web applications with React
-            and NodeJS.
+            and NodeJS, I also have some experience as an Embedded
+            Software Enginneer. I have a Bachelor&apos;s degree in
+            Electronics Engineering, from the University of Nigeria
+            Nsukka, Enugu Nigeria.
           </p>
-          <LinkButton >
-                Get to know me
-          </LinkButton>
+          <LinkButton>Get to know me</LinkButton>
         </motion.div>
       </div>
+
+      <motion.div className="techsCarousel"></motion.div>
     </AboutSectionContainer>
   );
 }

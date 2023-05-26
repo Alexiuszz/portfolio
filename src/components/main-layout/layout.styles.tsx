@@ -12,7 +12,7 @@ export const MainLayout = styled.div<LayoutStyleProps>`
   scrollbar-width: none;
   height: 100vh;
     max-width: ${(props) =>
-      props.hideOverview ? "100%" : "70%"};
+      props.hideOverview ? "100%" : "75%"};
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory;
   margin: 0 auto;

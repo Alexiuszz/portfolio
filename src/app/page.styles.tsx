@@ -55,7 +55,7 @@ export const AboutSectionContainer = styled(motion.div)`
     height: 100%;
     transform: skewX(-15deg);
     p {
-      line-height: 2;
+      line-height: 1.8;
     }
   }
   a {
