@@ -4,14 +4,19 @@ import styled from "styled-components";
 
 export const GliderContainer = styled(motion.div)`
   ${absCenter};
+  opacity: 0;
   transform: translate(-50%, -40%);
-  top: 60%;
-  overflow: hidden;
+  top: 75%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  width: 75%;
+
   .glider-wrapper {
     display: flex;
+    height: 10rem;
   }
   img {
-    max-width: 150px;
+    max-width: 150px;    
     height: 5rem;
     padding: 0 15px;
     object-fit: cover;
@@ -22,6 +27,6 @@ export const GliderContainer = styled(motion.div)`
   }
   section {
     display: flex;
-    /* animation: swipe var(--speed) linear infinite backwards; */
-  }
+        align-items: center;
+}
 `;

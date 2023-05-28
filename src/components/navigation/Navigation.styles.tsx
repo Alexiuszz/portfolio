@@ -16,6 +16,13 @@ export const NavContainer = styled(motion.div)`
   align-content: end; 
   padding: 0 10%;
   z-index: 2;
+  .logo{
+    height: 50px;
+    width: 50px;
+    img{
+      height:100%;
+    }
+  }
   .unsplash {
     margin-left: 20%;
     display: flex;

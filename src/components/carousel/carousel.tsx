@@ -1,11 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { GliderContainer } from "./carousel.styles";
-import Image from "next/image";
-import { motion, useTime, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
-const Carousel = ({ images }: { images: string[] }) => {
+const Carousel = ({
+  images,
+  animate,
+  transition,
+}: {
+  images: string[],
+  animate:{opacity:number[]},
+  transition: any
+}) => {
   return (
-    <GliderContainer>
+    <GliderContainer
+      animate={animate}
+      transition={transition}
+    >
       <div className="glider-wrapper">
         <motion.section
           animate={{ x: "-100%" }}
@@ -16,9 +26,16 @@ const Carousel = ({ images }: { images: string[] }) => {
           }}
         >
           {images.map((image, id) => (
-            <div className="image" key={id}>
+            <motion.div
+              className="image"
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.3 },
+              }}
+              key={id}
+            >
               <img src={image} alt={image} />
-            </div>
+            </motion.div>
           ))}
         </motion.section>
 
@@ -31,9 +48,16 @@ const Carousel = ({ images }: { images: string[] }) => {
           }}
         >
           {images.map((image, id) => (
-            <div className="image" key={id}>
+            <motion.div
+              className="image"
+              whileHover={{
+                scale: 1.2,
+                transition: { duration: 0.3 },
+              }}
+              key={id}
+            >
               <img src={image} alt={image} />
-            </div>
+            </motion.div>
           ))}
         </motion.section>
 
@@ -46,9 +70,16 @@ const Carousel = ({ images }: { images: string[] }) => {
           }}
         >
           {images.map((image, id) => (
-            <div className="image" key={id}>
+            <motion.div
+              className="image"
+              whileHover={{
+                scale: 1.2,
+                transition: { duration: 0.3 },
+              }}
+              key={id}
+            >
               <img src={image} alt={image} />
-            </div>
+            </motion.div>
           ))}
         </motion.section>
       </div>

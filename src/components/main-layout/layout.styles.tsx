@@ -8,17 +8,17 @@ export const MainLayout = styled.div<LayoutStyleProps>`
   overflow: hidden;
   background-color: #d6dbdc;
   .content {
-  overflow: scroll;
-  scrollbar-width: none;
-  height: 100vh;
-    max-width: ${(props) =>
-      props.hideOverview ? "100%" : "75%"};
-  scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory;
-  margin: 0 auto;
+    overflow: scroll;
+    scrollbar-width: none;
+    height: 100vh;
+    width: ${(props) => (props.hideOverview ? "100%" : "75%")};
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    margin: 0 auto;
   }
-  .content::-webkit-scrollbar{
-        display: none;
+  .content::-webkit-scrollbar {
+    display: none;
   }
 `;
 export const PageOverview = styled.div<LayoutStyleProps>`

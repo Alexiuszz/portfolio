@@ -56,22 +56,24 @@ const Hero = forwardRef(function Hero(
           }}
         />
       </HeroContainer>
-        <Carousel
-          images={[
-            "https://img.icons8.com/color/100/000000/c-plus-plus-logo.png",
-            "https://img.icons8.com/color/100/000000/javascript--v1.png",
-            "https://img.icons8.com/color/100/000000/typescript.png",
-            "https://img.icons8.com/color/100/000000/css3.png",
-            "https://img.icons8.com/color/100/000000/html-5--v1.png",
-            "https://img.icons8.com/color/100/000000/c-sharp-logo.png",
-            "https://img.icons8.com/color/100/000000/react-native.png",
-            "https://img.icons8.com/color/100/000000/nextjs.png",
-            "https://img.icons8.com/color/100/000000/nodejs.png",
-            "https://img.icons8.com/color/100/000000/postgreesql.png",
-            "https://img.icons8.com/color/100/000000/mongodb.png",
-            "https://img.icons8.com/color/100/000000/redux.png",
-          ]}
-        />
+      <Carousel
+        animate={splashAnimation}
+        transition={splashTransition}
+        images={[
+          "https://img.icons8.com/color/100/000000/c-plus-plus-logo.png",
+          "https://img.icons8.com/color/100/000000/javascript--v1.png",
+          "https://img.icons8.com/color/100/000000/typescript.png",
+          "https://img.icons8.com/color/100/000000/css3.png",
+          "https://img.icons8.com/color/100/000000/html-5--v1.png",
+          "https://img.icons8.com/color/100/000000/c-sharp-logo.png",
+          "https://img.icons8.com/color/100/000000/react-native.png",
+          "https://img.icons8.com/color/100/000000/nextjs.png",
+          "https://img.icons8.com/color/100/000000/nodejs.png",
+          "https://img.icons8.com/color/100/000000/postgreesql.png",
+          "https://img.icons8.com/color/100/000000/mongodb.png",
+          "https://img.icons8.com/color/100/000000/redux.png",
+        ]}
+      />
     </LandingContainer>
   );
 });

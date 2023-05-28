@@ -8,7 +8,7 @@ interface NavProps {
 }
 const entryAnimation = {
   opacity: [0, 0, 1, 1],
-  backgroundColor:["#d6dbdc0","#d6dbdc0","#d6dbdc0", "#d6dbdc6e"],
+  backgroundColor: ["#d6dbdc0", "#d6dbdc0", "#d6dbdc0", "#d6dbdc6e"],
   width: ["50%", "50%", "50%", "100%"],
   x: ["-50%", "-50%", "-50%", "-50%"],
   y: ["-60%", "-60%", "-50%", "-340%"],
@@ -25,7 +25,17 @@ function Navigation({ particles, toggleParticles }: NavProps) {
       animate={entryAnimation}
       transition={splashTransition}
     >
-      <motion.div>Logo</motion.div>
+      <motion.div
+        animate={{ scale: [1.5,1] }}
+        transition={{
+          duration: 0.5,
+          delay: 2.5,
+        }}
+        className="logo"
+      >
+        <img src="/assets/images/LogoNew.png" alt="Alexius" />
+        {/* <img src="/assets/images/logo2.png" alt="Alexius" /> */}
+      </motion.div>
       <motion.div
         animate={{ opacity: [0, 0, 0, 1] }}
         transition={{
