@@ -21,12 +21,14 @@ interface LayoutProps {
   pageOverview?: ProjectOverview[];
   home?: boolean;
   hideOverview?: boolean;
+  scrollSection(section: string): void;
 }
 function Layout({
   children,
   pageOverview,
   home,
   hideOverview,
+  scrollSection,
 }: LayoutProps) {
   const [particles, setParticles] = useState<boolean>(true);
   const containerRef = useRef<Container>(null);
@@ -55,7 +57,14 @@ function Layout({
           <span>Page Overview</span>
           {pageOverview?.map((item, i) => (
             <motion.div key={i} className="item">
-              <a href={`#${item.id}`} className="itemLink">
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollSection(item.id);
+                }}
+                className="itemLink"
+              >
                 {item.text}
               </a>
             </motion.div>

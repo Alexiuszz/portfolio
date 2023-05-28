@@ -1,12 +1,15 @@
 import { AboutSectionContainer } from "@/app/page.styles";
 import Image from "next/image";
-import React from "react";
+import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
 import LinkButton from "@/components/LinkButton";
 
-function AboutSection() {
+const AboutSection = forwardRef(function AboutSection(
+  props: {},
+  ref: React.Ref<HTMLElement>
+) {
   return (
-    <AboutSectionContainer id="home-about">
+    <AboutSectionContainer ref={ref} id="home-about">
       <div className="about-content">
         <motion.div className="about-img">
           <Image
@@ -32,6 +35,6 @@ function AboutSection() {
       <motion.div className="techsCarousel"></motion.div>
     </AboutSectionContainer>
   );
-}
+});
 
 export default AboutSection;

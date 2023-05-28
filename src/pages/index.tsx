@@ -1,5 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {
+  ReactElement,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { LandingContainer } from "@/app/page.styles";
 import Layout from "@/components/main-layout/layout";
 import AboutSection from "@/sections/Home/about";
@@ -12,7 +17,7 @@ const PageOverview = [
     icon: "",
   },
   {
-    id: "home-about",
+    id: "homeAbout",
     text: "Who am I?",
     icon: "",
   },
@@ -27,8 +32,26 @@ const PageOverview = [
     icon: "",
   },
 ];
+
+type Sections = {
+  home?: React.RefObject<HTMLElement>,
+  homeAbout?: React.RefObject<HTMLElement>
+}
 export default function Home() {
   const [hideOverview, setHideOverview] = useState(true);
+  const [pageFocus, setPageFocus] = useState<string>("home");
+  const heroSection = useRef<HTMLElement>(null);
+  const AboutSectionRef = useRef<HTMLElement>(null);
+
+  const scrollSection = (section: string) => {
+    const sections: Sections={
+      home: heroSection,
+      homeAbout: AboutSectionRef
+    }
+    if (sections[section as keyof Sections] && sections[section as keyof Sections]?.current) {
+      sections[section as keyof Sections]?.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   useEffect(() => {
     const showOverview = setTimeout(() => {
       setHideOverview(false);
@@ -44,22 +67,10 @@ export default function Home() {
       home={true}
       hideOverview={hideOverview}
       pageOverview={PageOverview}
+      scrollSection={scrollSection}
     >
-      <LandingContainer
-        id="home"
-        initial={{
-          background: `radial-gradient(circle at 50%, #d6dbdc, #d6dbdc 0%, #343434 0%, #343434 80%)`,
-        }}
-        animate={{
-          background: `radial-gradient(circle at 50%, #d6dbdc, #d6dbdc 100%, #343434 105%, #343434 105%)`,
-        }}
-        transition={{
-          duration: 0.8,
-        }}
-      >
-        <Hero />
-      </LandingContainer>
-      <AboutSection />
+      <Hero ref={heroSection} />
+      <AboutSection ref={AboutSectionRef} />
     </Layout>
   );
 }

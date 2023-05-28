@@ -2,7 +2,7 @@ import { absCenter, centerContent } from "@/styles/style_mixins";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const LandingContainer = styled(motion.main)`
+export const LandingContainer = styled(motion.section)`
   position: relative;
   min-height: 100vh;
   /* background: radial-gradient(circle at 50%, #333, #fff 50%); */
@@ -21,7 +21,7 @@ export const HeroContainer = styled(motion.div)`
   opacity: 0;
 `;
 
-export const AboutSectionContainer = styled(motion.div)`
+export const AboutSectionContainer = styled(motion.section)`
   max-width: var(--max-width);
   width: 100%;
   height: 100vh;
