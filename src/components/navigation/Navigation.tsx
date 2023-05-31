@@ -1,6 +1,12 @@
 import Toggle from "../toggle/Toggle";
 import { NavContainer } from "./Navigation.styles";
 import { motion } from "framer-motion";
+import {
+  Fit,
+  Layout,
+  useRive,
+  useStateMachineInput,
+} from "@rive-app/react-canvas";
 
 interface NavProps {
   particles: boolean;
@@ -11,7 +17,7 @@ const entryAnimation = {
   backgroundColor: ["#d6dbdc0", "#d6dbdc0", "#d6dbdc0", "#d6dbdc6e"],
   width: ["50%", "50%", "50%", "100%"],
   x: ["-50%", "-50%", "-50%", "-50%"],
-  y: ["-60%", "-60%", "-50%", "-340%"],
+  y: ["-60%", "-60%", "-50%", "-300%"],
 };
 const splashTransition = {
   duration: 3,
@@ -20,20 +26,39 @@ const splashTransition = {
   ease: [0, 0.71, 0.2, 1.01],
 };
 function Navigation({ particles, toggleParticles }: NavProps) {
+  const { rive, RiveComponent } = useRive({
+    src: "/assets/rives/logo.riv",
+    stateMachines: "main",
+    autoplay: true,
+    layout: new Layout({
+      fit: Fit.FitHeight,
+    }),
+  });
+  const playAnimation = useStateMachineInput(
+    rive,
+    "main",
+    "RotateBG"
+  );
+
   return (
     <NavContainer
       animate={entryAnimation}
       transition={splashTransition}
     >
       <motion.div
-        animate={{ scale: [1.5,1] }}
+        animate={{ scale: [1.5, 1] }}
         transition={{
           duration: 0.5,
           delay: 2.5,
         }}
         className="logo"
       >
-        <img src="/assets/images/LogoNew.png" alt="Alexius" />
+        <RiveComponent
+          onMouseOver={() => {
+            playAnimation ? (playAnimation.value = true) : null;
+          }}
+        />
+        {/* <img src="/assets/images/LogoNew.png" alt="Alexius" /> */}
         {/* <img src="/assets/images/logo2.png" alt="Alexius" /> */}
       </motion.div>
       <motion.div

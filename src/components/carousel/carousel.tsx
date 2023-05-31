@@ -20,7 +20,7 @@ const Carousel = ({
         <motion.section
           animate={{ x: "-100%" }}
           transition={{
-            duration: 10,
+            duration: 15,
             ease: "linear",
             repeat: Infinity,
           }}
@@ -42,7 +42,7 @@ const Carousel = ({
         <motion.section
           animate={{ x: "-100%" }}
           transition={{
-            duration: 10,
+            duration: 15,
             ease: "linear",
             repeat: Infinity,
           }}
@@ -64,7 +64,7 @@ const Carousel = ({
         <motion.section
           animate={{ x: "-100%" }}
           transition={{
-            duration: 10,
+            duration: 15,
             ease: "linear",
             repeat: Infinity,
           }}
