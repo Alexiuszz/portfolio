@@ -7,6 +7,7 @@ import {
   useRive,
   useStateMachineInput,
 } from "@rive-app/react-canvas";
+import Link from "next/link";
 
 interface NavProps {
   particles: boolean;
@@ -45,22 +46,25 @@ function Navigation({ particles, toggleParticles }: NavProps) {
       animate={entryAnimation}
       transition={splashTransition}
     >
-      <motion.div
-        animate={{ scale: [1.5, 1] }}
-        transition={{
-          duration: 0.5,
-          delay: 2.5,
-        }}
-        className="logo"
-      >
-        <RiveComponent
-          onMouseOver={() => {
-            playAnimation ? (playAnimation.value = true) : null;
+      <Link href="/">
+        <motion.div
+          animate={{
+            width: ["75px", "50px"],
+            height: ["75px", "50px"],
           }}
-        />
-        {/* <img src="/assets/images/LogoNew.png" alt="Alexius" /> */}
-        {/* <img src="/assets/images/logo2.png" alt="Alexius" /> */}
-      </motion.div>
+          transition={{
+            duration: 0.5,
+            delay: 2.5,
+          }}
+          className="logo"
+        >
+          <RiveComponent
+            onMouseOver={() => {
+              playAnimation ? (playAnimation.value = true) : null;
+            }}
+          />
+        </motion.div>
+      </Link>
       <motion.div
         animate={{ opacity: [0, 0, 0, 1] }}
         transition={{

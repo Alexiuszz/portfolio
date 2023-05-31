@@ -10,6 +10,7 @@ import { loadFull } from "tsparticles";
 import particlesOptions from "../../config/particles.json";
 import Particles from "react-particles";
 import { motion } from "framer-motion";
+import CustomCursor from "../CustomCursor";
 
 interface ProjectOverview {
   id: string;
@@ -47,6 +48,7 @@ function Layout({
   };
   return (
     <>
+    <CustomCursor />
       <Navigation
         particles={particles}
         toggleParticles={toggleParticles}

@@ -39,7 +39,6 @@ type Sections = {
 }
 export default function Home() {
   const [hideOverview, setHideOverview] = useState(true);
-  const [pageFocus, setPageFocus] = useState<string>("home");
   const heroSection = useRef<HTMLElement>(null);
   const AboutSectionRef = useRef<HTMLElement>(null);
 
