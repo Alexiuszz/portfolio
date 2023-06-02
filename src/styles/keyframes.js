@@ -120,3 +120,82 @@ export const growWidth = keyframes`
     width: 60%;
   }
 `;
+export const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`;
+
+export const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`;
+
+export const bgUp = keyframes`
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: black;
+  }
+`;
+
+export const bgDown = keyframes`
+  from {
+    background-color: black;
+  }
+
+  to {
+    background-color: transparent;
+  }
+`;
+
+export const scaleUp = keyframes`
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+`;
+
+export const scaleDown = keyframes`
+  from {
+    transform: scale(1.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+`;
+
+export const translateLeftDot = keyframes`
+  from {
+    transform: translate(20px, -50%);
+  }
+
+  to {
+    transform: translate(0px, -50%);
+  }
+`;
+
+export const translateRightDot = keyframes`
+  from {
+    transform: translate(-20px, -50%);
+  }
+
+  to {
+    transform: translate(0px, -50%);
+  }
+`;

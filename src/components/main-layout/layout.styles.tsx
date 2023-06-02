@@ -1,3 +1,5 @@
+import { centerContent } from "@/styles/style_mixins";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 interface LayoutStyleProps {
@@ -6,7 +8,6 @@ interface LayoutStyleProps {
 }
 export const MainLayout = styled.div<LayoutStyleProps>`
   overflow: hidden;
-  background-color: #d6dbdc;
   .content {
     overflow: scroll;
     scrollbar-width: none;
@@ -21,6 +22,20 @@ export const MainLayout = styled.div<LayoutStyleProps>`
     display: none;
   }
 `;
+
+export const SplashScreen = styled(motion.div)`
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  position: fixed;
+  ${centerContent}
+  .logoSplash{
+    height: 100px;
+    width: 100px;
+  
+  }
+`;
+
 export const PageOverview = styled.div<LayoutStyleProps>`
   position: fixed;
   top: 120px;

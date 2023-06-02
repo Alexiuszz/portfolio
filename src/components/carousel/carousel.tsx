@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GliderContainer } from "./carousel.styles";
 import { motion } from "framer-motion";
 
@@ -7,20 +7,27 @@ const Carousel = ({
   animate,
   transition,
 }: {
-  images: string[],
-  animate:{opacity:number[]},
-  transition: any
+  images: string[];
+  animate: { opacity: number[] };
+  transition: any;
 }) => {
+  const [scrollSpeed, setScrollSpeed] = useState(5);
   return (
     <GliderContainer
       animate={animate}
       transition={transition}
+      onMouseOver={() => {
+        setScrollSpeed(5);
+      }}
+      onMouseLeave={() => {
+        setScrollSpeed(15);
+      }}
     >
       <div className="glider-wrapper">
         <motion.section
           animate={{ x: "-100%" }}
           transition={{
-            duration: 15,
+            duration: scrollSpeed,
             ease: "linear",
             repeat: Infinity,
           }}
@@ -42,7 +49,7 @@ const Carousel = ({
         <motion.section
           animate={{ x: "-100%" }}
           transition={{
-            duration: 15,
+            duration: scrollSpeed,
             ease: "linear",
             repeat: Infinity,
           }}
@@ -64,7 +71,7 @@ const Carousel = ({
         <motion.section
           animate={{ x: "-100%" }}
           transition={{
-            duration: 15,
+            duration: scrollSpeed,
             ease: "linear",
             repeat: Infinity,
           }}

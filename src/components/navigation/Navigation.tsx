@@ -15,7 +15,6 @@ interface NavProps {
 }
 const entryAnimation = {
   opacity: [0, 0, 1, 1],
-  backgroundColor: ["#d6dbdc0", "#d6dbdc0", "#d6dbdc0", "#d6dbdc6e"],
   width: ["50%", "50%", "50%", "100%"],
   x: ["-50%", "-50%", "-50%", "-50%"],
   y: ["-60%", "-60%", "-50%", "-300%"],
@@ -23,12 +22,12 @@ const entryAnimation = {
 const splashTransition = {
   duration: 3,
   times: [0, 0.4, 0.6, 1],
-  delay: 0.5,
+  delay: 4,
   ease: [0, 0.71, 0.2, 1.01],
 };
 function Navigation({ particles, toggleParticles }: NavProps) {
   const { rive, RiveComponent } = useRive({
-    src: "/assets/rives/logo.riv",
+    src: "/assets/rives/logo-animation.riv",
     stateMachines: "main",
     autoplay: true,
     layout: new Layout({
@@ -54,7 +53,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
           }}
           transition={{
             duration: 0.5,
-            delay: 2.5,
+            delay: 6.5,
           }}
           className="logo"
         >
@@ -69,7 +68,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
         animate={{ opacity: [0, 0, 0, 1] }}
         transition={{
           duration: 0.5,
-          delay: 2.5,
+          delay: 6.5,
           ease: [0, 0.71, 0.2, 1.01],
         }}
         className="unsplash"

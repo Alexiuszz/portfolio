@@ -1,16 +1,32 @@
-import React, { useCallback, useRef, useState } from "react";
-import { MainLayout, PageOverview } from "./layout.styles";
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import {
+  MainLayout,
+  PageOverview,
+  SplashScreen,
+} from "./layout.styles";
 import Navigation from "../navigation/Navigation";
 import {
   Container,
   Engine,
   ISourceOptions,
+  Opacity,
 } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import particlesOptions from "../../config/particles.json";
 import Particles from "react-particles";
 import { motion } from "framer-motion";
 import CustomCursor from "../CustomCursor";
+import {
+  useRive,
+  useStateMachineInput,
+  Layout as RiveLayout,
+  Fit,
+} from "@rive-app/react-canvas";
 
 interface ProjectOverview {
   id: string;
@@ -33,6 +49,25 @@ function Layout({
 }: LayoutProps) {
   const [particles, setParticles] = useState<boolean>(true);
   const containerRef = useRef<Container>(null);
+  const [splash, setSplash] = useState(true);
+  const { rive, RiveComponent } = useRive({
+    src: "/assets/rives/logo-animation.riv",
+    stateMachines: "splash",
+    autoplay: true,
+    layout: new RiveLayout({
+      fit: Fit.FitHeight,
+    }),
+    onLoad: (e) => {},
+  });
+  useEffect(() => {
+    const splashTimeout = setTimeout(() => {
+      setSplash(false);
+    }, 5000);
+
+    return () => {
+      clearTimeout(splashTimeout);
+    };
+  }, []);
 
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
@@ -48,7 +83,30 @@ function Layout({
   };
   return (
     <>
-    <CustomCursor />
+      <SplashScreen
+        initial={{
+          background: `radial-gradient(circle at 50%, transparent, transparent 0%, #343434 0%, #343434 80%)`,
+        }}
+        animate={{
+          background: `radial-gradient(circle at 50%, transparent,transparent 100%, #343434 105%, #343434 105%)`,
+        }}
+        transition={{
+          delay: 4,
+          duration: 1,
+        }}
+        style={{ display: splash ? "absolute" : "none" }}
+      >
+        <motion.div
+          animate={{
+            opacity: [1, 0],
+          }}
+          transition={{ delay: 3.8, duration: .5 }}
+          className="logoSplash"
+        >
+          <RiveComponent />
+        </motion.div>
+      </SplashScreen>
+      <CustomCursor />
       <Navigation
         particles={particles}
         toggleParticles={toggleParticles}

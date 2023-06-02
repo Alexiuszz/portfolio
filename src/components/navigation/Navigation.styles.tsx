@@ -8,8 +8,6 @@ export const NavContainer = styled(motion.div)`
   display: grid;
   ${absCenter};
   position: fixed;
-  background-color: rgba(214, 219, 220, 0);
-  /* background-color: grey; */
   opacity: 0;
   top: 45%;
   grid-template-columns: 0.5fr minmax(10px, 2fr) 3fr;

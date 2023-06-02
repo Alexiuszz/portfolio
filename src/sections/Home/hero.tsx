@@ -9,7 +9,7 @@ const splashAnimation = {
 const splashTransition = {
   duration: 3,
   times: [0, 0.4, 0.7, 1],
-  delay: 0.5,
+  delay: 4,
   ease: [0, 0.71, 0.2, 1.01],
 };
 
@@ -21,15 +21,6 @@ const Hero = forwardRef(function Hero(
     <LandingContainer
       ref={ref}
       id="home"
-      initial={{
-        background: `radial-gradient(circle at 50%, #d6dbdc, #d6dbdc 0%, #343434 0%, #343434 80%)`,
-      }}
-      animate={{
-        background: `radial-gradient(circle at 50%, #d6dbdc, #d6dbdc 100%, #343434 105%, #343434 105%)`,
-      }}
-      transition={{
-        duration: 0.8,
-      }}
     >
       <div className="heroContent">
         <HeroContainer
@@ -47,7 +38,7 @@ const Hero = forwardRef(function Hero(
             getBeforeInit={(instance) => {
               instance
                 .type("Hi, I'm Alex")
-                .pause(1000)
+                .pause(4500)
                 .delete(4)
                 .pause(100)
                 .type("a FullStack Engineer")

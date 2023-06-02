@@ -5,7 +5,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { LandingContainer } from "@/app/page.styles";
 import Layout from "@/components/main-layout/layout";
 import AboutSection from "@/sections/Home/about";
 import Hero from "@/sections/Home/hero";

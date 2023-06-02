@@ -4,14 +4,13 @@ import styled from "styled-components";
 
 export const LandingContainer = styled(motion.section)`
   height: 100vh;
-  /* background: radial-gradient(circle at 50%, #333, #fff 50%); */
-  /* color: #d6dbdc */
   scroll-snap-align: center;
   .heroContent{
     position: relative;
     height: 100%;
   }
 `;
+
 
 export const HeroContainer = styled(motion.div)`
   display: flex;
