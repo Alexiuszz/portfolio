@@ -9,10 +9,10 @@ interface LayoutStyleProps {
 export const MainLayout = styled.div<LayoutStyleProps>`
   overflow: hidden;
   background-image: linear-gradient(
-    to right bottom,
-    ${({ theme }) => theme.primaryColor},
-    ${({ theme }) => theme.secondaryColor}
-  ),
+      to right bottom,
+      ${({ theme }) => theme.primaryColor},
+      ${({ theme }) => theme.secondaryColor}
+    ),
     url("/assets/images/bg-img.jpg");
   background-size: cover;
   background-position: top;
@@ -29,6 +29,13 @@ export const MainLayout = styled.div<LayoutStyleProps>`
   .content::-webkit-scrollbar {
     display: none;
   }
+  &:hover  .gradient1 {
+      stop-color: #CF9116;
+    }
+    
+    &:hover .gradient2{
+      stop-color: #0F8A5F;
+    }
 `;
 
 export const SplashScreen = styled(motion.div)`
@@ -58,5 +65,20 @@ export const PageOverview = styled.div<LayoutStyleProps>`
   .item {
     font-size: 12px;
     margin-left: 10%;
+  }
+`;
+
+export const Socials = styled(motion.div)`
+  position: fixed;
+  top: 515px;
+  left: 0;
+`;
+export const EmailDesign = styled(motion.div)`
+  position: fixed;
+  top: 515px;
+  right: 0;
+  transform: rotate(90deg);
+  &:hover{
+    transform: translateY() rotate(89deg);
   }
 `;

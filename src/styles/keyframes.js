@@ -139,24 +139,31 @@ export const fadeOut = keyframes`
     opacity: 0;
   }
 `;
-
-export const bgUp = keyframes`
-  from {
-    background-color: transparent;
+export const swim = keyframes`
+  0%, 100% {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
   }
-
-  to {
-    background-color: black;
+  
+  25% {
+    background: linear-gradient(to right, violet, red, orange, yellow, green, blue, indigo);
+  }
+  
+  50% {
+    background: linear-gradient(to right, indigo, violet, red, orange, yellow, green, blue);
+  }
+  
+  75% {
+    background: linear-gradient(to right, blue, indigo, violet, red, orange, yellow, green);
   }
 `;
-
-export const bgDown = keyframes`
-  from {
-    background-color: black;
+export const morphCircle = keyframes`
+  from{
+    transform: scaleY(1) scaleX(1);
+    opacity: 1;
   }
-
-  to {
-    background-color: transparent;
+  to{
+    transform: scaleY(2) scaleX(1.5);
+    opacity: 0.5;
   }
 `;
 

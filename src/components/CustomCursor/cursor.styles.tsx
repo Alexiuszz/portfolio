@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { fadeIn, fadeOut } from "../../styles/keyframes";
+import { fadeIn, fadeOut, morphCircle, scaleUp } from "../../styles/keyframes";
 import { absCenter } from "@/styles/style_mixins";
 
 export const CursorWrapper = styled.div`
@@ -12,6 +12,28 @@ export const CursorWrapper = styled.div`
     position: absolute;
     border-radius: 50%;
     z-index: 10;
+  }
+  &.hamburger {
+    .cursor-background {
+      animation: ${fadeOut} 1s cubic-bezier(0.77, 0, 0.175, 1) 0s
+        forwards;
+    }
+
+    .main-cursor-background {
+      animation: ${scaleUp} 1s cubic-bezier(0.77, 0, 0.175, 1) 0s
+        forwards;
+    }
+  }
+  &.link {
+    .cursor-background {
+      animation: ${fadeOut} 1s cubic-bezier(0.77, 0, 0.175, 1) 0s
+        forwards;
+    }
+
+    .main-cursor-background {
+      animation: ${morphCircle} .5s cubic-bezier(0.77, 0, 0.175, 1) 0s
+        forwards;
+    }
   }
 `;
 export const MainCursor = styled(motion.div)`

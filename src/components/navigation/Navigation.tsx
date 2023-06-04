@@ -19,7 +19,7 @@ const entryAnimation = {
   opacity: [0, 0, 1, 1],
   width: ["50%", "50%", "50%", "100%"],
   x: ["-50%", "-50%", "-50%", "-50%"],
-  y: ["-60%", "-60%", "-50%", "-300%"],
+  y: ["-60%", "-60%", "-50%", "-295%"],
 };
 const splashTransition = {
   duration: 3,
@@ -76,45 +76,49 @@ function Navigation({ particles, toggleParticles }: NavProps) {
         className="unsplash"
       >
         <a
-          onMouseEnter={() => setType("hamburger")}
+          onMouseEnter={() => setType("link")}
           onMouseLeave={() => setType("default")}
           href="#"
           className="navLinks"
         >
-          About
+          <span className="navIndex">01. </span>About
         </a>
         <a
-          onMouseEnter={() => setType("hamburger")}
+          onMouseEnter={() => setType("link")}
           onMouseLeave={() => setType("default")}
           href="#"
           className="navLinks"
         >
+          <span className="navIndex">02. </span>
           Projects
         </a>
         <a
-          onMouseEnter={() => setType("hamburger")}
+          onMouseEnter={() => setType("link")}
           onMouseLeave={() => setType("default")}
           href="#"
           className="navLinks"
         >
+          <span className="navIndex">03. </span>
           Education
         </a>
         <a
-          onMouseEnter={() => setType("hamburger")}
+          onMouseEnter={() => setType("link")}
           onMouseLeave={() => setType("default")}
           href="#"
           className="navLinks"
         >
+          <span className="navIndex">04. </span>
           Contact
         </a>
-        <a
-          onMouseEnter={() => setType("hamburger")}
+        {/* <a
+          onMouseEnter={() => setType("link")}
           onMouseLeave={() => setType("default")}
           href="#"
           className="navLinks"
         >
+          <span className="navIndex">05. </span>
           Blog
-        </a>
+        </a> */}
         <Toggle on={particles} toggle={toggleParticles} />
       </motion.div>
     </NavContainer>

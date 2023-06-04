@@ -22,7 +22,7 @@ const Carousel = ({
   images,
   animate,
   transition,
-  baseVelocity = -5,
+  baseVelocity = -4,
 }: ParallaxProps) => {
   const [scrollSpeed, setScrollSpeed] = useState(baseVelocity);
   const baseX = useMotionValue(0);

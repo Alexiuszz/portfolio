@@ -4,24 +4,25 @@ import styled from "styled-components";
 
 export const GliderContainer = styled(motion.div)`
   ${absCenter};
+  position: fixed;
   opacity: 0;
   transform: translate(-50%, -40%);
-  top: 75%;
+  top: 90%;
   overflow-x: hidden;
   overflow-y: visible;
-  width: 75%;
-  height: 11rem;
+  width: 80vw;
+  height: 8rem;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   .glider-wrapper {
     display: flex;
-    height: 10rem;
+    height: 6rem;
     .image {
-      margin-right: 30px;
+      margin-right: 10px;
       img {
         max-width: 150px;
-        height: 5rem;
+        height: 3rem;
         padding: 0 15px;
         object-fit: cover;
       }

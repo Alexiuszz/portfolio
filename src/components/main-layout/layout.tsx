@@ -8,6 +8,8 @@ import {
   MainLayout,
   PageOverview,
   SplashScreen,
+  Socials,
+  EmailDesign,
 } from "./layout.styles";
 import { GlobalStyles } from "@/styles/globalStyles";
 import Navigation from "../navigation/Navigation";
@@ -30,6 +32,7 @@ import {
 } from "@rive-app/react-canvas";
 import { ThemeProvider } from "styled-components";
 import { darkTheme } from "@/styles/theme";
+import LDesign from "../LDesign";
 
 interface ProjectOverview {
   id: string;
@@ -90,10 +93,10 @@ function Layout({
       <CustomCursor />
       <SplashScreen
         initial={{
-          background: `radial-gradient(circle at 50%, transparent, transparent 0%, #343434 0%, #343434 80%)`,
+          background: `radial-gradient(circle at 50%, transparent, transparent 0%, #061e16 0%, #061e16 80%)`,
         }}
         animate={{
-          background: `radial-gradient(circle at 50%, transparent,transparent 100%, #343434 105%, #343434 105%)`,
+          background: `radial-gradient(circle at 50%, transparent,transparent 100%, #061e16 105%, #061e16 105%)`,
         }}
         transition={{
           delay: 4,
@@ -116,6 +119,8 @@ function Layout({
         toggleParticles={toggleParticles}
       />
       <MainLayout hideOverview={hideOverview}>
+        <LDesign />
+        <Socials></Socials>
         <div className="content">{children}</div>
         <PageOverview hideOverview={hideOverview}>
           <span>Page Overview</span>
@@ -134,6 +139,7 @@ function Layout({
             </motion.div>
           ))}
         </PageOverview>
+        <EmailDesign><a href="mailto:alexiusnwala@gmail.com">alexiusnwala@gmail.com</a></EmailDesign>
       </MainLayout>
       <Particles
         options={particlesOptions as ISourceOptions}

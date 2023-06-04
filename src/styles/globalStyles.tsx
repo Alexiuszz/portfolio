@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     ${({ theme }) => theme.hoverFontColor} 50%,
     ${({ theme }) => theme.primaryFontColor} 50%
   );
-  height: 20px;
+  font-weight: 500;
   background-size: 200% 100%;
   background-position: -100%;
   display: inline-block;
@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
   background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
+  cursor: none;
 }
 
 a:before {
