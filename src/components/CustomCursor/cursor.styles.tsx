@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { fadeIn, fadeOut } from "../../styles/keyframes";
+import { absCenter } from "@/styles/style_mixins";
 
 export const CursorWrapper = styled.div`
   position: fixed;
@@ -21,8 +22,18 @@ export const MainCursor = styled(motion.div)`
   .main-cursor-background {
     width: 10px;
     height: 10px;
-    background: #0039aa;
+    background: ${({ theme }) => theme.cursorColor};
     border-radius: 50%;
+    &::after {
+      background: ${({ theme }) => theme.cursorGlow};
+      opacity: 0.1;
+      content: "";
+      height: 1000px;
+      width: 1000px;
+      display: inline-block;
+      border-radius: 50%;
+      ${absCenter}
+    }
   }
 `;
 export const SecondCursor = styled(motion.div)`
@@ -34,7 +45,7 @@ export const SecondCursor = styled(motion.div)`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: .5px solid #a2a2a2;
+    border: 0.5px solid #a2a2a2;
     position: relative;
     &:after,
     &:before {

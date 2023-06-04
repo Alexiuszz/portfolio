@@ -8,6 +8,8 @@ import {
   useStateMachineInput,
 } from "@rive-app/react-canvas";
 import Link from "next/link";
+import { useContext } from "react";
+import CustomCursorContext from "../CustomCursor/context/CustomCursorContext";
 
 interface NavProps {
   particles: boolean;
@@ -26,6 +28,7 @@ const splashTransition = {
   ease: [0, 0.71, 0.2, 1.01],
 };
 function Navigation({ particles, toggleParticles }: NavProps) {
+  const { setType } = useContext(CustomCursorContext);
   const { rive, RiveComponent } = useRive({
     src: "/assets/rives/logo-animation.riv",
     stateMachines: "main",
@@ -45,7 +48,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
       animate={entryAnimation}
       transition={splashTransition}
     >
-      <Link href="/">
+      <Link href="/" className="logo">
         <motion.div
           animate={{
             width: ["75px", "50px"],
@@ -55,7 +58,6 @@ function Navigation({ particles, toggleParticles }: NavProps) {
             duration: 0.5,
             delay: 6.5,
           }}
-          className="logo"
         >
           <RiveComponent
             onMouseOver={() => {
@@ -73,19 +75,44 @@ function Navigation({ particles, toggleParticles }: NavProps) {
         }}
         className="unsplash"
       >
-        <a href="#" className="navLinks">
+        <a
+          onMouseEnter={() => setType("hamburger")}
+          onMouseLeave={() => setType("default")}
+          href="#"
+          className="navLinks"
+        >
           About
         </a>
-        <a href="#" className="navLinks">
+        <a
+          onMouseEnter={() => setType("hamburger")}
+          onMouseLeave={() => setType("default")}
+          href="#"
+          className="navLinks"
+        >
           Projects
         </a>
-        <a href="#" className="navLinks">
+        <a
+          onMouseEnter={() => setType("hamburger")}
+          onMouseLeave={() => setType("default")}
+          href="#"
+          className="navLinks"
+        >
           Education
         </a>
-        <a href="#" className="navLinks">
+        <a
+          onMouseEnter={() => setType("hamburger")}
+          onMouseLeave={() => setType("default")}
+          href="#"
+          className="navLinks"
+        >
           Contact
         </a>
-        <a href="#" className="navLinks">
+        <a
+          onMouseEnter={() => setType("hamburger")}
+          onMouseLeave={() => setType("default")}
+          href="#"
+          className="navLinks"
+        >
           Blog
         </a>
         <Toggle on={particles} toggle={toggleParticles} />

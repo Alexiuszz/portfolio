@@ -9,6 +9,7 @@ import {
   PageOverview,
   SplashScreen,
 } from "./layout.styles";
+import { GlobalStyles } from "@/styles/globalStyles";
 import Navigation from "../navigation/Navigation";
 import {
   Container,
@@ -27,6 +28,8 @@ import {
   Layout as RiveLayout,
   Fit,
 } from "@rive-app/react-canvas";
+import { ThemeProvider } from "styled-components";
+import { darkTheme } from "@/styles/theme";
 
 interface ProjectOverview {
   id: string;
@@ -82,7 +85,9 @@ function Layout({
     }
   };
   return (
-    <>
+    <ThemeProvider theme={darkTheme}>
+      <GlobalStyles />
+      <CustomCursor />
       <SplashScreen
         initial={{
           background: `radial-gradient(circle at 50%, transparent, transparent 0%, #343434 0%, #343434 80%)`,
@@ -100,13 +105,12 @@ function Layout({
           animate={{
             opacity: [1, 0],
           }}
-          transition={{ delay: 3.8, duration: .5 }}
+          transition={{ delay: 3.8, duration: 0.5 }}
           className="logoSplash"
         >
           <RiveComponent />
         </motion.div>
       </SplashScreen>
-      <CustomCursor />
       <Navigation
         particles={particles}
         toggleParticles={toggleParticles}
@@ -137,7 +141,7 @@ function Layout({
         container={containerRef}
         style={{ display: particles ? "inherit" : "none", zIndex: 2 }}
       />
-    </>
+    </ThemeProvider>
   );
 }
 

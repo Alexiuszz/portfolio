@@ -10,23 +10,24 @@ export const GliderContainer = styled(motion.div)`
   overflow-x: hidden;
   overflow-y: visible;
   width: 75%;
-
+  height: 11rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
   .glider-wrapper {
     display: flex;
     height: 10rem;
+    .image {
+      margin-right: 30px;
+      img {
+        max-width: 150px;
+        height: 5rem;
+        padding: 0 15px;
+        object-fit: cover;
+      }
+      img:last-of-type {
+        padding-left: 0;
+      }
+    }
   }
-  img {
-    max-width: 150px;    
-    height: 5rem;
-    padding: 0 15px;
-    object-fit: cover;
-  }
-
-  img:last-of-type {
-    padding-left: 0;
-  }
-  section {
-    display: flex;
-        align-items: center;
-}
 `;

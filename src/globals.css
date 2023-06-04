@@ -6,12 +6,12 @@
     "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New",
     monospace;
   --primary-background-color: #182326;
-  --secondary-background-color: #1b2128;
+  --secondary-background-color: #1f3d37;
   --primary-font-color: #eefaf4;
   --secondary-font-color: #172219;
   --tetiary-font-color: #727677;
   --hover-font-color: #3dcd00;
-
+ --cursor-color: #e0fcee;
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
     #182326 0deg,
@@ -77,12 +77,6 @@ body {
 
 body {
   color: rgb(var(--primary-font-color));
-  background: linear-gradient(
-      to bottom right,
-      rgb(var(--primary-background-color)),
-      rgb(var(--secondary-background-color))
-    ),
-    url("/assets/images/bg-img.jpg");
 }
 
 a {

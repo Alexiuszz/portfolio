@@ -8,6 +8,14 @@ interface LayoutStyleProps {
 }
 export const MainLayout = styled.div<LayoutStyleProps>`
   overflow: hidden;
+  background-image: linear-gradient(
+    to right bottom,
+    ${({ theme }) => theme.primaryColor},
+    ${({ theme }) => theme.secondaryColor}
+  ),
+    url("/assets/images/bg-img.jpg");
+  background-size: cover;
+  background-position: top;
   .content {
     overflow: scroll;
     scrollbar-width: none;
@@ -29,10 +37,9 @@ export const SplashScreen = styled(motion.div)`
   z-index: 1000;
   position: fixed;
   ${centerContent}
-  .logoSplash{
+  .logoSplash {
     height: 100px;
     width: 100px;
-  
   }
 `;
 
