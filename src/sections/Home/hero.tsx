@@ -32,8 +32,6 @@ const Hero = forwardRef(function Hero(
               options={{
                 speed: 5,
                 waitUntilVisible: true,
-                loop: true,
-                loopDelay: 5000,
               }}
               getBeforeInit={(instance) => {
                 instance
@@ -42,7 +40,9 @@ const Hero = forwardRef(function Hero(
                   .delete(4)
                   .pause(100)
                   .type("a FullStack Engineer")
-                  .pause(4000);
+                  .pause(4000)
+                  .delete(28)
+                  .type("Welcome, my name is")
                 // Remember to return it!
                 return instance;
               }}
@@ -52,11 +52,11 @@ const Hero = forwardRef(function Hero(
             <Header weight="700" left="left">
               Alexius Nwala
             </Header>
-            <Header weight="700" size="25px" left="left">
+            <Header className="heroMe" weight="700" size="34px" left="left">
               I&apos;m a Fullstack Engineer and Embedded Software
               Engineer.
             </Header>
-            <Text>
+            <Text className="heroText">
               I build and design systems and applications for the web
               and occasional devices that connect you to it!
             </Text>

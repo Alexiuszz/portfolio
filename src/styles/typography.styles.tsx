@@ -19,11 +19,10 @@ export const Header = styled.h2.attrs((props) => ({
   font-weight: ${(props) => props.weight || "300"};
   font-size: ${(props) => props.size || "55px"};
   color: ${(props) => props.color || "inherit"};
-  
 `;
 
 export const Text = styled.p.attrs((props) => ({
-  className: noto.className,
+  className: noto.className
 }))<TypoProps>`
   text-align: ${(props) => props.left || "left"};
   font-weight: ${(props) => props.weight || "400"};

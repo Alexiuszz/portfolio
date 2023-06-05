@@ -2,9 +2,9 @@ import { DefaultTheme } from "styled-components";
 
 export const darkTheme: DefaultTheme = {
   primaryColor: "#000000df",
-  secondaryColor: "#0a2f22df",
-  primaryFontColor: "#f3fff9",
-  secondaryFontColor: "#172219",
+  secondaryColor: "#072118df",
+  primaryFontColor: "#c1d3ca",
+  secondaryFontColor: "#67886d",
   tetiaryFontColor: "#727677",
   hoverFontColor: "#1bd393",
   cursorColor: "#e0fcee",

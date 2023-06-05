@@ -27,12 +27,19 @@ export const HeroContainer = styled(motion.div)`
     transform: translate(0%, -200%);
     top: -120%;
     left: 0;
+    color: ${({theme}) => theme.hoverFontColor};
   }
   .heroAbout {
     position: absolute;
     top: -250%;
     left: 0;
-    width: 75%;
+    width: 70%;
+    .heroMe, .heroText{
+      color: ${({theme}) => theme.secondaryFontColor}
+    }
+    .heroText{
+      margin-top: 20px;
+    }
   }
 `;
 
