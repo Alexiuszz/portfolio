@@ -5,12 +5,11 @@ import styled from "styled-components";
 export const LandingContainer = styled(motion.section)`
   height: 100vh;
   scroll-snap-align: center;
-  .heroContent{
+  .heroContent {
     position: relative;
     height: 100%;
   }
 `;
-
 
 export const HeroContainer = styled(motion.div)`
   display: flex;
@@ -20,8 +19,21 @@ export const HeroContainer = styled(motion.div)`
   ${absCenter};
   position: relative;
   transform: translate(-50%, -40%);
-  top: 45%;
+  top: 30%;
   opacity: 0;
+  .typewriter {
+    font-size: 20px;
+    position: absolute;
+    transform: translate(0%, -200%);
+    top: -120%;
+    left: 0;
+  }
+  .heroAbout {
+    position: absolute;
+    top: -250%;
+    left: 0;
+    width: 75%;
+  }
 `;
 
 export const AboutSectionContainer = styled(motion.section)`

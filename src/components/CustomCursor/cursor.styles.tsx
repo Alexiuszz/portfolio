@@ -5,13 +5,13 @@ import { absCenter } from "@/styles/style_mixins";
 
 export const CursorWrapper = styled.div`
   position: fixed;
+    z-index: 10;
   & > div {
     pointer-events: none;
     transform: translate3d(0, 0, 0);
     position: fixed;
     position: absolute;
     border-radius: 50%;
-    z-index: 10;
   }
   &.hamburger {
     .cursor-background {
