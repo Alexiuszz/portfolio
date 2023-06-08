@@ -1,6 +1,6 @@
 import Toggle from "../toggle/Toggle";
 import { NavContainer } from "./Navigation.styles";
-import { motion } from "framer-motion";
+import { animate, motion, stagger } from "framer-motion";
 import {
   Fit,
   Layout,
@@ -8,7 +8,7 @@ import {
   useStateMachineInput,
 } from "@rive-app/react-canvas";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import CustomCursorContext from "../CustomCursor/context/CustomCursorContext";
 
 interface NavProps {
@@ -37,17 +37,21 @@ function Navigation({ particles, toggleParticles }: NavProps) {
       fit: Fit.FitHeight,
     }),
   });
-  const playAnimation = useStateMachineInput(
-    rive,
-    "main",
-    "RotateBG"
-  );
+  const playAnimation = useStateMachineInput(rive, "main", "RotateBG");
 
+  useEffect(() => {
+    animate(
+      ".unsplash a,.unsplash div",
+      { opacity: [0, 0, 0, 1] },
+      {
+        duration: 0.5,
+        delay: stagger(0.1, { startDelay: 6.5 }),
+        ease: [0, 0.71, 0.2, 1.01],
+      }
+    );
+  }, []);
   return (
-    <NavContainer
-      animate={entryAnimation}
-      transition={splashTransition}
-    >
+    <NavContainer animate={entryAnimation} transition={splashTransition}>
       <Link href="/" className="logo">
         <motion.div
           animate={{
@@ -66,13 +70,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
           />
         </motion.div>
       </Link>
-      <motion.div
-        animate={{ opacity: [0, 0, 0, 1] }}
-        transition={{
-          duration: 0.5,
-          delay: 6.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
+      <div
         className="unsplash"
       >
         <a
@@ -81,7 +79,8 @@ function Navigation({ particles, toggleParticles }: NavProps) {
           href="#"
           className="navLinks"
         >
-          <span className="navIndex">01. </span>About
+          <span className="navIndex">01. </span>
+          <span>About</span>
         </a>
         <a
           onMouseEnter={() => setType("link")}
@@ -90,7 +89,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
           className="navLinks"
         >
           <span className="navIndex">02. </span>
-          Projects
+          <span>Projects</span>
         </a>
         <a
           onMouseEnter={() => setType("link")}
@@ -99,7 +98,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
           className="navLinks"
         >
           <span className="navIndex">03. </span>
-          Education
+          <span>Education</span>
         </a>
         <a
           onMouseEnter={() => setType("link")}
@@ -108,7 +107,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
           className="navLinks"
         >
           <span className="navIndex">04. </span>
-          Contact
+          <span>Contact</span>
         </a>
         {/* <a
           onMouseEnter={() => setType("link")}
@@ -116,11 +115,11 @@ function Navigation({ particles, toggleParticles }: NavProps) {
           href="#"
           className="navLinks"
         >
-          <span className="navIndex">05. </span>
-          Blog
+          <span className="navIndex">05. </span><span>Blog</span>
+          
         </a> */}
         <Toggle on={particles} toggle={toggleParticles} />
-      </motion.div>
+      </div>
     </NavContainer>
   );
 }

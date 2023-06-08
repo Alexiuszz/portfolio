@@ -22,7 +22,7 @@ import {
 import { loadFull } from "tsparticles";
 import particlesOptions from "../../config/particles.json";
 import Particles from "react-particles";
-import { motion } from "framer-motion";
+import { animate, motion, stagger } from "framer-motion";
 import CustomCursor from "../CustomCursor";
 import {
   useRive,
@@ -74,7 +74,17 @@ function Layout({
       clearTimeout(splashTimeout);
     };
   }, []);
-
+  useEffect(() => {
+    animate(
+      ".socials,.myEmail",
+      { opacity: [0, 0, 0, 1] },
+      {
+        duration: 0.5,
+        delay: stagger(0.1, { startDelay: 8.0 }),
+        ease: [0, 0.71, 0.2, 1.01],
+      }
+    );
+  }, []);
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
@@ -120,7 +130,7 @@ function Layout({
       />
       <MainLayout hideOverview={hideOverview}>
         <LDesign />
-        <Socials></Socials>
+        <Socials className="socials"></Socials>
         <div className="content">{children}</div>
         <PageOverview hideOverview={hideOverview}>
           <span>Page Overview</span>
@@ -139,7 +149,7 @@ function Layout({
             </motion.div>
           ))}
         </PageOverview>
-        <EmailDesign><a href="mailto:alexiusnwala@gmail.com">alexiusnwala@gmail.com</a></EmailDesign>
+        <EmailDesign className="myEmail"><a href="mailto:alexiusnwala@gmail.com">alexiusnwala@gmail.com</a><div className="emailLine"/><div className="emailCircle"/></EmailDesign>
       </MainLayout>
       <Particles
         options={particlesOptions as ISourceOptions}

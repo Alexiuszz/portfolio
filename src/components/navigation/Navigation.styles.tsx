@@ -19,6 +19,7 @@ export const NavContainer = styled(motion.div)`
   font-size: 13px;
   -webkit-box-pack: justify;
   z-index: 1;
+
   .navLinks {
     margin: 0px 5px;
     padding: 10px;
@@ -27,6 +28,10 @@ export const NavContainer = styled(motion.div)`
       margin-right: 3px;
       color: ${({ theme }) => theme.hoverFontColor};
       -webkit-text-fill-color: ${({ theme }) => theme.hoverFontColor};
+    }
+    &:hover .navIndex {
+      transition: all 0.3s;
+      margin-right: 6px;
     }
   }
   .logo {

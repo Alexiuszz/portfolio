@@ -1,4 +1,4 @@
-import { AboutSectionContainer } from "@/app/page.styles";
+import { AboutSectionContainer } from "@/styles/page.styles";
 import Image from "next/image";
 import React, { forwardRef } from "react";
 import { motion } from "framer-motion";

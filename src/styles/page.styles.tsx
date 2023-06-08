@@ -20,7 +20,7 @@ export const HeroContainer = styled(motion.div)`
   position: relative;
   transform: translate(-50%, -40%);
   top: 30%;
-  opacity: 0;
+  opacity: 1;
   .typewriter {
     font-size: 20px;
     position: absolute;

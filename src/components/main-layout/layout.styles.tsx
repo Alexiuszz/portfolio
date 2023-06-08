@@ -29,13 +29,13 @@ export const MainLayout = styled.div<LayoutStyleProps>`
   .content::-webkit-scrollbar {
     display: none;
   }
-  &:hover  .gradient1 {
-      stop-color: #CF9116;
-    }
-    
-    &:hover .gradient2{
-      stop-color: #0F8A5F;
-    }
+  &:hover .gradient1 {
+    stop-color: #cf9116;
+  }
+
+  &:hover .gradient2 {
+    stop-color: #0f8a5f;
+  }
 `;
 
 export const SplashScreen = styled(motion.div)`
@@ -78,7 +78,21 @@ export const EmailDesign = styled(motion.div)`
   top: 515px;
   right: 0;
   transform: rotate(90deg);
-  &:hover{
+  display: flex;
+  align-items: center;
+  .emailLine {
+    height: 1px;
+    width: 65px;
+    margin-left: 5px;
+    background-color: ${({ theme }) => theme.primaryFontColor};
+  }
+  .emailCircle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid ${({ theme }) => theme.primaryFontColor};
+  }
+  &:hover {
     transform: translateY() rotate(89deg);
   }
 `;
