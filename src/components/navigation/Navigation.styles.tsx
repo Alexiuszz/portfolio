@@ -14,7 +14,7 @@ export const NavContainer = styled(motion.div)`
   opacity: 0;
   top: 45%;
   align-content: end;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   padding: 0 5%;
   font-size: 13px;
   -webkit-box-pack: justify;

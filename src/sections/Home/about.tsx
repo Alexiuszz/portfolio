@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
 import LinkButton from "@/components/LinkButton";
+import CustomLink from "@/components/CustomLink";
 
 const AboutSection = forwardRef(function AboutSection(
   props: {},
@@ -19,12 +20,12 @@ const AboutSection = forwardRef(function AboutSection(
             NodeJS, I also have experience as an Embedded Software
             Enginneer. I have a Bachelor&apos;s degree in Electronics
             Engineering, from the University of Nigeria Nsukka, Enugu
-            Nigeria. I&apos;m currentl building            <a href="#" className="home-about-link">
+            Nigeria. I&apos;m currentl building            <CustomLink href="#" className="home-about-link">
               Biamuta
-            </a>            and
-            <a href="#" className="home-about-link">
+            </CustomLink>            and
+            <CustomLink href="#" className="home-about-link">
               Emissar
-            </a>            . I love learning new things no matter how small,
+            </CustomLink>            . I love learning new things no matter how small,
           </p>
           <LinkButton>Get to know me</LinkButton>
         </motion.div>

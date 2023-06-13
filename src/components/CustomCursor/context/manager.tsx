@@ -9,7 +9,6 @@ const CustomCursorManager = ({
   children: ReactNode;
 }) => {
   const [type, setType] = useState<CursorLookType>("default");
-
   return (
     <CustomCursorContext.Provider value={{ type, setType }}>
       {children}

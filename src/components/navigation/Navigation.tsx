@@ -7,9 +7,8 @@ import {
   useRive,
   useStateMachineInput,
 } from "@rive-app/react-canvas";
-import Link from "next/link";
-import { useContext, useEffect } from "react";
-import CustomCursorContext from "../CustomCursor/context/CustomCursorContext";
+import { useEffect } from "react";
+import CustomLink from "../CustomLink";
 
 interface NavProps {
   particles: boolean;
@@ -19,7 +18,7 @@ const entryAnimation = {
   opacity: [0, 0, 1, 1],
   width: ["50%", "50%", "50%", "100%"],
   x: ["-50%", "-50%", "-50%", "-50%"],
-  y: ["-60%", "-60%", "-50%", "-295%"],
+  y: ["-60%", "-60%", "-50%", "-340%"],
 };
 const splashTransition = {
   duration: 3,
@@ -28,7 +27,6 @@ const splashTransition = {
   ease: [0, 0.71, 0.2, 1.01],
 };
 function Navigation({ particles, toggleParticles }: NavProps) {
-  const { setType } = useContext(CustomCursorContext);
   const { rive, RiveComponent } = useRive({
     src: "/assets/rives/logo-animation.riv",
     stateMachines: "main",
@@ -37,7 +35,11 @@ function Navigation({ particles, toggleParticles }: NavProps) {
       fit: Fit.FitHeight,
     }),
   });
-  const playAnimation = useStateMachineInput(rive, "main", "RotateBG");
+  const playAnimation = useStateMachineInput(
+    rive,
+    "main",
+    "RotateBG"
+  );
 
   useEffect(() => {
     animate(
@@ -51,8 +53,12 @@ function Navigation({ particles, toggleParticles }: NavProps) {
     );
   }, []);
   return (
-    <NavContainer animate={entryAnimation} transition={splashTransition}>
-      <Link href="/" className="logo">
+    <NavContainer
+      animate={entryAnimation}
+      transition={splashTransition}
+    >
+      {" "}
+      <CustomLink className="logo" href="/">
         <motion.div
           animate={{
             width: ["75px", "50px"],
@@ -69,55 +75,28 @@ function Navigation({ particles, toggleParticles }: NavProps) {
             }}
           />
         </motion.div>
-      </Link>
-      <div
-        className="unsplash"
-      >
-        <a
-          onMouseEnter={() => setType("link")}
-          onMouseLeave={() => setType("default")}
-          href="#"
-          className="navLinks"
-        >
+      </CustomLink>
+      <div className="unsplash">
+        <CustomLink className="navLinks" href="#">
           <span className="navIndex">01. </span>
           <span>About</span>
-        </a>
-        <a
-          onMouseEnter={() => setType("link")}
-          onMouseLeave={() => setType("default")}
-          href="#"
-          className="navLinks"
-        >
+        </CustomLink>
+        <CustomLink className="navLinks" href="#">
           <span className="navIndex">02. </span>
           <span>Projects</span>
-        </a>
-        <a
-          onMouseEnter={() => setType("link")}
-          onMouseLeave={() => setType("default")}
-          href="#"
-          className="navLinks"
-        >
+        </CustomLink>
+        <CustomLink className="navLinks" href="#">
           <span className="navIndex">03. </span>
           <span>Education</span>
-        </a>
-        <a
-          onMouseEnter={() => setType("link")}
-          onMouseLeave={() => setType("default")}
-          href="#"
-          className="navLinks"
-        >
+        </CustomLink>
+        <CustomLink className="navLinks" href="#">
           <span className="navIndex">04. </span>
           <span>Contact</span>
-        </a>
-        {/* <a
-          onMouseEnter={() => setType("link")}
-          onMouseLeave={() => setType("default")}
-          href="#"
-          className="navLinks"
-        >
+        </CustomLink>
+        {/*<CustomLink className="navLinks" href="#">
           <span className="navIndex">05. </span><span>Blog</span>
           
-        </a> */}
+        </CustomLink> */}
         <Toggle on={particles} toggle={toggleParticles} />
       </div>
     </NavContainer>
