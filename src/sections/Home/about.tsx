@@ -1,10 +1,54 @@
 import { AboutSectionContainer } from "@/styles/page.styles";
-import Image from "next/image";
-import React, { forwardRef } from "react";
-import { motion } from "framer-motion";
+import React, { forwardRef, useEffect, useState } from "react";
+import { Variants, motion } from "framer-motion";
 import LinkButton from "@/components/LinkButton";
 import CustomLink from "@/components/CustomLink";
 
+const containerVariants: Variants = {
+  offscreen: {
+    y: 100,
+  },
+  onscreen: {
+    y: 0,
+    rotate: -8,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
+const txtVariants: Variants = {
+  offscreen: {
+    y: 5,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
+const imgVariants: Variants = {
+  offscreen: {
+    opacity: 0.5,
+    scale: 0.8,
+  },
+  onscreen: {
+    opacity: 1,
+    scale: 1,
+    rotate: 8,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 const AboutSection = forwardRef(function AboutSection(
   props: {},
   ref: React.Ref<HTMLElement>
@@ -12,7 +56,13 @@ const AboutSection = forwardRef(function AboutSection(
   return (
     <AboutSectionContainer ref={ref} id="home-about">
       <div className="about-content">
-        <motion.div className="about-text">
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 1 }}
+          variants={txtVariants}
+          className="about-text"
+        >
           <p>
             <span className="bigLetter">H</span>ello! my name is
             Alexius, I&apos;m a software developer from Nigeria,
@@ -20,23 +70,38 @@ const AboutSection = forwardRef(function AboutSection(
             NodeJS, I also have experience as an Embedded Software
             Enginneer. I have a Bachelor&apos;s degree in Electronics
             Engineering, from the University of Nigeria Nsukka, Enugu
-            Nigeria. I&apos;m currentl building            <CustomLink href="#" className="home-about-link">
+            Nigeria. I&apos;m currentl building{" "}
+            <CustomLink href="#" className="home-about-link">
               Biamuta
-            </CustomLink>            and
+            </CustomLink>{" "}
+            and
             <CustomLink href="#" className="home-about-link">
               Emissar
-            </CustomLink>            . I love learning new things no matter how small,
+            </CustomLink>{" "}
+            . I love learning new things no matter how small,
           </p>
           <LinkButton>Get to know me</LinkButton>
         </motion.div>
         <motion.div className="about-img">
           <div className="splash"></div>
-          <div className="about-img-container">
-            <img
-              src={"/assets/images/PortHero1.png"}
-              alt="Enyinna Nwala"
-            />
-          </div>
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={containerVariants}
+            viewport={{ once: true, amount: 0.8 }}
+            className="aboutImgWrapper"
+          >
+            <div className="subWrapper">
+              <div className="about-img-container">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <motion.img
+                  src={"/assets/images/PortHero1.png"}
+                  alt="Enyinna Nwala"
+                  variants={imgVariants}
+                />
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </AboutSectionContainer>

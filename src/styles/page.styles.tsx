@@ -131,26 +131,48 @@ export const AboutSectionContainer = styled(motion.section)`
         rgb(0, 255, 85)
       );
     }
-    .about-img-container {
+    .aboutImgWrapper {
       height: 70%;
       width: 85%;
+      display: block;
+      position: relative;
       border-radius: 20px;
-      overflow: hidden;
-      background-color: white;
-      box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075),
-        0 0 2px hsl(0deg 0% 0% / 0.075),
-        0 0 4px hsl(0deg 0% 0% / 0.075),
-        0 0 8px hsl(0deg 0% 0% / 0.075),
-        0 0 16px hsl(0deg 0% 0% / 0.075);
-      transform-origin: 10% 60%;
-      ${centerContent};
-      z-index: 2;
+      background-color: ${({ theme }) => theme.hoverFontColor};
       transform: rotate(-8deg);
+      overflow: hidden;
+        box-shadow: 0 10px 30px -15px #1e1d1d;
+      transition: all 0.3s;
+      .subWrapper {
+        position: relative;
+        border-radius: 20px;
+        mix-blend-mode: multiply;
+        filter: grayscale(100%) contrast(1);
+        transition: all 0.3s;
+      }
+      &:hover ~ .splash {
+        top: -10%;
+      }
+      &:hover {
+        background-color: #fff;
+        transform: rotate(0deg) !important;
+        .subWrapper {
+          mix-blend-mode: normal;
+          filter: grayscale(0%) contrast(1);
+          .about-img-container img {
+            transform: rotate(3deg) !important;
+          }
+        }
+      }
+    }
+    .about-img-container {
+      height: 100%;
+      width: 100%;
+      ${centerContent};
     }
     img {
-      margin-top: 103px;
       height: 150%;
       transform: rotate(8deg);
+      transition: all 0.3s;
     }
   }
   .about-text {

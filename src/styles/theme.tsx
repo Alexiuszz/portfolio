@@ -7,7 +7,7 @@ export const darkTheme: DefaultTheme = {
   primaryFontColor: "#c1d3ca",
   secondaryFontColor: "#67886d",
   tetiaryFontColor: "#727677",
-  hoverFontColor: "#1bd393",
+  hoverFontColor: "#56f4a9",
   cursorColor: "#e0fcee",
   cursorGlow:
     "radial-gradient(circle at 50%,rgba(255, 255, 255, 0.100),rgba(255, 255, 255, 0.060) 10%,rgba(255, 255, 255, 0.002) 30%,rgba(255, 255, 255, 0.090) 35%,rgba(255, 255, 255, 0.002) 45%,rgba(255, 255, 255, 0.077) 48%,        rgba(255, 255, 255, 0.002) 54%,rgba(255, 255, 255, 0.065) 60%,rgba(255, 255, 255, 0.001) 74% )",
