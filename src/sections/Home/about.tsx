@@ -11,28 +11,33 @@ const AboutSection = forwardRef(function AboutSection(
   return (
     <AboutSectionContainer ref={ref} id="home-about">
       <div className="about-content">
-        <motion.div className="about-img">
-          <Image
-            src={"/assets/images/PortHero1.png"}
-            fill={true}
-            alt="Enyinna Nwala"
-          />
-        </motion.div>
         <motion.div className="about-text">
           <p>
-            Hello, welcome to my domain (pun intended). A little about
-            myself, I&apos;m a 24 year old software developer from
-            Nigeria, currently building web applications with React
-            and NodeJS, I also have some experience as an Embedded
-            Software Enginneer. I have a Bachelor&apos;s degree in
-            Electronics Engineering, from the University of Nigeria
-            Nsukka, Enugu Nigeria.
+            <span className="bigLetter">H</span>ello! my name is
+            Alexius, I&apos;m a software developer from Nigeria,
+            currently building beautiful web applications with React &
+            NodeJS, I also have experience as an Embedded Software
+            Enginneer. I have a Bachelor&apos;s degree in Electronics
+            Engineering, from the University of Nigeria Nsukka, Enugu
+            Nigeria. I&apos;m currentl building            <a href="#" className="home-about-link">
+              Biamuta
+            </a>            and
+            <a href="#" className="home-about-link">
+              Emissar
+            </a>            . I love learning new things no matter how small,
           </p>
           <LinkButton>Get to know me</LinkButton>
         </motion.div>
+        <motion.div className="about-img">
+          <div className="splash"></div>
+          <div className="about-img-container">
+            <img
+              src={"/assets/images/PortHero1.png"}
+              alt="Enyinna Nwala"
+            />
+          </div>
+        </motion.div>
       </div>
-
-      <motion.div className="techsCarousel"></motion.div>
     </AboutSectionContainer>
   );
 });

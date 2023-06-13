@@ -27,17 +27,18 @@ export const HeroContainer = styled(motion.div)`
     transform: translate(0%, -200%);
     top: -120%;
     left: 0;
-    color: ${({theme}) => theme.hoverFontColor};
+    color: ${({ theme }) => theme.hoverFontColor};
   }
   .heroAbout {
     position: absolute;
     top: -250%;
     left: 0;
     width: 70%;
-    .heroMe, .heroText{
-      color: ${({theme}) => theme.secondaryFontColor}
+    .heroMe,
+    .heroText {
+      color: ${({ theme }) => theme.secondaryFontColor};
     }
-    .heroText{
+    .heroText {
       margin-top: 20px;
     }
   }
@@ -49,21 +50,107 @@ export const AboutSectionContainer = styled(motion.section)`
   height: 100vh;
   scroll-snap-align: center;
   ${centerContent};
+  filter: drop-shadow(5px 5px 25px black);
   .about-content {
-    width: 100%;
-    height: 200px;
     display: flex;
-    z-index: 2;
-    justify-content: center;
+    position: relative;
+    top: 25px;
+    background: ${({ theme }) => theme.tetiaryColor};
+    background-size: 1000px;
+    border: 5px solid ${({ theme }) => theme.hoverFontColor};
+    background-position: center right;
+    justify-content: flex-start;
+    align-items: center;
+    width: 88%;
+    padding: 15px 10px 25px 15px;
+    filter: brightness(0.95) sepia(30%) saturate(80%);
+    border-radius: 30px;
+    height: 64%;
+    clip-path: polygon(
+      0% 0%,
+      0% 93%,
+      5% 98%,
+      6% 99%,
+      8% 95%,
+      12% 94%,
+      15% 97%,
+      17% 93%,
+      20% 98%,
+      22% 97%,
+      25% 99%,
+      31% 94%,
+      35% 93%,
+      39% 96%,
+      43% 93%,
+      45% 94%,
+      47% 95%,
+      50% 92%,
+      52% 96%,
+      54% 93%,
+      58% 92%,
+      60% 95%,
+      62% 93%,
+      65% 96%,
+      69% 93%,
+      72% 93%,
+      75% 94%,
+      79% 97%,
+      81% 94%,
+      85% 93%,
+      88% 92%,
+      90% 95%,
+      93% 93%,
+      95% 92%,
+      97% 95%,
+      100% 97%,
+      100% 0%
+    );
+    overflow: auto;
   }
   .about-img {
     position: relative;
-    width: 200px;
+    height: 80%;
+    width: 400px;
     overflow: hidden;
-    background-color: #7e6e9e;
-    transform: skewX(-15deg);
+    background: #ffffff10;
+    border-radius: 20px;
+    border-radius: ${({ theme }) => theme.hoverFontColor};
+    ${centerContent};
+    .splash {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: -28%;
+      clip-path: path(
+        "M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"
+      );
+      background: linear-gradient(
+        306deg,
+        rgb(85, 255, 0),
+        rgb(0, 255, 85)
+      );
+    }
+    .about-img-container {
+      height: 70%;
+      width: 85%;
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075),
+        0 0 2px hsl(0deg 0% 0% / 0.075),
+        0 0 4px hsl(0deg 0% 0% / 0.075),
+        0 0 8px hsl(0deg 0% 0% / 0.075),
+        0 0 16px hsl(0deg 0% 0% / 0.075);
+      transform-origin: 10% 60%;
+      ${centerContent};
+      z-index: 2;
+      transform: rotate(-8deg);
+    }
     img {
-      transform: skewX(15deg);
+      margin-top: 103px;
+      height: 150%;
+      transform: rotate(8deg);
     }
   }
   .about-text {
@@ -73,11 +160,21 @@ export const AboutSectionContainer = styled(motion.section)`
     background-color: rgba(var(--callout-rgb), 0.5);
     border: 1px solid rgba(var(--callout-border-rgb), 0.3);
     border-radius: var(--border-radius);
-    width: 60%;
-    height: 100%;
-    transform: skewX(-15deg);
+    width: 55%;
+    .bigLetter {
+      font-family: "Sassy Frass", cursive;
+      font-size: 600%;
+      font-weight: 1;
+      opacity: 0.8;
+      line-height: 0;
+    }
     p {
       line-height: 1.8;
+    }
+    .home-about-link {
+      display: inline-block;
+      color: ${({ theme }) => theme.hoverFontColor};
+      -webkit-text-fill-color: ${({ theme }) => theme.hoverFontColor};
     }
   }
   a {
