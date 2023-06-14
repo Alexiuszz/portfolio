@@ -110,7 +110,7 @@ export const AboutSectionContainer = styled(motion.section)`
   .about-img {
     position: relative;
     height: 80%;
-    width: 400px;
+    width: 380px;
     overflow: hidden;
     background: #ffffff10;
     border-radius: 20px;
