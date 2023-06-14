@@ -125,11 +125,7 @@ export const AboutSectionContainer = styled(motion.section)`
       clip-path: path(
         "M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"
       );
-      background: linear-gradient(
-        306deg,
-        rgb(85, 255, 0),
-        rgb(0, 255, 85)
-      );
+      background: linear-gradient(306deg, rgb(85, 255, 0), rgb(0, 255, 85));
     }
     .aboutImgWrapper {
       height: 70%;
@@ -140,7 +136,7 @@ export const AboutSectionContainer = styled(motion.section)`
       background-color: ${({ theme }) => theme.hoverFontColor};
       transform: rotate(-8deg);
       overflow: hidden;
-        box-shadow: 0 10px 30px -15px #1e1d1d;
+      box-shadow: 0 10px 30px -15px #1e1d1d;
       transition: all 0.3s;
       .subWrapper {
         position: relative;

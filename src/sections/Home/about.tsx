@@ -6,7 +6,7 @@ import CustomLink from "@/components/CustomLink";
 
 const containerVariants: Variants = {
   offscreen: {
-    y: 100,
+    y: 10,
   },
   onscreen: {
     y: 0,
@@ -20,7 +20,7 @@ const containerVariants: Variants = {
 };
 const txtVariants: Variants = {
   offscreen: {
-    y: 5,
+    y: 10,
     opacity: 0,
   },
   onscreen: {
@@ -88,7 +88,7 @@ const AboutSection = forwardRef(function AboutSection(
             initial="offscreen"
             whileInView="onscreen"
             variants={containerVariants}
-            viewport={{ once: true, amount: 0.8 }}
+            viewport={{ once: false, amount: 1 }}
             className="aboutImgWrapper"
           >
             <div className="subWrapper">
