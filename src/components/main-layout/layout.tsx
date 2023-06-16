@@ -33,6 +33,8 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme } from "@/styles/theme";
 import LDesign from "../LDesign";
 import { ResourceContext } from "./context/ResourceContext";
+import CustomLink from '@/components/CustomLink';
+import Link from "@/components/CustomLink";
 
 interface ProjectOverview {
   id: string;
@@ -155,7 +157,7 @@ function Layout({
             <LDesign />
             <Socials className="socials"></Socials>
             <div className="content">{children}</div>
-            <PageOverview hideOverview={hideOverview}>
+            {/* <PageOverview hideOverview={hideOverview}>
               <span>Page Overview</span>
               {pageOverview?.map((item, i) => (
                 <motion.div key={i} className="item">
@@ -171,11 +173,11 @@ function Layout({
                   </a>
                 </motion.div>
               ))}
-            </PageOverview>
+            </PageOverview> */}
             <EmailDesign className="myEmail">
-              <a href="mailto:alexiusnwala@gmail.com">
+              <Link className="" href="mailto:alexiusnwala@gmail.com">
                 alexiusnwala@gmail.com
-              </a>
+              </Link>
               <div className="emailLine" />
               <div className="emailCircle" />
             </EmailDesign>

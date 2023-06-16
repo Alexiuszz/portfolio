@@ -8,6 +8,7 @@ import React, {
 import Layout from "@/components/main-layout/layout";
 import AboutSection from "@/sections/Home/about";
 import Hero from "@/sections/Home/hero";
+import ExperienceSection from "@/sections/Home/experience";
 
 const PageOverview = [
   {
@@ -33,21 +34,27 @@ const PageOverview = [
 ];
 
 type Sections = {
-  home?: React.RefObject<HTMLElement>,
-  homeAbout?: React.RefObject<HTMLElement>
-}
+  home?: React.RefObject<HTMLElement>;
+  homeAbout?: React.RefObject<HTMLElement>;
+};
 export default function Home() {
   const [hideOverview, setHideOverview] = useState(true);
   const heroSection = useRef<HTMLElement>(null);
   const AboutSectionRef = useRef<HTMLElement>(null);
+  const ExperienceSectionRef = useRef<HTMLElement>(null);
 
   const scrollSection = (section: string) => {
-    const sections: Sections={
+    const sections: Sections = {
       home: heroSection,
-      homeAbout: AboutSectionRef
-    }
-    if (sections[section as keyof Sections] && sections[section as keyof Sections]?.current) {
-      sections[section as keyof Sections]?.current?.scrollIntoView({ behavior: "smooth" });
+      homeAbout: AboutSectionRef,
+    };
+    if (
+      sections[section as keyof Sections] &&
+      sections[section as keyof Sections]?.current
+    ) {
+      sections[section as keyof Sections]?.current?.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
   useEffect(() => {
@@ -69,6 +76,7 @@ export default function Home() {
     >
       <Hero ref={heroSection} />
       <AboutSection ref={AboutSectionRef} />
+      <ExperienceSection ref={ExperienceSectionRef} />
     </Layout>
   );
 }

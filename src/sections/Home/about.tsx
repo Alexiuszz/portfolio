@@ -74,13 +74,15 @@ const AboutSection = forwardRef(function AboutSection(
             <CustomLink href="#" className="home-about-link">
               Biamuta
             </CustomLink>{" "}
-            and
+            and{" "}
             <CustomLink href="#" className="home-about-link">
               Emissar
             </CustomLink>{" "}
             . I love learning new things no matter how small,
           </p>
-          <LinkButton>Get to know me</LinkButton>
+          <LinkButton className="" href="#">
+            Get to know me
+          </LinkButton>
         </motion.div>
         <motion.div className="about-img">
           <div className="splash"></div>

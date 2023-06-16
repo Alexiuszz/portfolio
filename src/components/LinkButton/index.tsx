@@ -1,17 +1,23 @@
 import { motion } from "framer-motion";
+import { ReactNode, useContext } from "react";
 import styled from "styled-components";
+import CustomCursorContext from "../CustomCursor/context/CustomCursorContext";
 
-export default styled(motion.a)`
-  border: 8px solid;
+const LinkButtonContainer = styled(motion.a)`
+  font-family: cursive, "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  border: 2px solid;
+  border-radius: 5px;
   border-image: repeating-linear-gradient(
       135deg,
-      #f8ca00 0 10px,
-      #e97f02 0 20px,
-      #0f8a5f 0 30px
+      #0f8a5f 0 50px,
+      #e97f02 0 100px,
+      #0f8a5f 0 150px
     )
-    8;
-    width: fit-content;
-  -webkit-mask: conic-gradient(
+    2;
+  padding: 5px 8px;
+  width: fit-content;
+  mask: conic-gradient(
         from 180deg at top 8px right 8px,
         #0000 90deg,
         #000 0
@@ -21,10 +27,48 @@ export default styled(motion.a)`
       var(--_i, 200%) / var(--_i, 8px) 200% border-box no-repeat,
     linear-gradient(#000 0 0) padding-box no-repeat;
   transition: 0.3s, -webkit-mask-position 0.3s 0.3s;
-
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 2px solid ${({ theme }) => theme.hoverFontColor};
+    transition: 0.2s width;
+  }
   &:hover {
     --_i: 100%;
-    color: #cc333f;
+    color: ${({ theme }) => theme.hoverFontColor};
     transition: 0.3s, -webkit-mask-size 0.3s 0.3s;
+  cursor: none;
+    &:after {
+      width: 0px;
+    }
   }
 `;
+
+function LinkButton({
+  className,
+  href,
+  children,
+}: {
+  children: ReactNode;
+  className: string;
+  href: string;
+}) {
+  const { setType } = useContext(CustomCursorContext);
+  return (
+    <LinkButtonContainer
+      onMouseEnter={() => setType("link")}
+      onMouseLeave={() => setType("default")}
+      href={href}
+      className={className}
+    >
+      {children}
+    </LinkButtonContainer>
+  );
+}
+
+export default LinkButton;

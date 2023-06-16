@@ -70,19 +70,20 @@ export const PageOverview = styled.div<LayoutStyleProps>`
 
 export const Socials = styled(motion.div)`
   position: fixed;
-  top: 515px;
+  bottom: 17%;
   left: 0;
 `;
 export const EmailDesign = styled(motion.div)`
   position: fixed;
-  top: 515px;
-  right: 0;
+  bottom: 17%;
+  right: -5%;
   transform: rotate(90deg);
   display: flex;
+  font-size: 12px;
   align-items: center;
   .emailLine {
     height: 1px;
-    width: 65px;
+    width: 100px;
     margin-left: 5px;
     background-color: ${({ theme }) => theme.primaryFontColor};
   }

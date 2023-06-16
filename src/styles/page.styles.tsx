@@ -45,7 +45,6 @@ export const HeroContainer = styled(motion.div)`
 `;
 
 export const AboutSectionContainer = styled(motion.section)`
-  max-width: var(--max-width);
   width: 100%;
   height: 100vh;
   scroll-snap-align: center;
@@ -61,7 +60,7 @@ export const AboutSectionContainer = styled(motion.section)`
     background-position: center right;
     justify-content: flex-start;
     align-items: center;
-    width: 88%;
+    width: 90%;
     padding: 15px 10px 25px 15px;
     filter: brightness(0.95) sepia(30%) saturate(80%);
     border-radius: 30px;
@@ -114,6 +113,7 @@ export const AboutSectionContainer = styled(motion.section)`
     overflow: hidden;
     background: #ffffff10;
     border-radius: 20px;
+    margin-left: 5%;
     border-radius: ${({ theme }) => theme.hoverFontColor};
     ${centerContent};
     .splash {
@@ -125,7 +125,11 @@ export const AboutSectionContainer = styled(motion.section)`
       clip-path: path(
         "M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"
       );
-      background: linear-gradient(306deg, rgb(85, 255, 0), rgb(0, 255, 85));
+      background: linear-gradient(
+        306deg,
+        rgb(85, 255, 0),
+        rgb(0, 255, 85)
+      );
     }
     .aboutImgWrapper {
       height: 70%;
@@ -174,10 +178,7 @@ export const AboutSectionContainer = styled(motion.section)`
   .about-text {
     position: relative;
     margin: 0;
-    padding: 1rem;
-    background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-    border-radius: var(--border-radius);
+    padding: 10px;
     width: 55%;
     .bigLetter {
       font-family: "Sassy Frass", cursive;
@@ -205,4 +206,11 @@ export const AboutSectionContainer = styled(motion.section)`
     font-weight: 700;
     font-family: var(--font-mono);
   }
+`;
+
+export const ExperienceContainer = styled(motion.section)`
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+  ${centerContent};
 `;
