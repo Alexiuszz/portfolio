@@ -196,16 +196,6 @@ export const AboutSectionContainer = styled(motion.section)`
       -webkit-text-fill-color: ${({ theme }) => theme.hoverFontColor};
     }
   }
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  code {
-    font-weight: 700;
-    font-family: var(--font-mono);
-  }
 `;
 
 export const ExperienceContainer = styled(motion.section)`
@@ -213,4 +203,5 @@ export const ExperienceContainer = styled(motion.section)`
   height: 100vh;
   scroll-snap-align: center;
   ${centerContent};
+  flex-direction: column;
 `;

@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 export const GliderContainer = styled(motion.div)`
   ${absCenter};
-  position: fixed;
   opacity: 0;
   transform: translate(-50%, -40%);
   top: 90%;
