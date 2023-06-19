@@ -204,4 +204,36 @@ export const ExperienceContainer = styled(motion.section)`
   scroll-snap-align: center;
   ${centerContent};
   flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  h2 {
+    color: ${({ theme }) => theme.primaryFontColor};
+    margin-bottom: 10px;
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 30vw;
+      height: 1px;
+      background-color: ${({ theme }) => theme.primaryFontColor};
+    }
+  }
+  .workHistoryContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+  }
+  .skillsContainer {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(140px, 200px));
+      gap: 0px 10px;
+      padding: 0px;
+      margin: 20px 0px 0px;
+      overflow: hidden;
+      list-style: none;
+    }
+  }
 `;

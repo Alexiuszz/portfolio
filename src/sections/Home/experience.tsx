@@ -50,14 +50,14 @@ const ExperienceSection = forwardRef(function AboutSection(
   const currWork = workHistory[currTab];
   return (
     <ExperienceContainer>
+      <h2 className="workTitle">Work History</h2>
       <motion.div className="workHistoryContainer">
-        <h2>Work History</h2>
-        <Experience
-          companyName={currWork.company}
-          role={currWork.role}
-          period={currWork.period}
-          works={currWork.works}
-        />
+          <Experience
+            companyName={currWork.company}
+            role={currWork.role}
+            period={currWork.period}
+            works={currWork.works}
+          />
         <motion.ul className="workTabs">
           {workHistory.map((work, i) => (
             <motion.li
@@ -73,14 +73,14 @@ const ExperienceSection = forwardRef(function AboutSection(
       <motion.div className="skillsContainer">
         <h2>Technologies I use currently</h2>
         <motion.ul className="skills">
-          <li className="skill">React</li>
-          <li className="skill">Typescript</li>
-          <li className="skill">Javascript (es6+)</li>
-          <li className="skill">Next.Js</li>
-          <li className="skill">Redux</li>
-          <li className="skill">NodeJs</li>
-          <li className="skill">PostgreSql</li>
-          <li className="skill">MongoDb</li>
+          <motion.li className="skill">React</motion.li>
+          <motion.li className="skill">Typescript</motion.li>
+          <motion.li className="skill">Javascript (es6+)</motion.li>
+          <motion.li className="skill">Next.Js</motion.li>
+          <motion.li className="skill">Redux</motion.li>
+          <motion.li className="skill">NodeJs</motion.li>
+          <motion.li className="skill">PostgreSql</motion.li>
+          <motion.li className="skill">MongoDb</motion.li>
         </motion.ul>
       </motion.div>
     </ExperienceContainer>

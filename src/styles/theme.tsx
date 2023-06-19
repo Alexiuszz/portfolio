@@ -4,7 +4,7 @@ export const darkTheme: DefaultTheme = {
   primaryColor: "#000000df",
   secondaryColor: "#072118df",
   tetiaryColor: "#12392bca",
-  primaryFontColor: "#c1d3ca",
+  primaryFontColor: "#e6f8ef",
   secondaryFontColor: "#67886d",
   tetiaryFontColor: "#727677",
   hoverFontColor: "#56f4a9",
