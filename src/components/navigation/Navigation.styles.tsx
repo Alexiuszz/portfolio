@@ -12,9 +12,8 @@ export const NavContainer = styled(motion.div)`
   -webkit-box-align: center;
   align-items: center;
   opacity: 0;
-  top: 45%;
+  top: 0;
   align-content: end;
-  backdrop-filter: blur(5px);
   padding: 0 5%;
   font-size: 13px;
   -webkit-box-pack: justify;

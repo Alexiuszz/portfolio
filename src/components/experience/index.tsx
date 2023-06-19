@@ -8,23 +8,28 @@ interface ExperienceProps {
   role: string;
   period: string;
   works: string[];
+  isCurr: boolean;
 }
 function Experience({
   companyName,
+  isCurr,
   role,
   period,
   works,
 }: ExperienceProps) {
   return (
-    <ExperienceContainer>
+    <ExperienceContainer className={isCurr ? "currentTab" : "notCurrentTab"}>
       <h3 className="role">
-        {role}{" > "}
+        {role}
+        {" > "}
         <span className="company">{companyName}</span>
       </h3>
       <p className="workPeriod">{period}</p>
       <ul className="workContainer">
         {works.map((work, i) => (
-          <StyledList key={i} className="work">{work}</StyledList>
+          <StyledList key={i} className="work">
+            {work}
+          </StyledList>
         ))}
       </ul>
     </ExperienceContainer>

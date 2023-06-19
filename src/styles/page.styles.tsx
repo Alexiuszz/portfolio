@@ -64,7 +64,7 @@ export const AboutSectionContainer = styled(motion.section)`
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    padding: 15px 10px 25px 15px;
+    padding: 15px 15px 25px 15px;
     filter: brightness(0.95) sepia(30%) saturate(80%);
     border-radius: 30px;
     height: 70%;
@@ -182,16 +182,22 @@ export const AboutSectionContainer = styled(motion.section)`
     }
   }
   .about-text {
-    position: relative;
     margin: 0;
-    padding: 10px;
     width: 60%;
+    height: 80%;
+    font-size: 14px;
     .bigLetter {
       font-family: "Sassy Frass", cursive;
       font-size: 600%;
       font-weight: 1;
       opacity: 0.8;
       line-height: 0;
+    }
+    .about-button {
+      position: relative;
+      bottom: -15%;
+      left: 61%;
+      color: ${({ theme }) => theme.hoverFontColor};
     }
     .home-about-link {
       display: inline-block;
@@ -222,6 +228,7 @@ export const ExperienceContainer = styled(motion.section)`
   }
   .workHistoryContainer {
     display: flex;
+    position: relative;
     justify-content: space-between;
     width: 90%;
     height: 400px;
@@ -229,6 +236,7 @@ export const ExperienceContainer = styled(motion.section)`
   .workTabs {
     font-size: 14px;
     position: relative;
+      left: 75%;
     .hLight {
       position: absolute;
       top: 0px;
@@ -250,8 +258,7 @@ export const ExperienceContainer = styled(motion.section)`
     li {
       margin: 0;
       padding: 10px 15px;
-      border-left: 2px solid
-        ${({ theme }) => theme.primaryFontColor};
+      border-left: 2px solid ${({ theme }) => theme.primaryFontColor};
       height: 40px;
       &::before {
         content: "";
@@ -259,10 +266,10 @@ export const ExperienceContainer = styled(motion.section)`
       &:hover {
         background-color: #ffffff2d;
       }
-      p{
-        transition: all .3s;
+      p {
+        transition: all 0.3s;
       }
-      .currTab{
+      .currTab {
         color: ${({ theme }) => theme.hoverFontColor};
       }
     }

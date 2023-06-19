@@ -31,6 +31,7 @@ export const CursorWrapper = styled.div`
     }
 
     .main-cursor-background {
+      backdrop-filter: hue-rotate(180deg);
       animation: ${morphCircle} .5s cubic-bezier(0.77, 0, 0.175, 1) 0s
         forwards;
     }

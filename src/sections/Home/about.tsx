@@ -54,7 +54,7 @@ const AboutSection = forwardRef(function AboutSection(
   ref: React.Ref<HTMLElement>
 ) {
   return (
-    <AboutSectionContainer ref={ref} id="home-about">
+    <AboutSectionContainer ref={ref} id="about">
       <div className="about-content">
         <motion.div
           initial="offscreen"
@@ -70,7 +70,7 @@ const AboutSection = forwardRef(function AboutSection(
             NodeJS, I also have experience as an Embedded Software
             Enginneer. I have a Bachelor&apos;s degree in Electronics
             Engineering, from the University of Nigeria Nsukka, Enugu
-            Nigeria. I&apos;m currentl building{" "}
+            Nigeria. I&apos;m currently building{" "}
             <CustomLink href="#" className="home-about-link">
               Biamuta
             </CustomLink>{" "}
@@ -80,7 +80,7 @@ const AboutSection = forwardRef(function AboutSection(
             </CustomLink>{" "}
             . I love learning new things no matter how small,
           </p>
-          <LinkButton className="" href="#">
+          <LinkButton className="about-button" href="#">
             Get to know me
           </LinkButton>
         </motion.div>

@@ -7,23 +7,21 @@ interface LayoutStyleProps {
   inView?: boolean;
 }
 export const MainLayout = styled.div<LayoutStyleProps>`
-  overflow: hidden;
   background-image: linear-gradient(
       to right bottom,
       ${({ theme }) => theme.primaryColor},
       ${({ theme }) => theme.secondaryColor}
     ),
     url("/assets/images/bg-img.jpg");
+  overflow-y: scroll;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
   background-size: cover;
   background-position: top;
   .content {
-    overflow: scroll;
-    scrollbar-width: none;
     height: 100vh;
     width: ${(props) => (props.hideOverview ? "100%" : "75%")};
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
     margin: 0 auto;
     section {
       width: 100%;

@@ -18,7 +18,7 @@ const entryAnimation = {
   opacity: [0, 0, 1, 1],
   width: ["50%", "50%", "50%", "100%"],
   x: ["-50%", "-50%", "-50%", "-50%"],
-  y: ["-60%", "-60%", "-50%", "-340%"],
+  y: ["340%", "340%", "340%", "0%"],
 };
 const splashTransition = {
   duration: 3,
@@ -58,7 +58,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
       transition={splashTransition}
     >
       {" "}
-      <CustomLink className="logo" href="/">
+      <CustomLink className="logo" href="/#home">
         <motion.div
           animate={{
             width: ["75px", "50px"],
@@ -77,19 +77,19 @@ function Navigation({ particles, toggleParticles }: NavProps) {
         </motion.div>
       </CustomLink>
       <div className="unsplash">
-        <CustomLink className="navLinks" href="#">
+        <CustomLink className="navLinks" href="#about">
           <span className="navIndex">01. </span>
           <span>About</span>
         </CustomLink>
-        <CustomLink className="navLinks" href="#">
+        <CustomLink className="navLinks" href="#experience">
           <span className="navIndex">02. </span>
+          <span>Experience</span>
+        </CustomLink>
+        <CustomLink className="navLinks" href="#projects">
+          <span className="navIndex">03. </span>
           <span>Projects</span>
         </CustomLink>
-        <CustomLink className="navLinks" href="#">
-          <span className="navIndex">03. </span>
-          <span>Education</span>
-        </CustomLink>
-        <CustomLink className="navLinks" href="#">
+        <CustomLink className="navLinks" href="#contact">
           <span className="navIndex">04. </span>
           <span>Contact</span>
         </CustomLink>

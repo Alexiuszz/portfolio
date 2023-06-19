@@ -48,17 +48,22 @@ const ExperienceSection = forwardRef(function AboutSection(
   ref: React.Ref<HTMLElement>
 ) {
   const [currTab, setCurrTab] = useState<number>(0);
-  const currWork = workHistory[currTab];
   return (
-    <ExperienceContainer>
+    <ExperienceContainer id="experience">
       <h2 className="workTitle">Work History</h2>
       <motion.div className="workHistoryContainer">
-        <Experience
-          companyName={currWork.company}
-          role={currWork.role}
-          period={currWork.period}
-          works={currWork.works}
-        />
+        {workHistory.map((work, i) => {
+          return (
+            <Experience
+              isCurr={i === currTab}
+              key={i}
+              companyName={work.company}
+              role={work.role}
+              period={work.period}
+              works={work.works}
+            />
+          );
+        })}
         <motion.ul className="workTabs">
           <motion.div
             animate={{ y: currTab * 40 }}
@@ -71,7 +76,9 @@ const ExperienceSection = forwardRef(function AboutSection(
               onClick={() => setCurrTab(i)}
               className="workTab"
             >
-              <p className={i === currTab?"currTab":""}>{work.company}</p>
+              <p className={i === currTab ? "currTab" : ""}>
+                {work.company}
+              </p>
             </StyledList>
           ))}
         </motion.ul>
