@@ -25,6 +25,10 @@ export const MainLayout = styled.div<LayoutStyleProps>`
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     margin: 0 auto;
+    section {
+      width: 100%;
+      overflow: hidden;
+    }
   }
   .content::-webkit-scrollbar {
     display: none;

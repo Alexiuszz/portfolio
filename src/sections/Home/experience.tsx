@@ -2,6 +2,7 @@ import { ExperienceContainer } from "@/styles/page.styles";
 import { forwardRef, useState } from "react";
 import { motion } from "framer-motion";
 import Experience from "@/components/experience";
+import StyledList from "@/components/StyledList";
 
 const workHistory: {
   company: string;
@@ -46,41 +47,62 @@ const ExperienceSection = forwardRef(function AboutSection(
   props: {},
   ref: React.Ref<HTMLElement>
 ) {
-  const [currTab, setCurrTab] = useState(0);
+  const [currTab, setCurrTab] = useState<number>(0);
   const currWork = workHistory[currTab];
   return (
     <ExperienceContainer>
       <h2 className="workTitle">Work History</h2>
       <motion.div className="workHistoryContainer">
-          <Experience
-            companyName={currWork.company}
-            role={currWork.role}
-            period={currWork.period}
-            works={currWork.works}
-          />
+        <Experience
+          companyName={currWork.company}
+          role={currWork.role}
+          period={currWork.period}
+          works={currWork.works}
+        />
         <motion.ul className="workTabs">
+          <motion.div
+            animate={{ y: currTab * 40 }}
+            transition={{ duration: 0.3 }}
+            className="hLight"
+          ></motion.div>
           {workHistory.map((work, i) => (
-            <motion.li
+            <StyledList
               key={i}
               onClick={() => setCurrTab(i)}
               className="workTab"
             >
-              {work.company}
-            </motion.li>
+              <p className={i === currTab?"currTab":""}>{work.company}</p>
+            </StyledList>
           ))}
         </motion.ul>
       </motion.div>
       <motion.div className="skillsContainer">
         <h2>Technologies I use currently</h2>
         <motion.ul className="skills">
-          <motion.li className="skill">React</motion.li>
-          <motion.li className="skill">Typescript</motion.li>
-          <motion.li className="skill">Javascript (es6+)</motion.li>
-          <motion.li className="skill">Next.Js</motion.li>
-          <motion.li className="skill">Redux</motion.li>
-          <motion.li className="skill">NodeJs</motion.li>
-          <motion.li className="skill">PostgreSql</motion.li>
-          <motion.li className="skill">MongoDb</motion.li>
+          <StyledList className="skill">
+            <p>React</p>
+          </StyledList>
+          <StyledList className="skill">
+            <p>Typescript</p>
+          </StyledList>
+          <StyledList className="skill">
+            <p>Javascript (es6+)</p>
+          </StyledList>
+          <StyledList className="skill">
+            <p>Next.Js</p>
+          </StyledList>
+          <StyledList className="skill">
+            <p>Redux</p>
+          </StyledList>
+          <StyledList className="skill">
+            <p>NodeJs</p>
+          </StyledList>
+          <StyledList className="skill">
+            <p>PostgreSql</p>
+          </StyledList>
+          <StyledList className="skill">
+            <p>MongoDb</p>
+          </StyledList>
         </motion.ul>
       </motion.div>
     </ExperienceContainer>

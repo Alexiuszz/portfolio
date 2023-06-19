@@ -40,6 +40,9 @@ export const HeroContainer = styled(motion.div)`
     }
     .heroText {
       margin-top: 20px;
+      p {
+        font-size: 16px;
+      }
     }
   }
 `;
@@ -60,11 +63,11 @@ export const AboutSectionContainer = styled(motion.section)`
     background-position: center right;
     justify-content: flex-start;
     align-items: center;
-    width: 90%;
+    width: 100%;
     padding: 15px 10px 25px 15px;
     filter: brightness(0.95) sepia(30%) saturate(80%);
     border-radius: 30px;
-    height: 64%;
+    height: 70%;
     clip-path: polygon(
       0% 0%,
       0% 93%,
@@ -108,8 +111,8 @@ export const AboutSectionContainer = styled(motion.section)`
   }
   .about-img {
     position: relative;
-    height: 80%;
-    width: 380px;
+    height: 60%;
+    aspect-ratio: 1/1;
     overflow: hidden;
     background: #ffffff10;
     border-radius: 20px;
@@ -121,7 +124,7 @@ export const AboutSectionContainer = styled(motion.section)`
       bottom: 0;
       left: 0;
       right: 0;
-      top: -28%;
+      top: -50%;
       clip-path: path(
         "M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"
       );
@@ -132,7 +135,7 @@ export const AboutSectionContainer = styled(motion.section)`
       );
     }
     .aboutImgWrapper {
-      height: 70%;
+      height: 85%;
       width: 85%;
       display: block;
       position: relative;
@@ -158,6 +161,9 @@ export const AboutSectionContainer = styled(motion.section)`
         .subWrapper {
           mix-blend-mode: normal;
           filter: grayscale(0%) contrast(1);
+          .about-img-container {
+            width: 100%;
+          }
           .about-img-container img {
             transform: rotate(3deg) !important;
           }
@@ -166,11 +172,11 @@ export const AboutSectionContainer = styled(motion.section)`
     }
     .about-img-container {
       height: 100%;
-      width: 100%;
+      width: 95%;
       ${centerContent};
     }
     img {
-      height: 150%;
+      height: 100%;
       transform: rotate(8deg);
       transition: all 0.3s;
     }
@@ -179,16 +185,13 @@ export const AboutSectionContainer = styled(motion.section)`
     position: relative;
     margin: 0;
     padding: 10px;
-    width: 55%;
+    width: 60%;
     .bigLetter {
       font-family: "Sassy Frass", cursive;
       font-size: 600%;
       font-weight: 1;
       opacity: 0.8;
       line-height: 0;
-    }
-    p {
-      line-height: 1.8;
     }
     .home-about-link {
       display: inline-block;
@@ -220,20 +223,61 @@ export const ExperienceContainer = styled(motion.section)`
   .workHistoryContainer {
     display: flex;
     justify-content: space-between;
-    width: 75%;
+    width: 90%;
+    height: 400px;
+  }
+  .workTabs {
+    font-size: 14px;
+    position: relative;
+    .hLight {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 10;
+      height: 40px;
+      width: 4px;
+      background-color: ${({ theme }) => theme.hoverFontColor};
+      clip-path: polygon(
+        0% 0%,
+        50% 0,
+        50% 40%,
+        100% 50%,
+        50% 60%,
+        50% 100%,
+        0 100%
+      );
+    }
+    li {
+      margin: 0;
+      padding: 10px 15px;
+      border-left: 2px solid
+        ${({ theme }) => theme.primaryFontColor};
+      height: 40px;
+      &::before {
+        content: "";
+      }
+      &:hover {
+        background-color: #ffffff2d;
+      }
+      p{
+        transition: all .3s;
+      }
+      .currTab{
+        color: ${({ theme }) => theme.hoverFontColor};
+      }
+    }
   }
   .skillsContainer {
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     left: 0;
     .skills {
       display: grid;
       grid-template-columns: repeat(3, minmax(140px, 200px));
-      gap: 0px 10px;
+      gap: 0px 22px;
       padding: 0px;
       margin: 20px 0px 0px;
       overflow: hidden;
-      list-style: none;
     }
   }
 `;

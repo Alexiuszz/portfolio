@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ExperienceContainer } from "./experience.styles";
+import StyledList from "../StyledList";
 
 interface ExperienceProps {
   companyName: string;
@@ -17,13 +18,13 @@ function Experience({
   return (
     <ExperienceContainer>
       <h3 className="role">
-        {role}-{">"}
+        {role}{" > "}
         <span className="company">{companyName}</span>
       </h3>
       <p className="workPeriod">{period}</p>
       <ul className="workContainer">
         {works.map((work, i) => (
-          <li key={i} className="work">{work}</li>
+          <StyledList key={i} className="work">{work}</StyledList>
         ))}
       </ul>
     </ExperienceContainer>
