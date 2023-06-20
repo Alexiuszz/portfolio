@@ -9,6 +9,7 @@ import Layout from "@/components/main-layout/layout";
 import AboutSection from "@/sections/Home/about";
 import Hero from "@/sections/Home/hero";
 import ExperienceSection from "@/sections/Home/experience";
+import Projects from "@/sections/Home/projects";
 
 const PageOverview = [
   {
@@ -77,6 +78,7 @@ export default function Home() {
       <Hero ref={heroSection} />
       <AboutSection ref={AboutSectionRef} />
       <ExperienceSection ref={ExperienceSectionRef} />
+      <Projects />
     </Layout>
   );
 }

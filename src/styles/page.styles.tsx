@@ -1,6 +1,7 @@
 import { absCenter, centerContent } from "@/styles/style_mixins";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import Project from '../components/project/index';
 
 export const LandingContainer = styled(motion.section)`
   height: 100vh;
@@ -37,6 +38,9 @@ export const HeroContainer = styled(motion.div)`
     .heroMe,
     .heroText {
       color: ${({ theme }) => theme.secondaryFontColor};
+    }
+    .heroName{
+      color: ${({ theme }) => theme.primaryFontColor};
     }
     .heroText {
       margin-top: 20px;
@@ -185,13 +189,14 @@ export const AboutSectionContainer = styled(motion.section)`
     margin: 0;
     width: 60%;
     height: 80%;
-    font-size: 14px;
+    font-size: 16px;
     .bigLetter {
       font-family: "Sassy Frass", cursive;
       font-size: 600%;
       font-weight: 1;
       opacity: 0.8;
       line-height: 0;
+      color: ${({ theme }) => theme.primaryFontColor};
     }
     .about-button {
       position: relative;
@@ -288,3 +293,10 @@ export const ExperienceContainer = styled(motion.section)`
     }
   }
 `;
+
+export const ProjectsSection = styled(motion.section)`  
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+  ${centerContent};
+`
