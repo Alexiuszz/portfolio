@@ -5,7 +5,7 @@ import Project from "../components/project/index";
 
 export const LandingContainer = styled(motion.section)`
   height: 100vh;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   .heroContent {
     position: relative;
     height: 100%;
@@ -54,7 +54,7 @@ export const HeroContainer = styled(motion.div)`
 export const AboutSectionContainer = styled(motion.section)`
   width: 100%;
   height: 100vh;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   ${centerContent};
   filter: drop-shadow(5px 5px 25px black);
   .about-content {
@@ -215,7 +215,7 @@ export const AboutSectionContainer = styled(motion.section)`
 export const ExperienceContainer = styled(motion.section)`
   width: 100%;
   height: 100vh;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   ${centerContent};
   flex-direction: column;
   align-items: flex-start;
@@ -285,7 +285,28 @@ export const ExperienceContainer = styled(motion.section)`
 
 export const ProjectsSection = styled(motion.section)`
   width: 100%;
-  height: 100vh;
-  scroll-snap-align: center;
-  ${centerContent};
+  height: fit-content;
+  scroll-snap-align: start;
+  flex-direction: column;
+  position: relative;
+  h2 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .projects {
+    height: fit-content;
+    width: 100%;
+    div:first-of-type {
+      div {
+        margin-top: 20px;
+      }
+    }
+    .projectContainer {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+  }
 `;

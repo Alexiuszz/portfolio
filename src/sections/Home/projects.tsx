@@ -66,7 +66,11 @@ function Projects() {
       <SectionHeader>My Notable Projects</SectionHeader>
       <div className="projects">
         {myProjects.map((project, i) => {
-          return <Project key={i} />;
+          return (
+            <div key={i} className="projectContainer">
+              <Project  project={project} />
+            </div>
+          );
         })}
       </div>
     </ProjectsSection>
