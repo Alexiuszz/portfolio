@@ -1,7 +1,7 @@
 import { absCenter, centerContent } from "@/styles/style_mixins";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import Project from '../components/project/index';
+import Project from "../components/project/index";
 
 export const LandingContainer = styled(motion.section)`
   height: 100vh;
@@ -39,7 +39,7 @@ export const HeroContainer = styled(motion.div)`
     .heroText {
       color: ${({ theme }) => theme.secondaryFontColor};
     }
-    .heroName{
+    .heroName {
       color: ${({ theme }) => theme.primaryFontColor};
     }
     .heroText {
@@ -220,17 +220,6 @@ export const ExperienceContainer = styled(motion.section)`
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  h2 {
-    color: ${({ theme }) => theme.primaryFontColor};
-    margin-bottom: 10px;
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 30vw;
-      height: 1px;
-      background-color: ${({ theme }) => theme.primaryFontColor};
-    }
-  }
   .workHistoryContainer {
     display: flex;
     position: relative;
@@ -241,7 +230,7 @@ export const ExperienceContainer = styled(motion.section)`
   .workTabs {
     font-size: 14px;
     position: relative;
-      left: 75%;
+    left: 75%;
     .hLight {
       position: absolute;
       top: 0px;
@@ -294,9 +283,9 @@ export const ExperienceContainer = styled(motion.section)`
   }
 `;
 
-export const ProjectsSection = styled(motion.section)`  
+export const ProjectsSection = styled(motion.section)`
   width: 100%;
   height: 100vh;
   scroll-snap-align: center;
   ${centerContent};
-`
+`;

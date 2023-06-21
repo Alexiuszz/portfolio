@@ -3,6 +3,7 @@ import { forwardRef, useState } from "react";
 import { motion } from "framer-motion";
 import Experience from "@/components/experience";
 import StyledList from "@/components/StyledList";
+import { SectionHeader } from "@/styles/typography.styles";
 
 const workHistory: {
   company: string;
@@ -50,7 +51,7 @@ const ExperienceSection = forwardRef(function AboutSection(
   const [currTab, setCurrTab] = useState<number>(0);
   return (
     <ExperienceContainer id="experience">
-      <h2 className="workTitle">Work History</h2>
+      <SectionHeader>Work History</SectionHeader>
       <motion.div className="workHistoryContainer">
         {workHistory.map((work, i) => {
           return (
@@ -84,7 +85,7 @@ const ExperienceSection = forwardRef(function AboutSection(
         </motion.ul>
       </motion.div>
       <motion.div className="skillsContainer">
-        <h2>Technologies I use currently</h2>
+        <SectionHeader>Technologies I use currently</SectionHeader>
         <motion.ul className="skills">
           <StyledList className="skill">
             <p>React</p>

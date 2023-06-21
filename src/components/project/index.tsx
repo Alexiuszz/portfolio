@@ -1,8 +1,10 @@
 import React from 'react'
+import { ProjectContainer } from './project.styles'
+import { ProjectType } from '@/sections/Home/projects'
 
-function Project() {
+function Project({project}: {project: ProjectType}) {
   return (
-    <div>Project</div>
+    <ProjectContainer>Project</ProjectContainer>
   )
 }
 

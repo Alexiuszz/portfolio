@@ -22,10 +22,22 @@ export const Header = styled.h2.attrs((props) => ({
 `;
 
 export const Text = styled.p.attrs((props) => ({
-  className: noto.className
+  className: noto.className,
 }))<TypoProps>`
   text-align: ${(props) => props.left || "left"};
   font-weight: ${(props) => props.weight || "400"};
   font-size: ${(props) => props.size || "16px"};
   color: ${(props) => props.color || "inherit"};
+`;
+
+export const SectionHeader = styled.h2`
+  color: ${({ theme }) => theme.primaryFontColor};
+  margin-bottom: 10px;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 30vw;
+    height: 1px;
+    background-color: ${({ theme }) => theme.primaryFontColor};
+  }
 `;
