@@ -39,7 +39,17 @@ const CustomLink = styled.a`
     width: 100%;
   }
 `;
-function Link({ className, href, children}: { children: ReactNode, className: string, href: string}) {
+function Link({
+  className,
+  href,
+  children,
+  blank = false,
+}: {
+  children: ReactNode;
+  className: string;
+  href: string;
+  blank?: boolean;
+}) {
   const { setType } = useContext(CustomCursorContext);
   return (
     <CustomLink
@@ -47,6 +57,7 @@ function Link({ className, href, children}: { children: ReactNode, className: st
       onMouseLeave={() => setType("default")}
       href={href}
       className={className}
+      target={blank ? "_blank" : "_self"}
     >
       {children}
     </CustomLink>

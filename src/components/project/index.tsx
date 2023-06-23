@@ -26,7 +26,7 @@ function Project({ project }: { project: ProjectType }) {
     <ProjectContainer className="project-container">
       <h2>{project.name}</h2>
       <figure className="projectWrapper">
-        <CustomLink className="imgContainer" href={project.url}>
+        <CustomLink blank className="imgContainer" href={project.url}>
           {/*  eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={project.img}
@@ -34,7 +34,7 @@ function Project({ project }: { project: ProjectType }) {
             onLoad={() => setLoaded(true)}
           />
         </CustomLink>
-        <CustomLink className="projectLink" href={project.url}>
+        <CustomLink blank className="projectLink" href={project.url}>
           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />{" "}
         </CustomLink>
       </figure>
