@@ -33,10 +33,13 @@ export const Text = styled.p.attrs((props) => ({
 export const SectionHeader = styled.h2`
   color: ${({ theme }) => theme.primaryFontColor};
   margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
   &::after {
     content: "";
     display: inline-block;
-    width: 30vw;
+    width: 30%;
     height: 1px;
     background-color: ${({ theme }) => theme.primaryFontColor};
   }

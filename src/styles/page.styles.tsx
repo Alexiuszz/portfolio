@@ -309,3 +309,64 @@ export const ProjectsSection = styled(motion.section)`
     }
   }
 `;
+export const ContactContainer = styled(motion.section)`
+  height: 100vh;
+  scroll-snap-align: start;
+  ${centerContent};
+  position: relative;
+  .contact-wrapper {
+    width: 70%;
+    height: fit-content;
+    ${centerContent};
+    flex-direction: column;
+    p {
+      text-align: center;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    .contactButton {
+      font-size: 20px;
+      padding: 20px;
+      background-color: ${({ theme }) => theme.tetiaryColor};
+      color: ${({ theme }) => theme.primaryFontColor};
+      margin: 40px 0;
+      &:hover {
+        color: ${({ theme }) => theme.hoverFontColor};
+      }
+    }
+  }
+  .foot {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 100%;
+    ${centerContent};
+    p {
+      font-family: cursive, "Gill Sans", "Gill Sans MT", Calibri,
+        "Trebuchet MS", sans-serif;
+    }
+    .foot-socials {
+      margin-top: 10px;
+      .socialsLink {
+        margin-right: 10px;
+        &:hover {
+          color: ${({ theme }) => theme.hoverFontColor};
+          padding-right: 10px;
+          padding-left: 10px;
+          height: 18px;
+          &::before {
+            width: 0;
+          }
+        }
+        svg {
+          height: 16px;
+        }
+      }
+    }
+  }
+`;

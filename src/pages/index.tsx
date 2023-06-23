@@ -10,6 +10,7 @@ import AboutSection from "@/sections/Home/about";
 import Hero from "@/sections/Home/hero";
 import ExperienceSection from "@/sections/Home/experience";
 import Projects from "@/sections/Home/projects";
+import ContactSection from "@/sections/Home/contact";
 
 const PageOverview = [
   {
@@ -79,6 +80,7 @@ export default function Home() {
       <AboutSection ref={AboutSectionRef} />
       <ExperienceSection ref={ExperienceSectionRef} />
       <Projects />
+      <ContactSection />
     </Layout>
   );
 }

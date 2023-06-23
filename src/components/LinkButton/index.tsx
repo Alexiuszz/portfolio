@@ -31,7 +31,7 @@ const LinkButtonContainer = styled(motion.a)`
   &:after {
     content: "";
     position: absolute;
-    top: 23px;
+    bottom: 0;
     left: 0;
     width: 100%;
     padding-bottom: 5px;
