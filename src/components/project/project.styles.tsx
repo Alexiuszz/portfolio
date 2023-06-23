@@ -59,8 +59,10 @@ export const ProjectContainer = styled(motion.div)`
         height: 20px;
       }
       &:hover {
+        svg {
+        height: 26px;
         color: ${({ theme }) => theme.hoverFontColor};
-        height: 24px;
+ }
       }
     }
     &:hover {
