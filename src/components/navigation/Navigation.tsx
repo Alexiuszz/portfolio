@@ -1,18 +1,19 @@
 import Toggle from "../toggle/Toggle";
 import { NavContainer } from "./Navigation.styles";
-import { animate, motion, stagger } from "framer-motion";
+import { animate, motion, stagger, useMotionValueEvent, useScroll } from "framer-motion";
 import {
   Fit,
   Layout,
   useRive,
   useStateMachineInput,
 } from "@rive-app/react-canvas";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CustomLink from "../CustomLink";
 
 interface NavProps {
   particles: boolean;
   toggleParticles(): void;
+  // hasScrolled:boolean
 }
 const entryAnimation = {
   opacity: [0, 0, 1, 1],
@@ -26,7 +27,9 @@ const splashTransition = {
   delay: 4,
   ease: [0, 0.71, 0.2, 1.01],
 };
-function Navigation({ particles, toggleParticles }: NavProps) {
+function Navigation({ particles, toggleParticles}: NavProps) {
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const {scrollY} = useScroll()
   const { rive, RiveComponent } = useRive({
     src: "/assets/rives/logo-animation.riv",
     stateMachines: "main",
@@ -41,6 +44,23 @@ function Navigation({ particles, toggleParticles }: NavProps) {
     "RotateBG"
   );
 
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    console.log("Page scroll: ", latest)
+  })
+  // const scrollDetect = () => {
+  //   if (window.scrollY >= 80) {
+  //     setHasScrolled(true);
+  //     console.log(hasScrolled)
+  //   } else {
+  //     setHasScrolled(false);
+  //   }
+  // };
+  // useEffect(() => {
+  //   scrollDetect()
+  //   // adding the event when scroll change background
+  //   window.addEventListener("scroll", scrollDetect)
+  // })
+  // // window.addEventListener("scroll", scrollDetect);
   useEffect(() => {
     animate(
       ".unsplash a,.unsplash div",
@@ -56,6 +76,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
     <NavContainer
       animate={entryAnimation}
       transition={splashTransition}
+      style={hasScrolled ? { backdropFilter: "blur(10px)" } : {}}
     >
       {" "}
       <CustomLink className="logo" href="/#home">
@@ -97,7 +118,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
           <span className="navIndex">05. </span><span>Blog</span>
           
         </CustomLink> */}
-        <Toggle on={particles} toggle={toggleParticles} />
+        {/* <Toggle on={particles} toggle={toggleParticles} /> */}
       </div>
     </NavContainer>
   );

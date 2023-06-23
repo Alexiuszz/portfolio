@@ -33,9 +33,15 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme } from "@/styles/theme";
 import LDesign from "../LDesign";
 import { ResourceContext } from "./context/ResourceContext";
-import CustomLink from '@/components/CustomLink';
+import CustomLink from "@/components/CustomLink";
 import Link from "@/components/CustomLink";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import {
+  faGithub,
+  faLinkedinIn,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 interface ProjectOverview {
   id: string;
   text: string;
@@ -59,6 +65,7 @@ function Layout({
   const containerRef = useRef<Container>(null);
   const [splash, setSplash] = useState(true);
   const { loaded, setLoaded } = useContext(ResourceContext);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const { rive, RiveComponent } = useRive({
     src: "/assets/rives/logo-animation.riv",
     stateMachines: "splash",
@@ -66,9 +73,9 @@ function Layout({
     layout: new RiveLayout({
       fit: Fit.FitHeight,
     }),
-    onLoad: (e) => {
-      setLoaded(true);
-    },
+    // onLoad: (e) => {
+    //   setLoaded(true);
+    // },
   });
 
   useEffect(() => {
@@ -155,8 +162,34 @@ function Layout({
           />
           <MainLayout hideOverview={hideOverview}>
             <LDesign />
-            <Socials className="socials"></Socials>
-            <div className="content">{children}</div>
+            <Socials className="socials">
+              <CustomLink
+                className="socialsLink"
+                href="https://github.com/Alexiuszz"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </CustomLink>
+              <CustomLink
+                className="socialsLink"
+                href="https://twitter.com/AlexiusNwala"
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </CustomLink>
+              <CustomLink
+                className="socialsLink"
+                href="https://www.linkedin.com/in/alexis-nwala"
+              >
+                <FontAwesomeIcon icon={faTwitter} />
+              </CustomLink>
+              <div className="emailLine" />
+              <div className="emailCircle" />
+            </Socials>
+            <div
+              className="content"
+              onScroll={() => setHasScrolled(true)}
+            >
+              {children}
+            </div>
             {/* <PageOverview hideOverview={hideOverview}>
               <span>Page Overview</span>
               {pageOverview?.map((item, i) => (

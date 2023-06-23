@@ -10,11 +10,10 @@ export const LShape = styled.div`
   width: 50px;
   display: inline-block;
   perspective: 1000px;
- 
+  z-index: 100;
   .gradient1 {
-    stop-color: #0F8A5F;
+    stop-color: #0f8a5f;
     transition: all 0.3s ease-in-out;
-    
   }
 
   .gradient2 {

@@ -4,7 +4,7 @@ import { SectionHeader } from "@/styles/typography.styles";
 import React from "react";
 
 export interface ProjectType {
-  project: string;
+  name: string;
   id: string;
   desc: string;
   url: string;
@@ -14,49 +14,49 @@ export interface ProjectType {
 
 const myProjects: ProjectType[] = [
   {
-    project: "Biamuta",
+    name: "Biamuta",
     id: "biamuta",
-    desc: "Africa's first one stop shop for basic education. Enter a world of interactive learning with Biamuta! From English and Mathematics to Science and Social studies, fun games, exercises and much more, you are in for an exciting ride on BiaMuta. BiaMuta is light on your data and you can access it from any device.",
+    desc: "Africa's first one stop shop for basic education. Enter a world of interactive learning with Biamuta! From English and Mathematics to Science and Social studies, fun games, exercises and much more, you are in for an exciting ride on Biamuta.",
     url: "https://biamuta.com/",
-    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/BiamutaHomepng.png",
+    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/Biamuta.png",
     tech: ["React", "Redux", "Firebase", "Rive", "Styled-Components"],
   },
   {
-    project: "Alexius.dev",
+    name: "Alexius.dev",
     id: "portfolio",
     desc: "My personal website",
     url: "",
-    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/Portfolio.png",
-    tech: ["Next.js", "Framer-motion", "Styled Components"],
+    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/alexius.png",
+    tech: ["Next.js", "Framer-motion", "Styled-Components"],
   },
   {
-    project: "Emissar",
+    name: "Emissar",
     id: "emissar",
     desc: "Courier hailing web app, for finding courier services around you!",
     url: "https://emissar.netlify.com/",
-    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/EmissarHomepng.png",
+    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/emissar.png",
     tech: [
       "React",
       "Redux",
       "Express.js",
       "MongoDb",
-      "Google maps API",
+      "Google-Maps-API",
     ],
   },
   {
-    project: "BrainTrainer",
+    name: "BrainTrainer",
     id: "bt",
     desc: "Highly addictive web app for training your cognitive ability, with many game modes involving memory retention, arithmetic and logical reasoning.",
     url: "http://brain-trainer-web.s3-website-us-west-2.amazonaws.com/",
-    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/BrainTrainerHome.png",
+    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/brain-trainer.png",
     tech: ["React", "Redux"],
   },
   {
-    project: "Oda Now",
+    name: "Oda Now",
     id: "oda",
     desc: "An order management system, for tracking orders, keeping track of inventory, invoicing and customer managment.",
     url: "https://odanow.net/#/",
-    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/OdaNow.png",
+    img: "https://s3.amazonaws.com/alexius.dev/projectImgs/odanow.png",
     tech: ["React", "Asp.net", "Sql", "Redux"],
   },
 ];
@@ -68,7 +68,7 @@ function Projects() {
         {myProjects.map((project, i) => {
           return (
             <div key={i} className="projectContainer">
-              <Project  project={project} />
+              <Project project={project} />
             </div>
           );
         })}

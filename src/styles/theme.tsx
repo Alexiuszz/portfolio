@@ -3,7 +3,7 @@ import { DefaultTheme } from "styled-components";
 export const darkTheme: DefaultTheme = {
   primaryColor: "#000000df",
   secondaryColor: "#072118df",
-  tetiaryColor: "#12392bca",
+  tetiaryColor: "#0a2f1e9b",
   primaryFontColor: "#ccd6f6",
   secondaryFontColor: "#748277",
   tetiaryFontColor: "#727677",

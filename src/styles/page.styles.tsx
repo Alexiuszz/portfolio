@@ -291,16 +291,15 @@ export const ProjectsSection = styled(motion.section)`
   position: relative;
   h2 {
     position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 3%;
+    left: 0;
   }
   .projects {
     height: fit-content;
     width: 100%;
     div:first-of-type {
       div {
-        margin-top: 20px;
+        margin-top: 40px;
       }
     }
     .projectContainer {

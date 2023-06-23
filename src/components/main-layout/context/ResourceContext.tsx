@@ -14,7 +14,7 @@ const LoadedResourceManager = ({
 }: {
   children: ReactNode;
 }) => {
-  const [loaded, setLoaded] = useState<boolean>(false);
+  const [loaded, setLoaded] = useState<boolean>(true);
   return (
     <ResourceContext.Provider value={{ loaded, setLoaded }}>
       {children}

@@ -73,16 +73,24 @@ export const PageOverview = styled.div<LayoutStyleProps>`
 export const Socials = styled(motion.div)`
   position: fixed;
   bottom: 17%;
-  left: 0;
-`;
-export const EmailDesign = styled(motion.div)`
-  position: fixed;
-  bottom: 17%;
-  right: -5%;
+  left: 0%;
   transform: rotate(90deg);
   display: flex;
   font-size: 12px;
   align-items: center;
+  width: 202px;
+  .socialsLink {
+    transform: rotate(-90deg);
+    margin-left: 10px;
+    &:hover {
+      color: ${({ theme }) => theme.hoverFontColor};
+      padding-right: 10px;
+      padding-left: 10px;
+      &::before {
+        width: 0;
+      }
+    }
+  }
   .emailLine {
     height: 1px;
     width: 100px;
@@ -95,7 +103,28 @@ export const EmailDesign = styled(motion.div)`
     border-radius: 50%;
     border: 1px solid ${({ theme }) => theme.primaryFontColor};
   }
-  &:hover {
-    transform: translateY() rotate(89deg);
+  svg {
+    height: 20px;
+  }
+`;
+export const EmailDesign = styled(motion.div)`
+  position: fixed;
+  bottom: 17%;
+  right: -5%;
+  transform: rotate(90deg);
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  .emailLine {
+    height: 1px;
+    width: 60px;
+    margin-left: 5px;
+    background-color: ${({ theme }) => theme.primaryFontColor};
+  }
+  .emailCircle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid ${({ theme }) => theme.primaryFontColor};
   }
 `;
