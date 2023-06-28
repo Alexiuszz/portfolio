@@ -68,7 +68,6 @@ function Projects() {
         {myProjects.map((project, i) => {
           return (
             <div key={i} className="projectContainer">
-              .
               <Project project={project} />
             </div>
           );

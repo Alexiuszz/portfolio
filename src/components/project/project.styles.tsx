@@ -8,7 +8,6 @@ export const ProjectContainer = styled(motion.div)`
   min-height: 300px;
   ${absCenter};
   position: relative;
-  opacity: 0;
   h2 {
     top: -12%;
   }

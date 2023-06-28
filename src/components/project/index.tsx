@@ -7,32 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 function Project({ project }: { project: ProjectType }) {
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => {
-    if (loaded) {
-      animate(
-        ".project-container",
-        {
-          opacity: 1,
-        },
-        {
-          duration: 0.5,
-        }
-      );
-    }
-  }, [loaded]);
-
   return (
     <ProjectContainer className="project-container">
       <h2>{project.name}</h2>
       <figure className="projectWrapper">
         <CustomLink blank className="imgContainer" href={project.url}>
           {/*  eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={project.img}
-            alt={project.name}
-            onLoad={() => setLoaded(true)}
-          />
+          <img src={project.img} alt={project.name} />
         </CustomLink>
         <CustomLink blank className="projectLink" href={project.url}>
           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />{" "}
