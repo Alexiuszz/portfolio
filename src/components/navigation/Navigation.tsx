@@ -36,7 +36,6 @@ const splashTransition = {
 };
 function Navigation({ particles, toggleParticles }: NavProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const { scrollY } = useScroll();
   const { rive, RiveComponent } = useRive({
     src: "/assets/rives/logo-animation.riv",
     stateMachines: "main",
@@ -56,21 +55,32 @@ function Navigation({ particles, toggleParticles }: NavProps) {
     const container = document.querySelector(".main-layout");
     if (container) {
       const winScroll = container.scrollTop;
-      // const height =
-      //   container.clientHeight;
-        // documconaent.documentElement.clientHeight;
+
       if (winScroll > lastScrollY) {
         // if scroll down hide the navbar
-        console.log("down");
+        animate(
+          ".main-nav",
+          { y: "-100%" },
+          {
+            duration: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }
+        );
         setHasScrolled(false);
       } else {
         // if scroll up show the navbar
 
-        console.log("up");
+        animate(
+          ".main-nav",
+          { y: "0%" },
+          {
+            duration: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }
+        );
         setHasScrolled(true);
       }
 
-      console.log(lastScrollY);
       // remember current page location to use in the next move
       setLastScrollY(winScroll);
     }
@@ -81,30 +91,12 @@ function Navigation({ particles, toggleParticles }: NavProps) {
 
     if (container) {
       container.addEventListener("scroll", controlNavbar);
-      console.log("Scroll");
       // cleanup function
       return () => {
         container.removeEventListener("scroll", controlNavbar);
       };
     }
   }, [lastScrollY]);
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log("Page scroll: ", latest);
-  });
-  // const scrollDetect = () => {
-  //   if (window.scrollY >= 80) {
-  //     setHasScrolled(true);
-  //     console.log(hasScrolled)
-  //   } else {
-  //     setHasScrolled(false);
-  //   }
-  // };
-  // useEffect(() => {
-  //   scrollDetect()
-  //   // adding the event when scroll change background
-  //   window.addEventListener("scroll", scrollDetect)
-  // })
-  // window.addEventListener("scroll", scrollDetect);
   useEffect(() => {
     animate(
       ".unsplash a,.unsplash div",
@@ -120,7 +112,9 @@ function Navigation({ particles, toggleParticles }: NavProps) {
     <NavContainer
       animate={entryAnimation}
       transition={splashTransition}
-      style={hasScrolled ? { backdropFilter: "blur(10px)" } : {}}
+      scrollUp={hasScrolled}
+      isTop={lastScrollY < 300}
+      className="main-nav"
     >
       <CustomLink className="logo" href="/#home">
         <motion.div

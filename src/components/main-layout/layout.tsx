@@ -71,12 +71,7 @@ function Layout({
   const containerRef = useRef<Container>(null);
   const [splash, setSplash] = useState(true);
   const { loaded, setLoaded } = useContext(ResourceContext);
-  const [hasScrolled, setHasScrolled] = useState(false);
-  const { scrollY } = useScroll();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log("Page scroll: ", latest);
-  });
   useEffect(() => {
     if (loaded) {
       animate(
@@ -160,9 +155,6 @@ function Layout({
             toggleParticles={toggleParticles}
           />
           <MainLayout
-            // onScroll={(e) => {
-            //   e.target.
-            // }}
             className="main-layout"
             hideOverview={hideOverview}
           >
@@ -189,14 +181,7 @@ function Layout({
               <div className="emailLine" />
               <div className="emailCircle" />
             </Socials>
-            <div
-              className="content"
-              onScroll={() => {
-                console.log("content scroll");
-              }}
-            >
-              {children}
-            </div>
+            <div className="content">{children}</div>
             {/* <PageOverview hideOverview={hideOverview}>
               <span>Page Overview</span>
               {pageOverview?.map((item, i) => (

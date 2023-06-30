@@ -2,9 +2,13 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { absCenter } from "../../styles/style_mixins";
 
-export const NavContainer = styled(motion.div)`
+interface NavProps {
+  scrollUp: boolean;
+  isTop: boolean;
+}
+export const NavContainer = styled(motion.div)<NavProps>`
   width: 60%;
-  height: 100px;
+  height: 80px;
   display: flex;
   ${absCenter};
   position: fixed;
@@ -18,6 +22,9 @@ export const NavContainer = styled(motion.div)`
   font-size: 13px;
   -webkit-box-pack: justify;
   z-index: 1;
+  backdrop-filter: ${({ isTop }) => (!isTop ? "blur(10px)" : "none")};
+  box-shadow: ${({ isTop }) =>
+    !isTop ? "0px 0px 14px 0px #073018" : "none"};
   .navLinks {
     margin: 0px 5px;
     padding: 10px;
