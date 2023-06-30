@@ -3,6 +3,7 @@ import React, { forwardRef, useEffect, useState } from "react";
 import { Variants, motion } from "framer-motion";
 import LinkButton from "@/components/LinkButton";
 import CustomLink from "@/components/CustomLink";
+import { SectionHeader } from "@/styles/typography.styles";
 
 const containerVariants: Variants = {
   offscreen: {
@@ -55,6 +56,7 @@ const AboutSection = forwardRef(function AboutSection(
 ) {
   return (
     <AboutSectionContainer ref={ref} id="about">
+      <SectionHeader>A little about me</SectionHeader>
       <div className="about-content">
         <motion.div
           initial="offscreen"
@@ -63,23 +65,32 @@ const AboutSection = forwardRef(function AboutSection(
           variants={txtVariants}
           className="about-text"
         >
-          <p>
-            <span className="bigLetter">H</span>ello! my name is
-            Alexius, I&apos;m a software developer from Nigeria,
-            currently building beautiful web applications with React &
-            NodeJS, I also have experience as an Embedded Software
-            Enginneer. I have a Bachelor&apos;s degree in Electronics
-            Engineering, from the University of Nigeria Nsukka, Enugu
-            Nigeria. I&apos;m currently building{" "}
-            <CustomLink href="#" className="home-about-link">
-              Biamuta
-            </CustomLink>{" "}
-            and{" "}
-            <CustomLink href="#" className="home-about-link">
-              Emissar
-            </CustomLink>{" "}
-            . I love learning new things no matter how small,
-          </p>
+          <article>
+            <p>
+              <span className="bigLetter">H</span>i! my name is
+              Alexius, I&apos;m a software developer from Nigeria. I
+              hold a Bachelor&apos;s degree in Electronics Engineering
+              from the University of Nigeria Nsukka, located in Enugu,
+              Nigeria.
+            </p>
+            <p>
+              Currently, my focus lies in building visually appealing
+              web applications using React and NodeJS. Additionally, I
+              possess experience as an Embedded Software Engineer.
+              Currently, I am involved in the development of two
+              projects:{" "}
+              <CustomLink href="#" className="home-about-link">
+                Biamuta{" "}
+              </CustomLink>{" "}
+              and{" "}
+              <CustomLink href="#" className="home-about-link">
+                Emissar{" "}
+              </CustomLink>
+              . I have an insatiable passion for continuous learning,
+              regardless of the scale or complexity of the subject
+              matter.
+            </p>
+          </article>
           <LinkButton className="about-button" href="#">
             Get to know me
           </LinkButton>
@@ -93,15 +104,13 @@ const AboutSection = forwardRef(function AboutSection(
             viewport={{ once: false, amount: 1 }}
             className="aboutImgWrapper"
           >
-            <div className="subWrapper">
-              <div className="about-img-container">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <motion.img
-                  src={"/assets/images/PortHero1.png"}
-                  alt="Enyinna Nwala"
-                  variants={imgVariants}
-                />
-              </div>
+            <div className="about-img-container">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <motion.img
+                src={"/assets/images/PortHero1.png"}
+                alt="Enyinna Nwala"
+                variants={imgVariants}
+              />
             </div>
           </motion.div>
         </motion.div>

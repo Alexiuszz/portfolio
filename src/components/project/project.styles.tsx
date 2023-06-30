@@ -8,7 +8,7 @@ export const ProjectContainer = styled(motion.div)`
   min-height: 300px;
   ${absCenter};
   position: relative;
-  h2 {
+  &&&> h2 {
     top: -12%;
   }
   .imgContainer {
@@ -25,7 +25,7 @@ export const ProjectContainer = styled(motion.div)`
         opacity: 0;
       }
       img {
-        height: 110%;
+        height: 105%;
       }
     }
     &::after {

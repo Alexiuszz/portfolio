@@ -14,6 +14,9 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   cursor: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }
   body {   
     color: ${({ theme }) => theme.secondaryFontColor};

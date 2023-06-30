@@ -53,24 +53,26 @@ export const HeroContainer = styled(motion.div)`
 
 export const AboutSectionContainer = styled(motion.section)`
   width: 100%;
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   scroll-snap-align: start;
   ${centerContent};
-  filter: drop-shadow(5px 5px 25px black);
+  flex-direction: column;
   .about-content {
     display: flex;
     position: relative;
+    overflow-x: hidden;
     top: 25px;
     background: ${({ theme }) => theme.tetiaryColor};
     background-size: 1000px;
     border: 5px solid ${({ theme }) => theme.hoverFontColor};
     background-position: center right;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    padding: 15px 15px 25px 15px;
+    padding: 30px 15px 40px 15px;
     border-radius: 30px;
-    height: 70%;
+    min-height: 60vh;
     /* clip-path: polygon(
       0% 0%,
       0% 93%,
@@ -129,9 +131,11 @@ export const AboutSectionContainer = styled(motion.section)`
   }
   .about-img {
     position: relative;
-    height: 60%;
+    width: 25%;
+    min-width: 230px;
     aspect-ratio: 1/1;
     overflow: hidden;
+    align-self: flex-start;
     background: #ffffff10;
     border-radius: 20px;
     margin-left: 5%;
@@ -163,21 +167,14 @@ export const AboutSectionContainer = styled(motion.section)`
       overflow: hidden;
       box-shadow: 0 10px 30px -15px #1e1d1d;
       transition: all 0.3s;
-      .subWrapper {
-        position: relative;
-        border-radius: 20px;
-        transition: all 0.3s;
-      }
       &:hover {
         background-color: #fff;
         transform: rotate(0deg) !important;
-        .subWrapper {
-          .about-img-container {
-            width: 100%;
-          }
-          .about-img-container img {
-            transform: rotate(3deg) !important;
-          }
+        .about-img-container {
+          width: 100%;
+        }
+        .about-img-container img {
+          transform: rotate(3deg) !important;
         }
       }
     }
@@ -187,7 +184,8 @@ export const AboutSectionContainer = styled(motion.section)`
       ${centerContent};
     }
     img {
-      height: 100%;
+      align-self: flex-start;
+      width: 200%;
       transform: rotate(8deg);
       transition: all 0.3s;
     }
@@ -196,19 +194,23 @@ export const AboutSectionContainer = styled(motion.section)`
     margin: 0;
     width: 60%;
     height: 80%;
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    p {
+      margin: 0px 0px 15px;
+    }
     .bigLetter {
       font-family: "Sassy Frass", cursive;
-      font-size: 600%;
+      font-size: 300%;
       font-weight: 1;
       opacity: 0.8;
       line-height: 0;
       color: ${({ theme }) => theme.primaryFontColor};
     }
     .about-button {
-      position: relative;
-      bottom: -15%;
-      left: 61%;
+      position: absolute;
+      bottom: 10%;
+      left: 70%;
       color: ${({ theme }) => theme.hoverFontColor};
     }
     .home-about-link {
@@ -298,7 +300,7 @@ export const ProjectsSection = styled(motion.section)`
   position: relative;
   h2 {
     position: absolute;
-    top: 3%;
+    top: 2%;
     left: 0;
   }
   .projects {
