@@ -18,7 +18,6 @@ export const NavContainer = styled(motion.div)`
   font-size: 13px;
   -webkit-box-pack: justify;
   z-index: 1;
-
   .navLinks {
     margin: 0px 5px;
     padding: 10px;

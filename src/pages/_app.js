@@ -1,5 +1,4 @@
 import Head from "next/head";
-import "../globals.css";
 import { Libre_Franklin } from "next/font/google";
 import LoadedResourceManager from "../components/main-layout/context/ResourceContext";
 import CustomCursorManager from "../components/CustomCursor/context/manager";
@@ -12,10 +11,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <LoadedResourceManager>
         <CustomCursorManager>
-          <main
-            className={libre.className}
-            style={{ overflow: "hidden" }}
-          >
+          <main className={`${libre.className} main`}>
             <Component {...pageProps} />
           </main>
         </CustomCursorManager>

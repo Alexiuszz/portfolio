@@ -22,7 +22,13 @@ import {
 import { loadFull } from "tsparticles";
 import particlesOptions from "../../config/particles.json";
 import Particles from "react-particles";
-import { animate, motion, stagger } from "framer-motion";
+import {
+  animate,
+  motion,
+  stagger,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
 import CustomCursor from "../CustomCursor";
 import {
   useRive,
@@ -66,18 +72,11 @@ function Layout({
   const [splash, setSplash] = useState(true);
   const { loaded, setLoaded } = useContext(ResourceContext);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const { rive, RiveComponent } = useRive({
-    src: "/assets/rives/logo-animation.riv",
-    stateMachines: "splash",
-    autoplay: true,
-    layout: new RiveLayout({
-      fit: Fit.FitHeight,
-    }),
-    // onLoad: (e) => {
-    //   setLoaded(true);
-    // },
-  });
+  const { scrollY } = useScroll();
 
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    console.log("Page scroll: ", latest);
+  });
   useEffect(() => {
     if (loaded) {
       animate(
@@ -145,13 +144,13 @@ function Layout({
         style={{ display: splash ? "absolute" : "none" }}
       >
         <motion.div
-          // animate={{
-          //   opacity: [1, 0],
-          // }}
-          // transition={{ delay: 3.8, duration: 0.5 }}
+          animate={{
+            opacity: [1, 0],
+          }}
+          transition={{ delay: 3.8, duration: 0.5 }}
           className="logoSplash"
         >
-          <RiveComponent />
+          <SplashDesign />
         </motion.div>
       </SplashScreen>
       {loaded && (
@@ -160,7 +159,13 @@ function Layout({
             particles={particles}
             toggleParticles={toggleParticles}
           />
-          <MainLayout hideOverview={hideOverview}>
+          <MainLayout
+            // onScroll={(e) => {
+            //   e.target.
+            // }}
+            className="main-layout"
+            hideOverview={hideOverview}
+          >
             <LDesign />
             <Socials className="socials">
               <CustomLink
@@ -186,7 +191,9 @@ function Layout({
             </Socials>
             <div
               className="content"
-              onScroll={() => setHasScrolled(true)}
+              onScroll={() => {
+                console.log("content scroll");
+              }}
             >
               {children}
             </div>
@@ -217,7 +224,7 @@ function Layout({
           </MainLayout>
         </>
       )}
-      <Particles
+      {/* <Particles
         options={particlesOptions as ISourceOptions}
         init={particlesInit}
         container={containerRef}
@@ -225,8 +232,121 @@ function Layout({
           display: particles ? "inherit" : "none",
           zIndex: 2,
         }}
-      />
+      /> */}
     </ThemeProvider>
+  );
+}
+function SplashDesign() {
+  const divRef = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState({
+    width: 0,
+    height: 0,
+    top: 0,
+    left: 0,
+  });
+
+  useEffect(() => {
+    if (!divRef.current) return;
+
+    const { width, height, top, left } =
+      divRef.current.getBoundingClientRect();
+
+    setDimensions({ width, height, top, left });
+  }, []);
+
+  return (
+    <div ref={divRef} className="container">
+      <motion.svg
+        className="svg-border"
+        width={dimensions.width + 100}
+        height={dimensions.height + 100}
+        viewBox={`0 0 ${dimensions.width + 100} ${
+          dimensions.height + 100
+        }`}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <filter
+            id="neon"
+            filterUnits="userSpaceOnUse"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%"
+          >
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="5"
+              result="blur5"
+            />
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur10"
+            />
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="20"
+              result="blur20"
+            />
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="30"
+              result="blur30"
+            />
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="50"
+              result="blur50"
+            />
+
+            <feMerge result="blur-merged">
+              <feMergeNode in="blur10" />
+              <feMergeNode in="blur20" />
+              <feMergeNode in="blur30" />
+              <feMergeNode in="blur50" />
+            </feMerge>
+
+            <feColorMatrix
+              result="red-blur"
+              in="blur-merged"
+              type="matrix"
+              values="1 0 0 0 0
+                      0 0.06 0 0 0
+                      0 0 0.44 0 0
+                      0 0 0 1 0"
+            />
+            <feMerge>
+              <feMergeNode in="red-blur" />
+              <feMergeNode in="blur5" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <svg className="neon" x={50} y={50}>
+          <motion.path
+            d={`M 0 0 h ${dimensions.width} v ${dimensions.height} h -${dimensions.width} v -${dimensions.height}`}
+            stroke="lime"
+            strokeWidth="3"
+            animate={{
+              pathLength: [0, 0.75],
+              pathOffset: [0, 0.2],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: 2,
+              ease: "easeInOut",
+              repeatType: "loop",
+            }}
+          />
+        </svg>
+      </motion.svg>
+
+      <span>Hello Word!</span>
+    </div>
   );
 }
 

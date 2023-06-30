@@ -14,6 +14,7 @@ export const ProjectContainer = styled(motion.div)`
   .imgContainer {
     width: 60%;
     aspect-ratio: 2/1;
+    min-width: 600px;
     position: relative;
     border-radius: 10px;
     overflow: hidden;

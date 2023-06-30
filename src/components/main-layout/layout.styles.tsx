@@ -25,7 +25,6 @@ export const MainLayout = styled.div<LayoutStyleProps>`
     margin: 0 auto;
     section {
       width: 100%;
-      overflow: hidden;
     }
   }
   .content::-webkit-scrollbar {
@@ -49,6 +48,19 @@ export const SplashScreen = styled(motion.div)`
   .logoSplash {
     height: 100px;
     width: 100px;
+    .container {
+      background: #fff;
+      transform: rotate(-20deg);
+      height: 100px;
+      width: 100px;
+      ${centerContent};
+      .svg-border {
+        position: absolute;
+      }
+      .neon {
+        filter: url(#neon);
+      }
+    }
   }
 `;
 
@@ -73,7 +85,7 @@ export const PageOverview = styled.div<LayoutStyleProps>`
 export const Socials = styled(motion.div)`
   position: fixed;
   bottom: 17%;
-  left: 0%;
+  left: -4%;
   transform: rotate(90deg);
   display: flex;
   font-size: 12px;

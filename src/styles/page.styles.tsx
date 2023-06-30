@@ -69,10 +69,9 @@ export const AboutSectionContainer = styled(motion.section)`
     align-items: center;
     width: 100%;
     padding: 15px 15px 25px 15px;
-    filter: brightness(0.95) sepia(30%) saturate(80%);
     border-radius: 30px;
     height: 70%;
-    clip-path: polygon(
+    /* clip-path: polygon(
       0% 0%,
       0% 93%,
       5% 98%,
@@ -110,6 +109,21 @@ export const AboutSectionContainer = styled(motion.section)`
       97% 95%,
       100% 97%,
       100% 0%
+    ); */
+    clip-path: polygon(
+      0% 0%,
+      0% 93%,
+      22% 97%,
+      25% 99%,
+      31% 94%,
+      35% 93%,
+      39% 96%,
+      43% 93%,
+      45% 94%,
+      47% 95%,
+      97% 95%,
+      100% 97%,
+      100% 0%
     );
     overflow: auto;
   }
@@ -144,7 +158,7 @@ export const AboutSectionContainer = styled(motion.section)`
       display: block;
       position: relative;
       border-radius: 20px;
-      background-color: ${({ theme }) => theme.hoverFontColor};
+      background-color: ${({ theme }) => theme.cursorColor};
       transform: rotate(-8deg);
       overflow: hidden;
       box-shadow: 0 10px 30px -15px #1e1d1d;
@@ -152,19 +166,12 @@ export const AboutSectionContainer = styled(motion.section)`
       .subWrapper {
         position: relative;
         border-radius: 20px;
-        mix-blend-mode: multiply;
-        filter: grayscale(100%) contrast(1);
         transition: all 0.3s;
-      }
-      &:hover ~ .splash {
-        top: -10%;
       }
       &:hover {
         background-color: #fff;
         transform: rotate(0deg) !important;
         .subWrapper {
-          mix-blend-mode: normal;
-          filter: grayscale(0%) contrast(1);
           .about-img-container {
             width: 100%;
           }

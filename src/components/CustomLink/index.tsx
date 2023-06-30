@@ -27,7 +27,7 @@ const CustomLink = styled.a`
     bottom: -3px;
     left: 0;
     width: 0;
-    height: 3px;
+    height: 1.5px;
     transition: all 0.3s ease-in-out;
   }
 
