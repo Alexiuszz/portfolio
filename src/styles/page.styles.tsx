@@ -324,6 +324,7 @@ export const ContactContainer = styled(motion.section)`
   ${centerContent};
   position: relative;
   .contact-wrapper {
+    margin-top: -20px;
     width: 70%;
     height: fit-content;
     ${centerContent};
@@ -332,7 +333,8 @@ export const ContactContainer = styled(motion.section)`
       text-align: center;
     }
     h2 {
-      font-size: 24px;
+      font-size: 30px;
+      margin-bottom: 40px;
     }
     .contactButton {
       font-size: 20px;

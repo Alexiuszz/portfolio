@@ -92,7 +92,7 @@ const AboutSection = forwardRef(function AboutSection(
             </p>
           </article>
           <LinkButton className="about-button" href="#">
-            Get to know me
+            Checkout my Resume
           </LinkButton>
         </motion.div>
         <motion.div className="about-img">
@@ -101,7 +101,7 @@ const AboutSection = forwardRef(function AboutSection(
             initial="offscreen"
             whileInView="onscreen"
             variants={containerVariants}
-            viewport={{ once: false, amount: 1 }}
+            viewport={{ once: true, amount: 1 }}
             className="aboutImgWrapper"
           >
             <div className="about-img-container">
