@@ -151,7 +151,12 @@ function Navigation({ particles, toggleParticles }: NavProps) {
           <span className="navIndex">04. </span>
           <span>Contact</span>
         </CustomLink>
-        <LinkButton className="navLinks resumeLink" href="/resume">
+        <LinkButton
+          className="about-button"
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Resume
         </LinkButton>
         {/*<CustomLink className="navLinks" href="#">

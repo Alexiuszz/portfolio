@@ -91,7 +91,12 @@ const AboutSection = forwardRef(function AboutSection(
               matter.
             </p>
           </article>
-          <LinkButton className="about-button" href="#">
+          <LinkButton
+            className="about-button"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Checkout my Resume
           </LinkButton>
         </motion.div>

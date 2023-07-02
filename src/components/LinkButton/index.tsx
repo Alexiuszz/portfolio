@@ -42,7 +42,7 @@ const LinkButtonContainer = styled(motion.a)`
     --_i: 100%;
     color: ${({ theme }) => theme.hoverFontColor};
     transition: 0.3s, -webkit-mask-size 0.3s 0.3s;
-  cursor: none;
+    cursor: none;
     &:after {
       width: 0px;
     }
@@ -53,10 +53,14 @@ function LinkButton({
   className,
   href,
   children,
+  rel,
+  target,
 }: {
   children: ReactNode;
   className: string;
   href: string;
+  target?: string;
+  rel?: string;
 }) {
   const { setType } = useContext(CustomCursorContext);
   return (
@@ -65,6 +69,7 @@ function LinkButton({
       onMouseLeave={() => setType("default")}
       href={href}
       className={className}
+      target={target}
     >
       {children}
     </LinkButtonContainer>
