@@ -122,7 +122,7 @@ export const Socials = styled(motion.div)`
 export const EmailDesign = styled(motion.div)`
   position: fixed;
   bottom: 17%;
-  right: -5%;
+  right: -3.5%;
   transform: rotate(90deg);
   display: flex;
   font-size: 12px;

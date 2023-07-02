@@ -6,8 +6,8 @@ export const LShape = styled.div`
   bottom: 0;
   left: 0;
   transform: rotate(-180deg) scaleX(-1);
-  height: 200px;
-  width: 50px;
+  height: 0;
+  width: 0;
   display: inline-block;
   perspective: 1000px;
   z-index: 100;
