@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect } from "react";
-import { HeroContainer, LandingContainer } from "@/styles/page.styles";
+import { HeroContainer, LandingContainer } from "@/sections/hero/hero.styles";
 import TypeIt from "typeit-react";
 import Carousel from "@/components/carousel/carousel";
 import { animate, motion, stagger } from "framer-motion";

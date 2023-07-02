@@ -6,11 +6,11 @@ import React, {
   useState,
 } from "react";
 import Layout from "@/components/main-layout/layout";
-import AboutSection from "@/sections/Home/about";
-import Hero from "@/sections/Home/hero";
-import ExperienceSection from "@/sections/Home/experience";
-import Projects from "@/sections/Home/projects";
-import ContactSection from "@/sections/Home/contact";
+import AboutSection from "@/sections/about/about";
+import Hero from "@/sections/hero/hero";
+import ExperienceSection from "@/sections/experience/experience";
+import Projects from "@/sections/projects/projects";
+import ContactSection from "@/sections/contact/contact";
 
 const PageOverview = [
   {

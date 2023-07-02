@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ProjectContainer } from "./project.styles";
-import { ProjectType } from "@/sections/Home/projects";
+import { ProjectType } from "@/sections/projects/projects";
 import { animate, motion } from "framer-motion";
 import CustomLink from "@/components/CustomLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

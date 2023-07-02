@@ -1,4 +1,4 @@
-import { AboutSectionContainer } from "@/styles/page.styles";
+import { AboutSectionContainer } from "@/sections/about/about.styles";
 import React, { forwardRef, useEffect, useState } from "react";
 import { Variants, motion } from "framer-motion";
 import LinkButton from "@/components/LinkButton";

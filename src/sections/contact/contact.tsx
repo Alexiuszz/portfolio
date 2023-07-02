@@ -1,5 +1,5 @@
 import LinkButton from "@/components/LinkButton";
-import { ContactContainer } from "@/styles/page.styles";
+import { ContactContainer } from "@/sections/contact/contact.styles";
 import { SectionHeader } from "@/styles/typography.styles";
 import {
   faGithub,

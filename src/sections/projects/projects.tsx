@@ -1,5 +1,5 @@
 import Project from "@/components/project";
-import { ProjectsSection } from "@/styles/page.styles";
+import { ProjectsSection } from "@/sections/projects/projects.styles";
 import { SectionHeader } from "@/styles/typography.styles";
 import React from "react";
 

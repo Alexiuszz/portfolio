@@ -1,4 +1,4 @@
-import { ExperienceContainer } from "@/styles/page.styles";
+import { ExperienceContainer } from "@/sections/experience/experience.styles";
 import { forwardRef, useState } from "react";
 import { motion } from "framer-motion";
 import Experience from "@/components/experience";
