@@ -11,6 +11,7 @@ import {
   SplashScreen,
   Socials,
   EmailDesign,
+  MenuContainer,
 } from "./layout.styles";
 import { GlobalStyles } from "@/styles/globalStyles";
 import Navigation from "../navigation/Navigation";
@@ -48,6 +49,7 @@ import {
   faLinkedinIn,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import LinkButton from "../LinkButton";
 interface ProjectOverview {
   id: string;
   text: string;
@@ -150,10 +152,7 @@ function Layout({
       </SplashScreen>
       {loaded && (
         <>
-          <Navigation
-            particles={particles}
-            toggleParticles={toggleParticles}
-          />
+          <Navigation menu={false} toggleMenu={() => {}} />
           <MainLayout
             className="main-layout"
             hideOverview={hideOverview}
@@ -181,6 +180,34 @@ function Layout({
               <div className="emailLine" />
               <div className="emailCircle" />
             </Socials>
+            <MenuContainer menu={false}>
+              <div className="nav-menu-items">
+                <CustomLink className="navLinks" href="#about">
+                  <span className="navIndex">01. </span>
+                  <span>About</span>
+                </CustomLink>
+                <CustomLink className="navLinks" href="#experience">
+                  <span className="navIndex">02. </span>
+                  <span>Experience</span>
+                </CustomLink>
+                <CustomLink className="navLinks" href="#projects">
+                  <span className="navIndex">03. </span>
+                  <span>Projects</span>
+                </CustomLink>
+                <CustomLink className="navLinks" href="#contact">
+                  <span className="navIndex">04. </span>
+                  <span>Contact</span>
+                </CustomLink>
+                <LinkButton
+                  className="about-button"
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  l
+                </LinkButton>
+              </div>
+            </MenuContainer>
             <div className="content">{children}</div>
             {/* <PageOverview hideOverview={hideOverview}>
               <span>Page Overview</span>

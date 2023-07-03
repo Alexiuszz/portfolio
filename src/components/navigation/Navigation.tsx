@@ -4,8 +4,6 @@ import {
   animate,
   motion,
   stagger,
-  useMotionValueEvent,
-  useScroll,
 } from "framer-motion";
 import {
   Fit,
@@ -18,8 +16,8 @@ import CustomLink from "../CustomLink";
 import LinkButton from "../LinkButton";
 
 interface NavProps {
-  particles: boolean;
-  toggleParticles(): void;
+  menu: boolean;
+  toggleMenu(): void;
   // hasScrolled:boolean
 }
 const entryAnimation = {
@@ -34,7 +32,7 @@ const splashTransition = {
   delay: 4,
   ease: [0, 0.71, 0.2, 1.01],
 };
-function Navigation({ particles, toggleParticles }: NavProps) {
+function Navigation({ menu, toggleMenu }: NavProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const { rive, RiveComponent } = useRive({
     src: "/assets/rives/logo-animation.riv",
@@ -165,6 +163,7 @@ function Navigation({ particles, toggleParticles }: NavProps) {
         </CustomLink> */}
         {/* <Toggle on={particles} toggle={toggleParticles} /> */}
       </div>
+      <div onClick={toggleMenu} className="nav-menu-button">M</div>
     </NavContainer>
   );
 }

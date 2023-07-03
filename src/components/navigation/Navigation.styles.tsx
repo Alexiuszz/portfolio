@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { absCenter } from "../../styles/style_mixins";
+import { mobile } from "../../styles/style_variables";
 
 interface NavProps {
   scrollUp: boolean;
@@ -49,5 +50,19 @@ export const NavContainer = styled(motion.div)<NavProps>`
   .unsplash {
     display: flex;
     justify-content: space-between;
+    
+  
+  }
+  .nav-menu-button {
+    display: none;
+  }
+  @media screen and (max-width: ${mobile}) {
+    .unsplash{
+      display: none;
+    }
+    .nav-menu-button{
+      display: flex;
+      margin-right: 20px;
+    }
   }
 `;

@@ -1,4 +1,5 @@
 import { centerContent } from "@/styles/style_mixins";
+import { mobile } from "@/styles/style_variables";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
@@ -59,6 +60,41 @@ export const SplashScreen = styled(motion.div)`
       }
       .neon {
         filter: url(#neon);
+      }
+    }
+  }
+`;
+interface MenuContainerProps {
+  menu?: boolean;
+}
+export const MenuContainer = styled(motion.div)<MenuContainerProps>`
+  display: none;
+  @media screen and (max-width: ${mobile}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: ${({ menu }) => (menu ? "60%" : "20%")};
+    min-width: 20px;
+    opacity: ${({ menu }) => (menu ? "1" : ".5")};
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 80px;
+    backdrop-filter: ${({ menu }) => (menu ? "blur(10px)" : "none")};
+    .nav-menu-items {
+      margin-top: 40%;
+      display: flex;
+      flex-direction: column;
+      height: 45%;
+      justify-content: space-around;
+      .navLinks {
+        span {
+          font-size: ${({ menu }) => (menu ? "100%" : "0%")};
+        }
+        .navIndex {
+          font-size: 100%;
+        }
       }
     }
   }
