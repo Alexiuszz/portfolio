@@ -43,6 +43,7 @@ import { ResourceContext } from "./context/ResourceContext";
 import CustomLink from "@/components/CustomLink";
 import Link from "@/components/CustomLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAddressCard, faDiagramProject, faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
 
 import {
   faGithub,
@@ -183,19 +184,27 @@ function Layout({
             <MenuContainer menu={false}>
               <div className="nav-menu-items">
                 <CustomLink className="navLinks" href="#about">
-                  <span className="navIndex">01. </span>
+                  <span className="navIndex">
+                    <FontAwesomeIcon icon={faUser} />{" "}
+                  </span>
                   <span>About</span>
                 </CustomLink>
                 <CustomLink className="navLinks" href="#experience">
-                  <span className="navIndex">02. </span>
+                  <span className="navIndex">
+                    <FontAwesomeIcon icon={faAddressCard} />{" "}
+                  </span>
                   <span>Experience</span>
                 </CustomLink>
                 <CustomLink className="navLinks" href="#projects">
-                  <span className="navIndex">03. </span>
+                  <span className="navIndex">
+                    <FontAwesomeIcon icon={faDiagramProject} />
+                  </span>
                   <span>Projects</span>
                 </CustomLink>
                 <CustomLink className="navLinks" href="#contact">
-                  <span className="navIndex">04. </span>
+                  <span className="navIndex">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </span>
                   <span>Contact</span>
                 </CustomLink>
                 <LinkButton

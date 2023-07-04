@@ -77,23 +77,28 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
     width: ${({ menu }) => (menu ? "60%" : "20%")};
     min-width: 20px;
     opacity: ${({ menu }) => (menu ? "1" : ".5")};
-    height: 100vh;
+    height: 45vh;
     position: fixed;
     right: 0;
-    top: 80px;
+    top: 0;
+    padding-top: 80px;
+    box-shadow: 0px 0px 14px 0px #073018;
+    border-bottom-left-radius: 14px;
     backdrop-filter: ${({ menu }) => (menu ? "blur(10px)" : "none")};
     .nav-menu-items {
       margin-top: 40%;
       display: flex;
       flex-direction: column;
-      height: 45%;
+      height: 100%;      
       justify-content: space-around;
       .navLinks {
         span {
           font-size: ${({ menu }) => (menu ? "100%" : "0%")};
         }
         .navIndex {
-          font-size: 100%;
+          svg {
+            height: 14px;
+          }
         }
       }
     }

@@ -2,10 +2,15 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { fadeIn, fadeOut, morphCircle, scaleUp } from "../../styles/keyframes";
 import { absCenter } from "@/styles/style_mixins";
+import { mobile } from "@/styles/style_variables";
 
 export const CursorWrapper = styled.div`
   position: fixed;
     z-index: 10;
+    display: initial;
+  @media screen and (max-width: ${mobile}) {
+    display: none;
+  }
   & > div {
     pointer-events: none;
     transform: translate3d(0, 0, 0);

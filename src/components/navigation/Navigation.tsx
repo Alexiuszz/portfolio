@@ -1,10 +1,6 @@
 import Toggle from "../toggle/Toggle";
 import { NavContainer } from "./Navigation.styles";
-import {
-  animate,
-  motion,
-  stagger,
-} from "framer-motion";
+import { animate, motion, stagger } from "framer-motion";
 import {
   Fit,
   Layout,
@@ -14,6 +10,8 @@ import {
 import { useEffect, useState } from "react";
 import CustomLink from "../CustomLink";
 import LinkButton from "../LinkButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAddressCard, faDiagramProject, faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
 
 interface NavProps {
   menu: boolean;
@@ -134,19 +132,21 @@ function Navigation({ menu, toggleMenu }: NavProps) {
       </CustomLink>
       <div className="unsplash">
         <CustomLink className="navLinks" href="#about">
-          <span className="navIndex">01. </span>
+          <span className="navIndex">
+            <FontAwesomeIcon icon={faUser} />{" "}
+          </span>
           <span>About</span>
         </CustomLink>
         <CustomLink className="navLinks" href="#experience">
-          <span className="navIndex">02. </span>
+          <span className="navIndex"><FontAwesomeIcon icon={faAddressCard} /> </span>
           <span>Experience</span>
         </CustomLink>
         <CustomLink className="navLinks" href="#projects">
-          <span className="navIndex">03. </span>
+          <span className="navIndex"><FontAwesomeIcon icon={faDiagramProject} /></span>
           <span>Projects</span>
         </CustomLink>
         <CustomLink className="navLinks" href="#contact">
-          <span className="navIndex">04. </span>
+          <span className="navIndex"><FontAwesomeIcon icon={faEnvelope} /></span>
           <span>Contact</span>
         </CustomLink>
         <LinkButton
@@ -163,7 +163,9 @@ function Navigation({ menu, toggleMenu }: NavProps) {
         </CustomLink> */}
         {/* <Toggle on={particles} toggle={toggleParticles} /> */}
       </div>
-      <div onClick={toggleMenu} className="nav-menu-button">M</div>
+      <div onClick={toggleMenu} className="nav-menu-button">
+        M
+      </div>
     </NavContainer>
   );
 }

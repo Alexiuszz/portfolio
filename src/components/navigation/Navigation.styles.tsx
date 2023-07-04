@@ -30,7 +30,9 @@ export const NavContainer = styled(motion.div)<NavProps>`
     margin: 0px 5px;
     padding: 10px;
     .navIndex {
-      font-size: 12px;
+      svg {
+        height: 12px;
+      }
       margin-right: 3px;
       color: ${({ theme }) => theme.hoverFontColor};
       -webkit-text-fill-color: ${({ theme }) => theme.hoverFontColor};
@@ -50,17 +52,15 @@ export const NavContainer = styled(motion.div)<NavProps>`
   .unsplash {
     display: flex;
     justify-content: space-between;
-    
-  
   }
   .nav-menu-button {
     display: none;
   }
   @media screen and (max-width: ${mobile}) {
-    .unsplash{
+    .unsplash {
       display: none;
     }
-    .nav-menu-button{
+    .nav-menu-button {
       display: flex;
       margin-right: 20px;
     }

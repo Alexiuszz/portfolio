@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { mobile } from "./style_variables";
 export const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
@@ -14,6 +15,10 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   cursor: none;
+  
+  @media screen and (max-width: ${mobile}) {
+    cursor:initial;
+  }
   &::-webkit-scrollbar{
     display: none;
   }
