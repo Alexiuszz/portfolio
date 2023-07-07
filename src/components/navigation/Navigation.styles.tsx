@@ -57,12 +57,13 @@ export const NavContainer = styled(motion.div)<NavProps>`
     display: none;
   }
   @media screen and (max-width: ${mobile}) {
+    padding-right: 0;
     .unsplash {
       display: none;
     }
     .nav-menu-button {
       display: flex;
-      margin-right: 20px;
+      margin-right: 30px;
     }
   }
 `;

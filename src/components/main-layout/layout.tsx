@@ -43,7 +43,12 @@ import { ResourceContext } from "./context/ResourceContext";
 import CustomLink from "@/components/CustomLink";
 import Link from "@/components/CustomLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAddressCard, faDiagramProject, faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAddressCard,
+  faDiagramProject,
+  faEnvelope,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 import {
   faGithub,
@@ -73,8 +78,10 @@ function Layout({
   const [particles, setParticles] = useState<boolean>(true);
   const containerRef = useRef<Container>(null);
   const [splash, setSplash] = useState(true);
+  const [menu, setMenu] = useState<boolean>(false);
   const { loaded, setLoaded } = useContext(ResourceContext);
 
+  const toggleMenu = () => setMenu((prevState) => !prevState);
   useEffect(() => {
     if (loaded) {
       animate(
@@ -153,10 +160,11 @@ function Layout({
       </SplashScreen>
       {loaded && (
         <>
-          <Navigation menu={false} toggleMenu={() => {}} />
+          <Navigation menu={menu} toggleMenu={toggleMenu} />
           <MainLayout
             className="main-layout"
             hideOverview={hideOverview}
+            onClick={() => setMenu(false)}
           >
             <LDesign />
             <Socials className="socials">
@@ -181,7 +189,7 @@ function Layout({
               <div className="emailLine" />
               <div className="emailCircle" />
             </Socials>
-            <MenuContainer menu={false}>
+            <MenuContainer menu={menu}>
               <div className="nav-menu-items">
                 <CustomLink className="navLinks" href="#about">
                   <span className="navIndex">
@@ -235,7 +243,7 @@ function Layout({
                 </motion.div>
               ))}
             </PageOverview> */}
-            <EmailDesign className="myEmail">
+            <EmailDesign className="socials">
               <Link className="" href="mailto:alexiusnwala@gmail.com">
                 alexiusnwala@gmail.com
               </Link>

@@ -1,9 +1,13 @@
 import React, { forwardRef, useEffect } from "react";
-import { HeroContainer, LandingContainer } from "@/sections/hero/hero.styles";
+import {
+  HeroContainer,
+  LandingContainer,
+} from "@/sections/hero/hero.styles";
 import TypeIt from "typeit-react";
 import Carousel from "@/components/carousel/carousel";
 import { animate, motion, stagger } from "framer-motion";
 import { Header, Text } from "@/styles/typography.styles";
+import { useIsMedium } from "@/hooks/useMediaQuery";
 
 const splashAnimation = {
   opacity: [0, 0, 0, 1],
@@ -21,7 +25,15 @@ const splashTransition2 = {
   ease: [0, 0.71, 0.2, 1.01],
 };
 
-const Hero = forwardRef(function Hero(props: {}, ref: React.Ref<HTMLElement>) {
+const Hero = forwardRef(function Hero(
+  props: {},
+  ref: React.Ref<HTMLElement>
+) {
+  const isMedium = useIsMedium();
+
+  // useEffect(() => {
+  //   console.log(isMedium);
+  // }, [isMedium]);
   useEffect(() => {
     animate(
       ".heroText ,.heroMe,.heroName",
@@ -78,12 +90,18 @@ const Hero = forwardRef(function Hero(props: {}, ref: React.Ref<HTMLElement>) {
             <Header className="heroName" weight="700" left="left">
               Alexius Nwala
             </Header>
-            <Header className="heroMe" weight="700" size="34px" left="left">
-              I&apos;m a Fullstack Engineer and Embedded Software Engineer.
+            <Header
+              className="heroMe"
+              weight="700"
+              size="34px"
+              left="left"
+            >
+              I&apos;m a Fullstack Engineer and Embedded Software
+              Engineer.
             </Header>
             <Text className="heroText">
-              I build and design systems and applications for the web and
-              occasional devices that connect you to it!
+              I build and design systems and applications for the web
+              and occasional devices that connect you to it!
             </Text>
           </motion.div>
         </HeroContainer>

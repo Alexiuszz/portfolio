@@ -1,4 +1,5 @@
 import { swim } from "@/styles/keyframes";
+import { mobile } from "@/styles/style_variables";
 import styled from "styled-components";
 
 export const LShape = styled.div`
@@ -19,5 +20,10 @@ export const LShape = styled.div`
   .gradient2 {
     stop-color: #bc6014;
     transition: all 0.3s ease-in-out;
+  }
+  
+  @media screen and (max-width: ${mobile}) {
+    bottom: -13px;
+    left: -13px;
   }
 `;

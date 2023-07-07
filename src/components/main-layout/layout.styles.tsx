@@ -38,6 +38,15 @@ export const MainLayout = styled.div<LayoutStyleProps>`
   &:hover .gradient2 {
     stop-color: #0f8a5f;
   }
+  @media screen and (max-width: ${mobile}) {
+    .content{
+      width: 90%;
+      margin: 0 75px 0 13px;
+    }
+      .socials{
+        display: none;
+      }
+  }
 `;
 
 export const SplashScreen = styled(motion.div)`
@@ -69,30 +78,38 @@ interface MenuContainerProps {
 }
 export const MenuContainer = styled(motion.div)<MenuContainerProps>`
   display: none;
+  transition: all.3s;
+  transition-timing-function: ease-in-out;
   @media screen and (max-width: ${mobile}) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: ${({ theme }) => theme.primaryColor};
     justify-content: space-between;
-    width: ${({ menu }) => (menu ? "60%" : "20%")};
+    width: ${({ menu }) => (menu ? "100vw" : "50px")};
     min-width: 20px;
-    opacity: ${({ menu }) => (menu ? "1" : ".5")};
-    height: 45vh;
+    opacity: ${({ menu }) => (menu ? "1" : ".3")};
+    height: ${({ menu }) => (menu ? "100vh" : "55vh")};
     position: fixed;
-    right: 0;
+    right: 12px;
     top: 0;
     padding-top: 80px;
     box-shadow: 0px 0px 14px 0px #073018;
     border-bottom-left-radius: 14px;
-    backdrop-filter: ${({ menu }) => (menu ? "blur(10px)" : "none")};
+    backdrop-filter: ${({ menu }) => (menu ? "blur(15px)" : "none")};
+    z-index: ${({ menu }) => (menu ? "10000" : "0")};
     .nav-menu-items {
-      margin-top: 40%;
+      margin-top: ${({ menu }) => (menu ? "20%" : "40%")};
       display: flex;
       flex-direction: column;
-      height: 100%;      
+      height: 100%;
       justify-content: space-around;
       .navLinks {
+        text-align: center;
+        cursor: pointer;
         span {
+          transition: all.3s;
+          transition-timing-function: ease-in-out;
           font-size: ${({ menu }) => (menu ? "100%" : "0%")};
         }
         .navIndex {
