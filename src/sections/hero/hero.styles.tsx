@@ -1,7 +1,7 @@
 import { absCenter } from "@/styles/style_mixins";
+import { mobile } from "@/styles/style_variables";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-
 
 export const LandingContainer = styled(motion.section)`
   height: 100vh;
@@ -46,6 +46,17 @@ export const HeroContainer = styled(motion.div)`
       margin-top: 20px;
       p {
         font-size: 16px;
+      }
+    }
+  }
+
+  @media screen and (max-width: ${mobile}) {
+    top: 24%;
+    left: 55%;
+    .heroAbout{
+      width: 90%;
+      h2{
+        font-size: 30px;
       }
     }
   }

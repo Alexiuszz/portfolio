@@ -42,6 +42,9 @@ export const MainLayout = styled.div<LayoutStyleProps>`
     .content{
       width: 90%;
       margin: 0 75px 0 13px;
+      section{        
+      width: 93%;
+      }
     }
       .socials{
         display: none;
@@ -97,7 +100,7 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
     box-shadow: 0px 0px 14px 0px #073018;
     border-bottom-left-radius: 14px;
     backdrop-filter: ${({ menu }) => (menu ? "blur(15px)" : "none")};
-    z-index: ${({ menu }) => (menu ? "10000" : "0")};
+    z-index: ${({ menu }) => (menu ? "500" : "0")};
     .nav-menu-items {
       margin-top: ${({ menu }) => (menu ? "20%" : "40%")};
       display: flex;

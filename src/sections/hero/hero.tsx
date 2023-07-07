@@ -5,7 +5,7 @@ import {
 } from "@/sections/hero/hero.styles";
 import TypeIt from "typeit-react";
 import Carousel from "@/components/carousel/carousel";
-import { animate, motion, stagger } from "framer-motion";
+import { Variants, animate, motion, stagger } from "framer-motion";
 import { Header, Text } from "@/styles/typography.styles";
 import { useIsMedium } from "@/hooks/useMediaQuery";
 
@@ -15,28 +15,38 @@ const splashAnimation = {
 const splashTransition = {
   duration: 3,
   times: [0, 0.4, 0.6, 1],
-  delay: 4,
+  delay: 3,
   ease: [0, 0.71, 0.2, 1.01],
 };
 const splashTransition2 = {
   duration: 3,
   times: [0, 0.4, 0.7, 1],
-  delay: 6,
+  delay: 4,
   ease: [0, 0.71, 0.2, 1.01],
 };
 
+const sizeVariants = {
+  mobile: {
+    opacity: [0, 1, 1, 1],
+    x: ["130%", "130%", "130%", "0%"],
+    y: ["550%", "550%", "550%", "-200%"],
+  },
+  pc: {
+    opacity: [0, 1, 1, 1],
+    x: ["250%", "250%", "250%", "0%"],
+    y: ["250%", "250%", "250%", "-200%"],
+    fontSize: ["30px", "30px", "30px", "20px"],
+  },
+};
 const Hero = forwardRef(function Hero(
   props: {},
   ref: React.Ref<HTMLElement>
 ) {
   const isMedium = useIsMedium();
 
-  // useEffect(() => {
-  //   console.log(isMedium);
-  // }, [isMedium]);
   useEffect(() => {
     animate(
-      ".heroText ,.heroMe,.heroName",
+      ".heroText, .heroMe, .heroName",
       { opacity: [0, 0, 0, 1] },
       {
         duration: 0.5,
@@ -45,17 +55,13 @@ const Hero = forwardRef(function Hero(
       }
     );
   }, []);
+
   return (
     <LandingContainer ref={ref} id="home">
       <div className="heroContent">
         <HeroContainer>
           <motion.div
-            animate={{
-              opacity: [0, 1, 1, 1],
-              x: ["250%", "250%", "250%", "0%"],
-              y: ["250%", "250%", "250%", "-200%"],
-              fontSize: ["30px", "30px", "30px", "20px"],
-            }}
+            animate={!isMedium ? sizeVariants.mobile : sizeVariants.pc}
             transition={splashTransition}
             className="typewriter"
           >
@@ -96,7 +102,7 @@ const Hero = forwardRef(function Hero(
               size="34px"
               left="left"
             >
-              I&apos;m a Fullstack Engineer and Embedded Software
+              I&apos;m a Fullstack Dev and Embedded Software
               Engineer.
             </Header>
             <Text className="heroText">

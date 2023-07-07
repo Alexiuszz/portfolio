@@ -42,13 +42,13 @@ function ContactSection() {
           </CustomLink>
           <CustomLink
             className="socialsLink"
-            href="https://twitter.com/AlexiusNwala"
+            href="https://www.linkedin.com/in/alexis-nwala"
           >
             <FontAwesomeIcon icon={faLinkedinIn} />
           </CustomLink>
           <CustomLink
             className="socialsLink"
-            href="https://www.linkedin.com/in/alexis-nwala"
+            href="https://twitter.com/AlexiusNwala"
           >
             <FontAwesomeIcon icon={faTwitter} />
           </CustomLink>

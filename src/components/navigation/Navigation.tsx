@@ -11,27 +11,29 @@ import { useEffect, useState } from "react";
 import CustomLink from "../CustomLink";
 import LinkButton from "../LinkButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAddressCard, faDiagramProject, faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAddressCard,
+  faDiagramProject,
+  faEnvelope,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { useIsMedium } from "@/hooks/useMediaQuery";
 
 interface NavProps {
   menu: boolean;
   toggleMenu(): void;
   // hasScrolled:boolean
 }
-const entryAnimation = {
-  opacity: [0, 0, 1, 1],
-  width: ["50%", "50%", "50%", "100%"],
-  x: ["-50%", "-50%", "-50%", "-50%"],
-  y: ["340%", "340%", "340%", "0%"],
-};
+
 const splashTransition = {
   duration: 3,
   times: [0, 0.4, 0.6, 1],
-  delay: 4,
+  delay: 3,
   ease: [0, 0.71, 0.2, 1.01],
 };
 function Navigation({ menu, toggleMenu }: NavProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
+  const isMedium = useIsMedium();
   const { rive, RiveComponent } = useRive({
     src: "/assets/rives/logo-animation.riv",
     stateMachines: "main",
@@ -95,7 +97,7 @@ function Navigation({ menu, toggleMenu }: NavProps) {
   }, [lastScrollY]);
   useEffect(() => {
     animate(
-      ".unsplash a,.unsplash div",
+      ".unsplash a,.unsplash div,.nav-menu-button",
       { opacity: [0, 0, 0, 1] },
       {
         duration: 0.5,
@@ -104,12 +106,26 @@ function Navigation({ menu, toggleMenu }: NavProps) {
       }
     );
   }, []);
+  const entryAnimation = !isMedium
+    ? {
+        opacity: [0, 0, 1, 1],
+        width: ["50%", "50%", "50%", "100%"],
+        x: ["-35%", "-35%", "-35%", "-50%"],
+        y: ["300%", "300%", "300%", "0%"],
+      }
+    : {
+        opacity: [0, 0, 1, 1],
+        width: ["50%", "50%", "50%", "100%"],
+        x: ["-50%", "-50%", "-50%", "-50%"],
+        y: ["340%", "340%", "340%", "0%"],
+      };
   return (
     <NavContainer
       animate={entryAnimation}
       transition={splashTransition}
       scrollUp={hasScrolled}
       isTop={lastScrollY < 300}
+      menu={menu}
       className="main-nav"
     >
       <CustomLink className="logo" href="/#home">
@@ -119,14 +135,15 @@ function Navigation({ menu, toggleMenu }: NavProps) {
             height: ["75px", "50px"],
           }}
           transition={{
-            duration: 0.5,
-            delay: 6.5,
+            duration: 1,
+            delay: 4.5,
           }}
         >
           <RiveComponent
             onMouseOver={() => {
               playAnimation ? (playAnimation.value = true) : null;
             }}
+            onClick={() => {}}
           />
         </motion.div>
       </CustomLink>
@@ -138,15 +155,21 @@ function Navigation({ menu, toggleMenu }: NavProps) {
           <span>About</span>
         </CustomLink>
         <CustomLink className="navLinks" href="#experience">
-          <span className="navIndex"><FontAwesomeIcon icon={faAddressCard} /> </span>
+          <span className="navIndex">
+            <FontAwesomeIcon icon={faAddressCard} />{" "}
+          </span>
           <span>Experience</span>
         </CustomLink>
         <CustomLink className="navLinks" href="#projects">
-          <span className="navIndex"><FontAwesomeIcon icon={faDiagramProject} /></span>
+          <span className="navIndex">
+            <FontAwesomeIcon icon={faDiagramProject} />
+          </span>
           <span>Projects</span>
         </CustomLink>
         <CustomLink className="navLinks" href="#contact">
-          <span className="navIndex"><FontAwesomeIcon icon={faEnvelope} /></span>
+          <span className="navIndex">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </span>
           <span>Contact</span>
         </CustomLink>
         <LinkButton

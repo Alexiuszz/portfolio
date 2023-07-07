@@ -6,10 +6,11 @@ import { mobile } from "../../styles/style_variables";
 interface NavProps {
   scrollUp: boolean;
   isTop: boolean;
+  menu: boolean;
 }
 export const NavContainer = styled(motion.div)<NavProps>`
   width: 60%;
-  height: 80px;
+  height: 100px;
   display: flex;
   ${absCenter};
   position: fixed;
@@ -33,13 +34,13 @@ export const NavContainer = styled(motion.div)<NavProps>`
       svg {
         height: 12px;
       }
-      margin-right: 3px;
+      margin-right: 5px;
       color: ${({ theme }) => theme.hoverFontColor};
       -webkit-text-fill-color: ${({ theme }) => theme.hoverFontColor};
     }
     &:hover .navIndex {
       transition: all 0.3s;
-      margin-right: 6px;
+      margin-right: 7px;
     }
   }
   .logo {
@@ -58,6 +59,7 @@ export const NavContainer = styled(motion.div)<NavProps>`
   }
   @media screen and (max-width: ${mobile}) {
     padding-right: 0;
+    z-index: ${({ menu }) => (menu ? "1000" : "1")};
     .unsplash {
       display: none;
     }
