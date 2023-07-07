@@ -1,9 +1,10 @@
+import { mobile } from "@/styles/style_variables";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const ExperienceContainer = styled(motion.div)`
   width: 70%;
-  height: 300px;
+  height: 280px;
   transition: all 0.5s;
   position: absolute;
   top: 0;
@@ -11,9 +12,11 @@ export const ExperienceContainer = styled(motion.div)`
   &.currentTab {
     transition: all 0.5s 0.3s;
     opacity: 1;
+    z-index: 0;
   }
   &.notCurrentTab {
     opacity: 0;
+    z-index: -1;
   }
   .role {
     font-size: 18px;
@@ -28,5 +31,12 @@ export const ExperienceContainer = styled(motion.div)`
   .workContainer {
     margin-top: 10px;
     font-size: 14px;
+    height: 65%;
+    overflow-y: auto;
+  }
+  
+  @media screen and (max-width: ${mobile}) {
+    width: 100%;
+  top: 6%;
   }
 `;

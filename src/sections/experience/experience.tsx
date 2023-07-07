@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Experience from "@/components/experience";
 import StyledList from "@/components/StyledList";
 import { SectionHeader } from "@/styles/typography.styles";
+import { useIsMedium } from "@/hooks/useMediaQuery";
 
 const workHistory: {
   company: string;
@@ -37,10 +38,8 @@ const workHistory: {
     period: "April 2022 - January 2023",
     works: [
       "Acquired complete understanding of the fundamentals of computer programing with C#.",
-      "Gained sufficient understanding of the principles of various data structures including trees and graphs.",
-      "Gained sufficient understanding of linear algebra and its applications.",
       "Wrote a linear algebra mathematical library using C# for solving various forms of linear equations.",
-      "Developed a circuit simulation application for simulating basic electronic circuits.",
+      "Developed a circuit simulation application for simulating basic electronic circuits using graph datastructures and linear algebra library I developed.",
     ],
   },
 ];
@@ -48,6 +47,7 @@ const ExperienceSection = forwardRef(function AboutSection(
   props: {},
   ref: React.Ref<HTMLElement>
 ) {
+  const isMedium = useIsMedium();
   const [currTab, setCurrTab] = useState<number>(0);
   return (
     <ExperienceContainer id="experience">
@@ -67,7 +67,9 @@ const ExperienceSection = forwardRef(function AboutSection(
         })}
         <motion.ul className="workTabs">
           <motion.div
-            animate={{ y: currTab * 40 }}
+            animate={
+              isMedium ? { y: currTab * 40 } : { x: currTab * 106 }
+            }
             transition={{ duration: 0.3 }}
             className="hLight"
           ></motion.div>
@@ -78,14 +80,14 @@ const ExperienceSection = forwardRef(function AboutSection(
               className="workTab"
             >
               <p className={i === currTab ? "currTab" : ""}>
-                {work.company}
+                {work.company.split(" ")[0]}
               </p>
             </StyledList>
           ))}
         </motion.ul>
       </motion.div>
       <motion.div className="skillsContainer">
-        <SectionHeader>Technologies I use currently</SectionHeader>
+        <SectionHeader>Technologies</SectionHeader>
         <motion.ul className="skills">
           <StyledList className="skill">
             <p>React</p>
