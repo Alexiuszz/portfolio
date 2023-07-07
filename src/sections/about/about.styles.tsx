@@ -1,7 +1,7 @@
 import { centerContent } from "@/styles/style_mixins";
+import { mobile } from "@/styles/style_variables";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-
 
 export const AboutSectionContainer = styled(motion.section)`
   width: 100%;
@@ -25,45 +25,6 @@ export const AboutSectionContainer = styled(motion.section)`
     padding: 30px 15px 40px 15px;
     border-radius: 30px;
     min-height: 60vh;
-    /* clip-path: polygon(
-      0% 0%,
-      0% 93%,
-      5% 98%,
-      6% 99%,
-      8% 95%,
-      12% 94%,
-      15% 97%,
-      17% 93%,
-      20% 98%,
-      22% 97%,
-      25% 99%,
-      31% 94%,
-      35% 93%,
-      39% 96%,
-      43% 93%,
-      45% 94%,
-      47% 95%,
-      50% 92%,
-      52% 96%,
-      54% 93%,
-      58% 92%,
-      60% 95%,
-      62% 93%,
-      65% 96%,
-      69% 93%,
-      72% 93%,
-      75% 94%,
-      79% 97%,
-      81% 94%,
-      85% 93%,
-      88% 92%,
-      90% 95%,
-      93% 93%,
-      95% 92%,
-      97% 95%,
-      100% 97%,
-      100% 0%
-    ); */
     clip-path: polygon(
       0% 0%,
       0% 93%,
@@ -169,6 +130,22 @@ export const AboutSectionContainer = styled(motion.section)`
       display: inline-block;
       color: ${({ theme }) => theme.hoverFontColor};
       -webkit-text-fill-color: ${({ theme }) => theme.hoverFontColor};
+    }
+  }
+
+  @media screen and (max-width: ${mobile}) {
+    .about-content {
+      flex-direction: column;
+      .about-text {
+        width: 100%;
+      }
+      .about-img {
+        width: 15%;
+        min-width: 150px;
+        .splash {
+          top: -118%;
+        }
+      }
     }
   }
 `;

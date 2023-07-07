@@ -97,7 +97,7 @@ const AboutSection = forwardRef(function AboutSection(
             target="_blank"
             rel="noopener noreferrer"
           >
-            Checkout my Resume
+            My Resume
           </LinkButton>
         </motion.div>
         <motion.div className="about-img">
