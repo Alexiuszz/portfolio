@@ -34,6 +34,10 @@ export const ProjectsSection = styled(motion.section)`
       top: 8.5%;
     }
     .projects {
+      padding-bottom: 100px;
+      div:last-of-type.projectContainer {
+        margin-bottom: 200px;
+      }
       .projectContainer {
         height: 30vh;
       }

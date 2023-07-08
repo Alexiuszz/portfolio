@@ -80,7 +80,6 @@ function Layout({
   const [splash, setSplash] = useState(true);
   const [menu, setMenu] = useState<boolean>(false);
   const { loaded, setLoaded } = useContext(ResourceContext);
-
   const toggleMenu = () => setMenu((prevState) => !prevState);
   useEffect(() => {
     if (loaded) {

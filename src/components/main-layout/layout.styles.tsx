@@ -6,6 +6,7 @@ import styled from "styled-components";
 interface LayoutStyleProps {
   hideOverview?: boolean;
   inView?: boolean;
+  scrollUp?: boolean;
 }
 export const MainLayout = styled.div<LayoutStyleProps>`
   background-image: linear-gradient(
@@ -39,16 +40,16 @@ export const MainLayout = styled.div<LayoutStyleProps>`
     stop-color: #0f8a5f;
   }
   @media screen and (max-width: ${mobile}) {
-    .content{
+    .content {
       width: 90%;
       margin: 0 75px 0 13px;
-      section{        
-      width: 93%;
+      section {
+        width: 93%;
       }
     }
-      .socials{
-        display: none;
-      }
+    .socials {
+      display: none;
+    }
   }
 `;
 
