@@ -1,4 +1,5 @@
 import { absCenter } from "@/styles/style_mixins";
+import { mobile } from "@/styles/style_variables";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
@@ -8,7 +9,7 @@ export const ProjectContainer = styled(motion.div)`
   min-height: 300px;
   ${absCenter};
   position: relative;
-  &&&> h2 {
+  &&& > h2 {
     top: -12%;
   }
   .imgContainer {
@@ -60,9 +61,9 @@ export const ProjectContainer = styled(motion.div)`
       }
       &:hover {
         svg {
-        height: 26px;
-        color: ${({ theme }) => theme.hoverFontColor};
- }
+          height: 26px;
+          color: ${({ theme }) => theme.hoverFontColor};
+        }
       }
     }
     &:hover {
@@ -90,6 +91,72 @@ export const ProjectContainer = styled(motion.div)`
       font-size: 12px;
       margin: 10px auto 0 auto;
       width: fit-content;
+    }
+  }
+
+  @media screen and (max-width: ${mobile}) {
+    width: 95%;
+    aspect-ratio: 2/1;
+    min-width: 200px;
+    min-height: 100px;
+    &&& > h2 {
+      top: -36%;
+    }
+    &:hover {
+      .textWindow {
+        height: 100%;
+        font-size: 14px;
+        padding: 20px;
+        .techList {
+          font-size: 12px;
+        }
+      }
+    }
+    .textWindow {
+      top: 100%;
+      transform: translate(-50%, -100%);
+      left: 50%;
+      height: 0;
+      padding: 0;
+      width: 100%;
+      border-radius: 10px;
+      border: none;
+      font-size: 0;
+      transition: all 0.3s;
+      .techList {
+        font-size: 0;
+        position: absolute;
+        top: 100%;
+      }
+    }
+    .projectWrapper {
+      position: relative;
+      .imgContainer {
+        width: 100%;
+        min-width: 60px;
+        &::after {
+          content: "";
+          width: 0%;
+          height: 0%;
+        }
+      }
+      .projectLink {
+        color: ${({ theme }) => theme.primaryFontColor};
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        transition: all.4s;
+        z-index: 2;
+        svg {
+          height: 20px;
+        }
+      }
+      &:hover {
+        svg {
+          height: 26px;
+          color: ${({ theme }) => theme.hoverFontColor};
+        }
+      }
     }
   }
 `;
