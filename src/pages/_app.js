@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
+
 import { Libre_Franklin } from "next/font/google";
 import LoadedResourceManager from "../components/main-layout/context/ResourceContext";
 import CustomCursorManager from "../components/CustomCursor/context/manager";
@@ -12,6 +14,7 @@ export default function App({ Component, pageProps }) {
       <LoadedResourceManager>
         <CustomCursorManager>
           <main className={`${libre.className} main`}>
+            <Analytics />
             <Component {...pageProps} />
           </main>
         </CustomCursorManager>
