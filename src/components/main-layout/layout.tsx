@@ -47,6 +47,7 @@ import {
   faAddressCard,
   faDiagramProject,
   faEnvelope,
+  faFile,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -194,25 +195,25 @@ function Layout({
                   <span className="navIndex">
                     <FontAwesomeIcon icon={faUser} />{" "}
                   </span>
-                  <span>About</span>
+                  <span> About</span>
                 </CustomLink>
                 <CustomLink className="navLinks" href="#experience">
                   <span className="navIndex">
                     <FontAwesomeIcon icon={faAddressCard} />{" "}
                   </span>
-                  <span>Experience</span>
+                  <span> Experience</span>
                 </CustomLink>
                 <CustomLink className="navLinks" href="#projects">
                   <span className="navIndex">
                     <FontAwesomeIcon icon={faDiagramProject} />
                   </span>
-                  <span>Projects</span>
+                  <span> Projects</span>
                 </CustomLink>
                 <CustomLink className="navLinks" href="#contact">
                   <span className="navIndex">
                     <FontAwesomeIcon icon={faEnvelope} />
                   </span>
-                  <span>Contact</span>
+                  <span> Contact</span>
                 </CustomLink>
                 <LinkButton
                   className="about-button"
@@ -220,8 +221,39 @@ function Layout({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  l
+                  <span className="navIndex">
+                    <FontAwesomeIcon icon={faFile} />
+                  </span>
+                  <span> resume</span>
                 </LinkButton>
+                <div className="onlyFullMenu">
+                  <Link
+                    className="menu-mail"
+                    href="mailto:alexiusnwala@gmail.com"
+                  >
+                    alexiusnwala@gmail.com
+                  </Link>
+                  <div className="menu-socials">
+                    <CustomLink
+                      className="socialsLink"
+                      href="https://github.com/Alexiuszz"
+                    >
+                      <FontAwesomeIcon icon={faGithub} />
+                    </CustomLink>
+                    <CustomLink
+                      className="socialsLink"
+                      href="https://twitter.com/AlexiusNwala"
+                    >
+                      <FontAwesomeIcon icon={faLinkedinIn} />
+                    </CustomLink>
+                    <CustomLink
+                      className="socialsLink"
+                      href="https://www.linkedin.com/in/alexis-nwala"
+                    >
+                      <FontAwesomeIcon icon={faTwitter} />
+                    </CustomLink>
+                  </div>
+                </div>
               </div>
             </MenuContainer>
             <div className="content">{children}</div>
