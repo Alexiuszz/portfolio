@@ -1,7 +1,7 @@
 import { centerContent } from "@/styles/style_mixins";
+import { mobile } from "@/styles/style_variables";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-
 
 export const ContactContainer = styled(motion.section)`
   height: 100vh;
@@ -9,7 +9,7 @@ export const ContactContainer = styled(motion.section)`
   ${centerContent};
   position: relative;
   .contact-wrapper {
-    margin-top: -20px;
+    margin-top: -40px;
     width: 70%;
     height: fit-content;
     ${centerContent};
@@ -63,6 +63,14 @@ export const ContactContainer = styled(motion.section)`
           height: 16px;
         }
       }
+    }
+  }
+  @media screen and (max-width: ${mobile}) {
+    .contact-wrapper {
+      margin-top: -60px;
+    }
+    .foot {
+      bottom: 8%;
     }
   }
 `;
