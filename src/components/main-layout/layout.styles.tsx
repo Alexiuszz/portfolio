@@ -40,6 +40,7 @@ export const MainLayout = styled.div<LayoutStyleProps>`
     stop-color: #0f8a5f;
   }
   @media screen and (max-width: ${mobile}) {
+    overflow-x: hidden;
     .content {
       width: 90%;
       margin: 0 75px 0 13px;
