@@ -9,9 +9,6 @@ export const ProjectContainer = styled(motion.div)`
   min-height: 300px;
   ${absCenter};
   position: relative;
-  &&& > h2 {
-    top: -12%;
-  }
   .imgContainer {
     width: 60%;
     aspect-ratio: 2/1;
@@ -50,6 +47,7 @@ export const ProjectContainer = styled(motion.div)`
   }
   .projectWrapper {
     width: 100%;
+    aspect-ratio: 2/1;
     .projectLink {
       color: ${({ theme }) => theme.primaryFontColor};
       font-size: 20px;
@@ -77,7 +75,7 @@ export const ProjectContainer = styled(motion.div)`
     width: 50%;
     background-color: ${({ theme }) => theme.tetiaryColor};
     font-size: 14px;
-    top: 75%;
+    top: 100%;
     left: 75%;
     transform: translate(-50%, -50%);
     padding: 20px;
@@ -97,11 +95,6 @@ export const ProjectContainer = styled(motion.div)`
   @media screen and (max-width: ${mobile}) {
     width: 95%;
     aspect-ratio: 2/1;
-    min-width: 200px;
-    min-height: 100px;
-    &&& > h2 {
-      top: -36%;
-    }
     &:hover {
       .textWindow {
         height: 100%;
@@ -127,6 +120,12 @@ export const ProjectContainer = styled(motion.div)`
         font-size: 0;
         position: absolute;
         top: 100%;
+      }
+      .proj-descr {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
       }
     }
     .projectWrapper {
@@ -157,6 +156,11 @@ export const ProjectContainer = styled(motion.div)`
           color: ${({ theme }) => theme.hoverFontColor};
         }
       }
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .textWindow {
+      top: 100%;
     }
   }
 `;

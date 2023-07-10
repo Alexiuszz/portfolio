@@ -99,11 +99,20 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
     position: fixed;
     right: 12px;
     top: 0;
+    overflow: hidden;
     padding-top: 80px;
     box-shadow: 0px 0px 14px 0px #073018;
     border-bottom-left-radius: 14px;
     backdrop-filter: ${({ menu }) => (menu ? "blur(15px)" : "none")};
-    z-index: ${({ menu }) => (menu ? "500" : "0")};
+    z-index: 10;
+
+    .nav-menu-button {
+      display: flex;
+      position: fixed;
+      top: 35px;
+      right: 30px;
+      color: ${({ theme }) => theme.primaryFontColor};
+    }
     .nav-menu-items {
       margin-top: ${({ menu }) => (menu ? "10%" : "30%")};
       display: flex;

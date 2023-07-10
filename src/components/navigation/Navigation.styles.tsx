@@ -10,7 +10,7 @@ interface NavProps {
 }
 export const NavContainer = styled(motion.div)<NavProps>`
   width: 60%;
-  height: 100px;
+  height: 80px;
   display: flex;
   ${absCenter};
   position: fixed;
@@ -25,8 +25,8 @@ export const NavContainer = styled(motion.div)<NavProps>`
   -webkit-box-pack: justify;
   z-index: 1;
   backdrop-filter: ${({ isTop }) => (!isTop ? "blur(10px)" : "none")};
-  box-shadow: ${({ isTop }) =>
-    !isTop ? "0px 0px 14px 0px #073018" : "none"};
+  box-shadow: ${({ isTop, menu }) =>
+    !isTop && !menu ? "0px 0px 14px 0px #073018" : "none"};
   .navLinks {
     margin: 0px 5px;
     padding: 10px;
@@ -59,13 +59,8 @@ export const NavContainer = styled(motion.div)<NavProps>`
   }
   @media screen and (max-width: ${mobile}) {
     padding-right: 0;
-    z-index: ${({ menu }) => (menu ? "1000" : "1")};
     .unsplash {
       display: none;
-    }
-    .nav-menu-button {
-      display: flex;
-      margin-right: 30px;
     }
   }
 `;

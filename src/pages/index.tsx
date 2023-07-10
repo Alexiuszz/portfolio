@@ -44,6 +44,8 @@ export default function Home() {
   const heroSection = useRef<HTMLElement>(null);
   const AboutSectionRef = useRef<HTMLElement>(null);
   const ExperienceSectionRef = useRef<HTMLElement>(null);
+  const ProjectsRef = useRef<HTMLElement>(null);
+  const ContactsRef = useRef<HTMLElement>(null);
 
   const scrollSection = (section: string) => {
     const sections: Sections = {
@@ -79,8 +81,8 @@ export default function Home() {
       <Hero ref={heroSection} />
       <AboutSection ref={AboutSectionRef} />
       <ExperienceSection ref={ExperienceSectionRef} />
-      <Projects />
-      <ContactSection />
+      <Projects ref={ProjectsRef}/>
+      <ContactSection ref={ContactsRef}/>
     </Layout>
   );
 }

@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import {
   HeroContainer,
   LandingContainer,
@@ -43,6 +43,20 @@ const Hero = forwardRef(function Hero(
   ref: React.Ref<HTMLElement>
 ) {
   const isMedium = useIsMedium();
+  const [heroAnimation, setHeroAnimation] = useState(() =>
+    !isMedium
+      ? {
+          opacity: [0, 1, 1, 1],
+          x: ["130%", "130%", "130%", "0%"],
+          y: ["550%", "550%", "550%", "-200%"],
+        }
+      : {
+          opacity: [0, 1, 1, 1],
+          x: ["250%", "250%", "250%", "0%"],
+          y: ["250%", "250%", "250%", "-200%"],
+          fontSize: ["30px", "30px", "30px", "20px"],
+        }
+  );
 
   useEffect(() => {
     animate(
@@ -61,7 +75,7 @@ const Hero = forwardRef(function Hero(
       <div className="heroContent">
         <HeroContainer>
           <motion.div
-            animate={!isMedium ? sizeVariants.mobile : sizeVariants.pc}
+            animate={heroAnimation}
             transition={splashTransition}
             className="typewriter"
           >
@@ -102,8 +116,7 @@ const Hero = forwardRef(function Hero(
               size="34px"
               left="left"
             >
-              I&apos;m a Fullstack Dev and Embedded Software
-              Engineer.
+              I&apos;m a Fullstack Dev and Embedded Software Engineer.
             </Header>
             <Text className="heroText">
               I build and design systems and applications for the web

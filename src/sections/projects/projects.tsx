@@ -63,7 +63,7 @@ const myProjects: ProjectType[] = [
 function Projects() {
   return (
     <ProjectsSection id="projects">
-      <SectionHeader>Notable Projects</SectionHeader>
+      <SectionHeader className="sectionHeader">Notable Projects</SectionHeader>
       <div className="projects">
         {myProjects.map((project, i) => {
           return (

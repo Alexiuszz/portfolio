@@ -68,6 +68,7 @@ export const ContactContainer = styled(motion.section)`
   @media screen and (max-width: ${mobile}) {
     .contact-wrapper {
       margin-top: -60px;
+      width: 90%;
     }
     .foot {
       bottom: 8%;

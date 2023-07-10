@@ -26,7 +26,7 @@ function Project({ project }: { project: ProjectType }) {
           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />{" "}
         </CustomLink>
         <motion.div className="textWindow">
-          <motion.p>{project.desc}</motion.p>
+          <motion.p className="proj-descr">{project.desc}</motion.p>
           <motion.p className="techList">
             {project.tech.join(" ")}
           </motion.p>

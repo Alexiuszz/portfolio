@@ -21,7 +21,6 @@ import { useIsMedium } from "@/hooks/useMediaQuery";
 
 interface NavProps {
   menu: boolean;
-  toggleMenu(): void;
   // hasScrolled:boolean
 }
 
@@ -31,7 +30,7 @@ const splashTransition = {
   delay: 3,
   ease: [0, 0.71, 0.2, 1.01],
 };
-function Navigation({ menu, toggleMenu }: NavProps) {
+function Navigation({ menu }: NavProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const isMedium = useIsMedium();
   const { rive, RiveComponent } = useRive({
@@ -106,19 +105,21 @@ function Navigation({ menu, toggleMenu }: NavProps) {
       }
     );
   }, []);
-  const entryAnimation = !isMedium
-    ? {
-        opacity: [0, 0, 1, 1],
-        width: ["50%", "50%", "50%", "100%"],
-        x: ["-35%", "-35%", "-35%", "-50%"],
-        y: ["300%", "300%", "300%", "0%"],
-      }
-    : {
-        opacity: [0, 0, 1, 1],
-        width: ["50%", "50%", "50%", "100%"],
-        x: ["-50%", "-50%", "-50%", "-50%"],
-        y: ["340%", "340%", "340%", "0%"],
-      };
+  const [entryAnimation] = useState(() =>
+    !isMedium
+      ? {
+          opacity: [0, 0, 1, 1],
+          width: ["50%", "50%", "50%", "100%"],
+          x: ["-35%", "-35%", "-35%", "-50%"],
+          y: ["300%", "300%", "300%", "0%"],
+        }
+      : {
+          opacity: [0, 0, 1, 1],
+          width: ["50%", "50%", "50%", "100%"],
+          x: ["-50%", "-50%", "-50%", "-50%"],
+          y: ["340%", "340%", "340%", "0%"],
+        }
+  );
   return (
     <NavContainer
       animate={entryAnimation}
@@ -185,9 +186,6 @@ function Navigation({ menu, toggleMenu }: NavProps) {
           
         </CustomLink> */}
         {/* <Toggle on={particles} toggle={toggleParticles} /> */}
-      </div>
-      <div onClick={toggleMenu} className="nav-menu-button">
-        M
       </div>
     </NavContainer>
   );

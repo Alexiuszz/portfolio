@@ -8,38 +8,45 @@ export const ProjectsSection = styled(motion.section)`
   scroll-snap-align: start;
   flex-direction: column;
   position: relative;
-  padding-top: 35px;
-  h2 {
-    position: absolute;
-    top: 4%;
-    left: 0;
-  }
+  padding-top: 100px;
+  padding-bottom: 50vh;
   .projects {
     height: fit-content;
     width: 100%;
-    div:first-of-type.projectContainer {
-      margin-top: 40px;
-    }
     .projectContainer {
-      height: 100vh;
+      height: 60vh;
       width: 100%;
       position: relative;
     }
   }
 
   @media screen and (max-width: ${mobile}) {
-    padding-top: 140px;
     h2 {
       font-size: 25px;
-      top: 8.5%;
+      margin-bottom: 10px;
+    }
+    .sectionHeader{      
+      margin-bottom: 40px;
     }
     .projects {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding-bottom: 100px;
-      div:last-of-type.projectContainer {
+      /* div:last-of-type.projectContainer {
         margin-bottom: 200px;
-      }
-      .projectContainer {
-        height: 30vh;
+      } */
+      /* div:not(div:first-of-type.projectContainer) {
+        margin-top: 160px;        
+      } */
+    }
+  }
+  @media screen and (max-width: 520px) {
+     
+    .projects {
+      height: fit-content;
+      .projectContainer{
+        height: 40vh;
       }
     }
   }

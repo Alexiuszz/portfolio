@@ -160,7 +160,7 @@ function Layout({
       </SplashScreen>
       {loaded && (
         <>
-          <Navigation menu={menu} toggleMenu={toggleMenu} />
+          <Navigation menu={menu} />
           <MainLayout
             className="main-layout"
             hideOverview={hideOverview}
@@ -190,6 +190,15 @@ function Layout({
               <div className="emailCircle" />
             </Socials>
             <MenuContainer menu={menu}>
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setMenu((prevState) => !prevState);
+                }}
+                className="nav-menu-button"
+              >
+                M
+              </div>
               <div className="nav-menu-items">
                 <CustomLink className="navLinks" href="#about">
                   <span className="navIndex">
