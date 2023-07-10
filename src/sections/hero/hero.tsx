@@ -1,11 +1,17 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   HeroContainer,
   LandingContainer,
 } from "@/sections/hero/hero.styles";
 import TypeIt from "typeit-react";
 import Carousel from "@/components/carousel/carousel";
-import { Variants, animate, motion, stagger } from "framer-motion";
+import {
+  Variants,
+  animate,
+  motion,
+  stagger,
+  useInView,
+} from "framer-motion";
 import { Header, Text } from "@/styles/typography.styles";
 import { useIsMedium } from "@/hooks/useMediaQuery";
 
@@ -38,10 +44,16 @@ const sizeVariants = {
     fontSize: ["30px", "30px", "30px", "20px"],
   },
 };
-const Hero = forwardRef(function Hero(
-  props: {},
-  ref: React.Ref<HTMLElement>
-) {
+const Hero = ({
+  setSection,
+}: {
+  setSection: (section: string) => void;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref,{amount: 0.5});
+  useEffect(() => {
+    isInView && setSection("home");
+  }, [isInView]);
   const isMedium = useIsMedium();
   const [heroAnimation, setHeroAnimation] = useState(() =>
     !isMedium
@@ -145,5 +157,5 @@ const Hero = forwardRef(function Hero(
       </div>
     </LandingContainer>
   );
-});
+};
 export default Hero;

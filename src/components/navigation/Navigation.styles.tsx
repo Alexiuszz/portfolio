@@ -7,6 +7,7 @@ interface NavProps {
   scrollUp: boolean;
   isTop: boolean;
   menu: boolean;
+  sectionInView: string;
 }
 export const NavContainer = styled(motion.div)<NavProps>`
   width: 60%;
@@ -27,6 +28,11 @@ export const NavContainer = styled(motion.div)<NavProps>`
   backdrop-filter: ${({ isTop }) => (!isTop ? "blur(10px)" : "none")};
   box-shadow: ${({ isTop, menu }) =>
     !isTop && !menu ? "0px 0px 14px 0px #073018" : "none"};
+  .navLinks[href="${({ sectionInView }) => sectionInView}"] {
+    &:before {
+      width: 100%;
+    }
+  }
   .navLinks {
     margin: 0px 5px;
     padding: 10px;

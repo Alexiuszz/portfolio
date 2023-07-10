@@ -35,54 +35,57 @@ const PageOverview = [
   },
 ];
 
-type Sections = {
-  home?: React.RefObject<HTMLElement>;
-  homeAbout?: React.RefObject<HTMLElement>;
-};
+// type Sections = {
+//   home?: React.RefObject<HTMLElement>;
+//   homeAbout?: React.RefObject<HTMLElement>;
+//   experience?: React.RefObject<HTMLElement>;
+//   projects?: React.RefObject<HTMLElement>;
+//   contact?: React.RefObject<HTMLElement>;
+// };
 export default function Home() {
-  const [hideOverview, setHideOverview] = useState(true);
-  const heroSection = useRef<HTMLElement>(null);
-  const AboutSectionRef = useRef<HTMLElement>(null);
-  const ExperienceSectionRef = useRef<HTMLElement>(null);
-  const ProjectsRef = useRef<HTMLElement>(null);
-  const ContactsRef = useRef<HTMLElement>(null);
+  const [sectionInView, setSectionInView] = useState<string>("#home");
+  // const heroSection = useRef<HTMLElement>(null);
+  // const AboutSectionRef = useRef<HTMLElement>(null);
+  // const ExperienceSectionRef = useRef<HTMLElement>(null);
+  // const ProjectsRef = useRef<HTMLElement>(null);
+  // const ContactsRef = useRef<HTMLElement>(null);
 
   const scrollSection = (section: string) => {
-    const sections: Sections = {
-      home: heroSection,
-      homeAbout: AboutSectionRef,
-    };
-    if (
-      sections[section as keyof Sections] &&
-      sections[section as keyof Sections]?.current
-    ) {
-      sections[section as keyof Sections]?.current?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
+    console.log(section);
+    setSectionInView("#" + section);
   };
-  useEffect(() => {
-    const showOverview = setTimeout(() => {
-      setHideOverview(false);
-    }, 3000);
+  // const scrollSection = (section: string) => {
+  //   const sections: Sections = {
+  //     home: heroSection,
+  //     homeAbout: AboutSectionRef,
+  //     experience: ExperienceSectionRef,
+  //     projects: ProjectsRef,
+  //     contact: ContactsRef,
+  //   };
+  //   if (
+  //     sections[section as keyof Sections] &&
+  //     sections[section as keyof Sections]?.current
+  //   ) {
+  //     sections[section as keyof Sections]?.current?.checkVisibility
+  //   }
+  // };
+  // useEffect(() => {
+  //   const showOverview = setTimeout(() => {
+  //     setHideOverview(false);
+  //   }, 3000);
 
-    return () => {
-      clearTimeout(showOverview);
-    };
-  });
+  //   return () => {
+  //     clearTimeout(showOverview);
+  //   };
+  // });
 
   return (
-    <Layout
-      home={true}
-      hideOverview={hideOverview}
-      pageOverview={PageOverview}
-      scrollSection={scrollSection}
-    >
-      <Hero ref={heroSection} />
-      <AboutSection ref={AboutSectionRef} />
-      <ExperienceSection ref={ExperienceSectionRef} />
-      <Projects ref={ProjectsRef}/>
-      <ContactSection ref={ContactsRef}/>
+    <Layout sectionInView={sectionInView}>
+      <Hero setSection={scrollSection} />
+      <AboutSection setSection={scrollSection} />
+      <ExperienceSection setSection={scrollSection} />
+      <Projects setSection={scrollSection} />
+      <ContactSection setSection={scrollSection} />
     </Layout>
   );
 }

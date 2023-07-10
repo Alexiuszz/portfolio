@@ -7,12 +7,22 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import CustomLink from "@/components/CustomLink";
+import { useInView } from "framer-motion";
 
-function ContactSection() {
+function ContactSection({
+  setSection,
+}: {
+  setSection: (section: string) => void;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref,{amount: 0.5});
+  useEffect(() => {
+    isInView && setSection("contact");
+  }, [isInView]);
   return (
-    <ContactContainer id="contact">
+    <ContactContainer ref={ref} id="contact">
       <div className="contact-wrapper">
         <SectionHeader>Send me a message</SectionHeader>
         <p>

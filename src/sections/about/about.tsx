@@ -1,6 +1,11 @@
 import { AboutSectionContainer } from "@/sections/about/about.styles";
-import React, { forwardRef, useEffect, useState } from "react";
-import { Variants, motion } from "framer-motion";
+import React, {
+  forwardRef,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { Variants, motion, useInView } from "framer-motion";
 import LinkButton from "@/components/LinkButton";
 import CustomLink from "@/components/CustomLink";
 import { SectionHeader } from "@/styles/typography.styles";
@@ -50,10 +55,17 @@ const imgVariants: Variants = {
     },
   },
 };
-const AboutSection = forwardRef(function AboutSection(
-  props: {},
-  ref: React.Ref<HTMLElement>
-) {
+const AboutSection = ({
+  setSection,
+}: {
+  setSection: (section: string) => void;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5 });
+  useEffect(() => {
+    isInView && setSection("about");
+  }, [isInView]);
+
   return (
     <AboutSectionContainer ref={ref} id="about">
       <SectionHeader>A little about me</SectionHeader>
@@ -122,6 +134,6 @@ const AboutSection = forwardRef(function AboutSection(
       </div>
     </AboutSectionContainer>
   );
-});
+};
 
 export default AboutSection;

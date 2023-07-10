@@ -1,7 +1,8 @@
 import Project from "@/components/project";
 import { ProjectsSection } from "@/sections/projects/projects.styles";
 import { SectionHeader } from "@/styles/typography.styles";
-import React from "react";
+import { useInView } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 
 export interface ProjectType {
   name: string;
@@ -60,10 +61,21 @@ const myProjects: ProjectType[] = [
     tech: ["React", "Asp.net", "Sql", "Redux"],
   },
 ];
-function Projects() {
+function Projects({
+  setSection,
+}: {
+  setSection: (section: string) => void;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref,{amount: 0.2});
+  useEffect(() => {
+    isInView && setSection("projects");
+  }, [isInView]);
   return (
-    <ProjectsSection id="projects">
-      <SectionHeader className="sectionHeader">Notable Projects</SectionHeader>
+    <ProjectsSection ref={ref} id="projects">
+      <SectionHeader className="sectionHeader">
+        Notable Projects
+      </SectionHeader>
       <div className="projects">
         {myProjects.map((project, i) => {
           return (

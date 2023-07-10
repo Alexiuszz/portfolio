@@ -1,6 +1,6 @@
 import { ExperienceContainer } from "@/sections/experience/experience.styles";
-import { forwardRef, useState } from "react";
-import { motion } from "framer-motion";
+import { forwardRef, useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import Experience from "@/components/experience";
 import StyledList from "@/components/StyledList";
 import { SectionHeader } from "@/styles/typography.styles";
@@ -43,14 +43,21 @@ const workHistory: {
     ],
   },
 ];
-const ExperienceSection = forwardRef(function AboutSection(
-  props: {},
-  ref: React.Ref<HTMLElement>
-) {
+const ExperienceSection = ({
+  setSection,
+}: {
+  setSection: (section: string) => void;
+}) => {
   const isMedium = useIsMedium();
   const [currTab, setCurrTab] = useState<number>(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5 });
+  useEffect(() => {
+    isInView && setSection("experience");
+  }, [isInView]);
+
   return (
-    <ExperienceContainer id="experience">
+    <ExperienceContainer ref={ref} id="experience">
       <SectionHeader>Work History</SectionHeader>
       <motion.div className="workHistoryContainer">
         {workHistory.map((work, i) => {
@@ -117,6 +124,6 @@ const ExperienceSection = forwardRef(function AboutSection(
       </motion.div>
     </ExperienceContainer>
   );
-});
+};
 
 export default ExperienceSection;

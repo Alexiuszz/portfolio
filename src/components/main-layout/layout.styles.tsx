@@ -80,6 +80,7 @@ export const SplashScreen = styled(motion.div)`
 `;
 interface MenuContainerProps {
   menu?: boolean;
+  sectionInView: string;
 }
 export const MenuContainer = styled(motion.div)<MenuContainerProps>`
   display: none;
@@ -89,11 +90,10 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: ${({ theme }) => theme.primaryColor};
+    background-color: #00000062;
     justify-content: space-between;
     width: ${({ menu }) => (menu ? "100vw" : "50px")};
     min-width: 20px;
-    opacity: ${({ menu }) => (menu ? "1" : ".3")};
     height: ${({ menu }) => (menu ? "100vh" : "55vh")};
     padding-bottom: ${({ menu }) => (menu ? "30px" : "0")};
     position: fixed;
@@ -101,7 +101,7 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
     top: 0;
     overflow: hidden;
     padding-top: 80px;
-    box-shadow: 0px 0px 14px 0px #073018;
+    box-shadow: 0px 0px 8px 0px #073018a4;
     border-bottom-left-radius: 14px;
     backdrop-filter: ${({ menu }) => (menu ? "blur(15px)" : "none")};
     z-index: 10;
@@ -119,8 +119,10 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
       flex-direction: column;
       height: 100%;
       justify-content: space-around;
+
       .navLinks,
       .about-button {
+        opacity: ${({ menu }) => (menu ? "1" : ".3")};
         text-align: center;
         cursor: pointer;
         align-self: center;
@@ -136,6 +138,13 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
           svg {
             height: 14px;
           }
+        }
+      }
+      .navLinks[href="${({ sectionInView }) => sectionInView}"] {
+        opacity: 0.7;
+        color: ${({ theme }) => theme.hoverFontColor};
+        &:before {
+          width: 100%;
         }
       }
       .onlyFullMenu {

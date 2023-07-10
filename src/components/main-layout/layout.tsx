@@ -48,6 +48,7 @@ import {
   faDiagramProject,
   faEnvelope,
   faFile,
+  faHome,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -64,18 +65,9 @@ interface ProjectOverview {
 }
 interface LayoutProps {
   children?: React.ReactNode;
-  pageOverview?: ProjectOverview[];
-  home?: boolean;
-  hideOverview?: boolean;
-  scrollSection(section: string): void;
+  sectionInView: string;
 }
-function Layout({
-  children,
-  pageOverview,
-  home,
-  hideOverview,
-  scrollSection,
-}: LayoutProps) {
+function Layout({ children, sectionInView }: LayoutProps) {
   const [particles, setParticles] = useState<boolean>(true);
   const containerRef = useRef<Container>(null);
   const [splash, setSplash] = useState(true);
@@ -160,10 +152,9 @@ function Layout({
       </SplashScreen>
       {loaded && (
         <>
-          <Navigation menu={menu} />
+          <Navigation menu={menu} sectionInView={sectionInView} />
           <MainLayout
             className="main-layout"
-            hideOverview={hideOverview}
             onClick={() => setMenu(false)}
           >
             <LDesign />
@@ -189,7 +180,7 @@ function Layout({
               <div className="emailLine" />
               <div className="emailCircle" />
             </Socials>
-            <MenuContainer menu={menu}>
+            <MenuContainer menu={menu} sectionInView={sectionInView}>
               <div
                 onClick={(e) => {
                   e.stopPropagation();
@@ -200,6 +191,12 @@ function Layout({
                 M
               </div>
               <div className="nav-menu-items">
+                <CustomLink className="navLinks" href="#home">
+                  <span className="navIndex">
+                    <FontAwesomeIcon icon={faHome} />{" "}
+                  </span>
+                  <span> Home</span>
+                </CustomLink>
                 <CustomLink className="navLinks" href="#about">
                   <span className="navIndex">
                     <FontAwesomeIcon icon={faUser} />{" "}

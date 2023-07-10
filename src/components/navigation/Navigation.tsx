@@ -21,7 +21,7 @@ import { useIsMedium } from "@/hooks/useMediaQuery";
 
 interface NavProps {
   menu: boolean;
-  // hasScrolled:boolean
+  sectionInView: string;
 }
 
 const splashTransition = {
@@ -30,7 +30,7 @@ const splashTransition = {
   delay: 3,
   ease: [0, 0.71, 0.2, 1.01],
 };
-function Navigation({ menu }: NavProps) {
+function Navigation({ menu, sectionInView }: NavProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const isMedium = useIsMedium();
   const { rive, RiveComponent } = useRive({
@@ -128,6 +128,7 @@ function Navigation({ menu }: NavProps) {
       isTop={lastScrollY < 300}
       menu={menu}
       className="main-nav"
+      sectionInView={sectionInView}
     >
       <CustomLink className="logo" href="/#home">
         <motion.div
