@@ -27,7 +27,7 @@ const myProjects: ProjectType[] = [
     name: "Alexius.dev",
     id: "portfolio",
     desc: "My personal website",
-    url: "",
+    url: "https://www.alexiusnwala.com/",
     img: "https://s3.amazonaws.com/alexius.dev/projectImgs/alexius.png",
     tech: ["Next.js", "Framer-motion", "Styled-Components"],
     git: "https://github.com/Alexiuszz/portfolio"

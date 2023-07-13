@@ -61,6 +61,7 @@ import {
 import LinkButton from "../LinkButton";
 import CustomCursorContext from "../CustomCursor/context/CustomCursorContext";
 import { MenuSwitch } from "../toggle/Toggle";
+import Image from "next/image";
 interface ProjectOverview {
   id: string;
   text: string;
@@ -185,7 +186,11 @@ function Layout({ children, sectionInView }: LayoutProps) {
               <div className="emailLine" />
               <div className="emailCircle" />
             </Socials>
-            <MenuContainer menu={menu} transition={spring} sectionInView={sectionInView}>
+            <MenuContainer
+              menu={menu}
+              transition={spring}
+              sectionInView={sectionInView}
+            >
               <div
                 onMouseEnter={() => setType("link")}
                 onMouseLeave={() => setType("default")}
@@ -195,7 +200,7 @@ function Layout({ children, sectionInView }: LayoutProps) {
                 }}
                 className="nav-menu-button"
               >
-                <MenuSwitch on={menu}/>
+                <MenuSwitch on={menu} />
               </div>
               <div className="nav-menu-items">
                 <CustomLink className="navLinks" href="#home">
@@ -415,8 +420,7 @@ function SplashDesign() {
           />
         </svg>
       </motion.svg>
-
-      <img src="/assets/images/logo.png" alt="Logo" />
+      <Image src="/assets/images/logo.png" width={60} height={74} alt="Logo" />
     </div>
   );
 }
