@@ -109,16 +109,22 @@ export const AboutSectionContainer = styled(motion.section)`
     height: 80%;
     font-size: 14px;
     line-height: 1.5;
-    p {
-      margin: 0px 0px 15px;
-    }
-    .bigLetter {
-      font-family: "Sassy Frass", cursive;
-      font-size: 300%;
-      font-weight: 1;
-      opacity: 0.8;
-      line-height: 0;
-      color: ${({ theme }) => theme.primaryFontColor};
+
+    article {
+      max-height: 60vh;
+      overflow-y: scroll;
+      padding-top: 20px;
+      p {
+        margin: 0px 0px 15px;
+      }
+      .bigLetter {
+        font-family: "Sassy Frass", cursive;
+        font-size: 300%;
+        font-weight: 1;
+        opacity: 0.8;
+        line-height: 0;
+        color: ${({ theme }) => theme.primaryFontColor};
+      }
     }
     .about-button {
       position: absolute;
@@ -138,6 +144,11 @@ export const AboutSectionContainer = styled(motion.section)`
       flex-direction: column;
       .about-text {
         width: 100%;
+        article {
+          padding-top: 20px;
+          height: 45vh;
+          overflow-y: scroll;
+        }
       }
       .about-img {
         width: 15%;

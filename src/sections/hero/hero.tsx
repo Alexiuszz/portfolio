@@ -50,7 +50,7 @@ const Hero = ({
   setSection: (section: string) => void;
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref,{amount: 0.5});
+  const isInView = useInView(ref, { amount: 0.5 });
   useEffect(() => {
     isInView && setSection("home");
   }, [isInView]);
@@ -131,8 +131,11 @@ const Hero = ({
               I&apos;m a Fullstack Dev and Embedded Software Engineer.
             </Header>
             <Text className="heroText">
-              I build and design systems and applications for the web
-              and occasional devices that connect you to it!
+              My expertise lies in creating outstanding systems and
+              applications for the web, and occasionally even those
+              amazing devices that keep you connected to it! I thrive
+              in building and designing things that bring the online
+              world and your gadgets to life.
             </Text>
           </motion.div>
         </HeroContainer>

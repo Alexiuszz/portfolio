@@ -26,6 +26,16 @@ body {
   body {   
     color: ${({ theme }) => theme.secondaryFontColor};
     line-height: 1.3;
+    
+  background-image: linear-gradient(
+      to right bottom,
+      ${({ theme }) => theme.primaryColor},
+      ${({ theme }) => theme.secondaryColor}
+    ),
+    url("/assets/images/bg-img.jpg");
+    
+  background-size: cover;
+  background-position: top;
   }&::-webkit-scrollbar {
     width: 12px;
 }

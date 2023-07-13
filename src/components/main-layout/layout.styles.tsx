@@ -9,22 +9,17 @@ interface LayoutStyleProps {
   scrollUp?: boolean;
 }
 export const MainLayout = styled.div<LayoutStyleProps>`
-  background-image: linear-gradient(
-      to right bottom,
-      ${({ theme }) => theme.primaryColor},
-      ${({ theme }) => theme.secondaryColor}
-    ),
-    url("/assets/images/bg-img.jpg");
   overflow-y: scroll;
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  background-size: cover;
-  background-position: top;
+  max-width: 1600px;
+    margin: 0px auto;
   .content {
     height: 100vh;
     width: ${(props) => (props.hideOverview ? "100%" : "75%")};
     margin: 0 auto;
+
     section {
       width: 100%;
     }
@@ -61,8 +56,8 @@ export const SplashScreen = styled(motion.div)`
   position: fixed;
   ${centerContent}
   .logoSplash {
-      height: 80px;
-      width: 70px;
+    height: 80px;
+    width: 70px;
     .container {
       background: #0b3320;
       transform: rotate(-24.53deg);

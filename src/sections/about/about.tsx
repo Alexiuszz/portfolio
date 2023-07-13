@@ -86,21 +86,37 @@ const AboutSection = ({
               Nigeria.
             </p>
             <p>
-              Currently, my focus lies in building visually appealing
-              web applications using React and NodeJS. Additionally, I
-              possess experience as an Embedded Software Engineer.
-              Currently, I am involved in the development of two
-              projects:{" "}
+              currently, my primary focus revolves around building
+              captivating and aesthetically pleasing web applications
+              with a myriad technologies the core of which are React,
+              Next and NodeJS. Moreover, my background also
+              encompasses valuable expertise as an Embedded Software
+              Engineer. As of now, I am actively engaged in the
+              development of two exciting projects:{" "}
               <CustomLink href="#" className="home-about-link">
                 Biamuta{" "}
               </CustomLink>{" "}
               and{" "}
               <CustomLink href="#" className="home-about-link">
-                Emissar{" "}
+                OdaNow{" "}
               </CustomLink>
-              . I have an insatiable passion for continuous learning,
-              regardless of the scale or complexity of the subject
-              matter.
+              .
+            </p>
+            <p>
+              One aspect that sets me apart is my insatiable passion
+              for continuous learning. I firmly believe that the
+              journey of knowledge acquisition is a lifelong pursuit,
+              and I eagerly embrace new challenges regardless of their
+              scale or complexity. Whether it&apos;s delving into
+              cutting-edge frameworks, exploring emerging
+              technologies, or expanding my proficiency in existing
+              tools, I am always driven to expand my skillset and stay
+              at the forefront of industry trends.
+            </p>
+            <p>
+              In summary, I thrive on continuous learning, embracing
+              new challenges, and staying ahead of the curve to
+              deliver exceptional results.
             </p>
           </article>
           <LinkButton
