@@ -58,6 +58,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import LinkButton from "../LinkButton";
+import CustomCursorContext from "../CustomCursor/context/CustomCursorContext";
 interface ProjectOverview {
   id: string;
   text: string;
@@ -74,6 +75,8 @@ function Layout({ children, sectionInView }: LayoutProps) {
   const [menu, setMenu] = useState<boolean>(false);
   const { loaded, setLoaded } = useContext(ResourceContext);
   const toggleMenu = () => setMenu((prevState) => !prevState);
+
+  const { setType } = useContext(CustomCursorContext);
   useEffect(() => {
     if (loaded) {
       animate(
@@ -182,6 +185,8 @@ function Layout({ children, sectionInView }: LayoutProps) {
             </Socials>
             <MenuContainer menu={menu} sectionInView={sectionInView}>
               <div
+                onMouseEnter={() => setType("link")}
+                onMouseLeave={() => setType("default")}
                 onClick={(e) => {
                   e.stopPropagation();
                   setMenu((prevState) => !prevState);
@@ -290,7 +295,7 @@ function Layout({ children, sectionInView }: LayoutProps) {
           </MainLayout>
         </>
       )}
-      {/* <Particles
+      <Particles
         options={particlesOptions as ISourceOptions}
         init={particlesInit}
         container={containerRef}
@@ -298,7 +303,7 @@ function Layout({ children, sectionInView }: LayoutProps) {
           display: particles ? "inherit" : "none",
           zIndex: 2,
         }}
-      /> */}
+      />
     </ThemeProvider>
   );
 }
@@ -313,10 +318,8 @@ function SplashDesign() {
 
   useEffect(() => {
     if (!divRef.current) return;
-
     const { width, height, top, left } =
       divRef.current.getBoundingClientRect();
-
     setDimensions({ width, height, top, left });
   }, []);
 
@@ -397,8 +400,8 @@ function SplashDesign() {
             stroke="lime"
             strokeWidth="3"
             animate={{
-              pathLength: [0, 0.75],
-              pathOffset: [0, 0.2],
+              pathLength: [0, 0.9],
+              pathOffset: [0, 0.1],
               opacity: [0, 1, 0],
             }}
             transition={{
@@ -411,7 +414,7 @@ function SplashDesign() {
         </svg>
       </motion.svg>
 
-      <span>Hello Word!</span>
+      <img src="/assets/images/logo.png" alt="Logo" />
     </div>
   );
 }

@@ -61,14 +61,19 @@ export const SplashScreen = styled(motion.div)`
   position: fixed;
   ${centerContent}
   .logoSplash {
-    height: 100px;
-    width: 100px;
+      height: 80px;
+      width: 70px;
     .container {
-      background: #fff;
-      transform: rotate(-20deg);
-      height: 100px;
-      width: 100px;
+      background: #0b3320;
+      transform: rotate(-24.53deg);
+      height: 80px;
+      width: 70px;
+      border-radius: 10px;
       ${centerContent};
+      img {
+        transform: rotate(24.53deg);
+        height: 60px;
+      }
       .svg-border {
         position: absolute;
       }
@@ -100,7 +105,7 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
     right: 12px;
     top: 0;
     overflow: hidden;
-    padding-top: 80px;
+    padding-top: ${({ menu }) => (menu ? "40px" : "80px")};
     box-shadow: 0px 0px 8px 0px #073018a4;
     border-bottom-left-radius: 14px;
     backdrop-filter: ${({ menu }) => (menu ? "blur(15px)" : "none")};
@@ -112,12 +117,13 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
       top: 35px;
       right: 30px;
       color: ${({ theme }) => theme.primaryFontColor};
+      cursor: pointer;
     }
     .nav-menu-items {
       margin-top: ${({ menu }) => (menu ? "10%" : "30%")};
       display: flex;
       flex-direction: column;
-      height: 100%;
+      height: ${({ menu }) => (menu ? "90%" : "100%")};
       justify-content: space-around;
 
       .navLinks,

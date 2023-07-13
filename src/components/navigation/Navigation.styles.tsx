@@ -52,8 +52,9 @@ export const NavContainer = styled(motion.div)<NavProps>`
   .logo {
     height: 50px;
     width: 50px;
-    img {
-      height: 100%;
+    canvas {
+      height: 100% !important;
+      width: 100% !important;
     }
   }
   .unsplash {

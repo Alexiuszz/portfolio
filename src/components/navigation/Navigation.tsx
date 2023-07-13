@@ -1,7 +1,7 @@
 import Toggle from "../toggle/Toggle";
 import { NavContainer } from "./Navigation.styles";
 import { animate, motion, stagger } from "framer-motion";
-import {
+import Rive, {
   Fit,
   Layout,
   useRive,
@@ -33,14 +33,27 @@ const splashTransition = {
 function Navigation({ menu, sectionInView }: NavProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const isMedium = useIsMedium();
-  const { rive, RiveComponent } = useRive({
-    src: "/assets/rives/logo-animation.riv",
+  const layout = new Layout({
+    fit: Fit.FitHeight,
+  });
+  const params = {
+    // src: "https://public.rive.app/hosted/253210/75184/VKgIzlx_WUipuny2eN8RQQ.riv",
+    src: "/assets/rives/logo.riv",
+    artboard: "logo",
+    animations: "idle",
     stateMachines: "main",
     autoplay: true,
-    layout: new Layout({
-      fit: Fit.FitHeight,
-    }),
-  });
+    layout,
+  };
+  const { RiveComponent, rive } = useRive(params);
+  // const { rive, RiveComponent } = useRive({
+  //   src: "/assets/rives/logo-animation.riv",
+  //   stateMachines: "main",
+  //   autoplay: true,
+  //   layout: new Layout({
+  //     fit: Fit.FitHeight,
+  //   }),
+  // });
   const playAnimation = useStateMachineInput(
     rive,
     "main",
