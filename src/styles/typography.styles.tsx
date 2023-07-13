@@ -28,6 +28,8 @@ export const Text = styled.p.attrs((props) => ({
   font-weight: ${(props) => props.weight || "400"};
   font-size: ${(props) => props.size || "16px"};
   color: ${(props) => props.color || "inherit"};
+  font-family: "SF UI Text", "Helvetica Neue", "Segoe UI", "Oxygen",
+    "Ubuntu", "Cantarell", "Open Sans", sans-serif;
 `;
 
 export const SectionHeader = styled.h2`

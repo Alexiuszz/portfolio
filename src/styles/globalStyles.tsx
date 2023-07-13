@@ -36,6 +36,7 @@ body {
     
   background-size: cover;
   background-position: top;
+  font-family: "SF UI Text", "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
   }&::-webkit-scrollbar {
     width: 12px;
 }
