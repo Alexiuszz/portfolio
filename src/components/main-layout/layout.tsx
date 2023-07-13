@@ -420,7 +420,7 @@ function SplashDesign() {
           />
         </svg>
       </motion.svg>
-      <Image src="/assets/images/logo.png" width={60} height={74} alt="Logo" />
+      <Image src="/assets/images/Logo.png" width={60} height={74} alt="Logo" />
     </div>
   );
 }
