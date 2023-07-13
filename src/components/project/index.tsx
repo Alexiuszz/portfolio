@@ -6,6 +6,7 @@ import CustomLink from "@/components/CustomLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { useIsMedium } from "@/hooks/useMediaQuery";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 function Project({ project }: { project: ProjectType }) {
   const isMedium = useIsMedium();
@@ -17,7 +18,7 @@ function Project({ project }: { project: ProjectType }) {
         <CustomLink
           blank={isMedium}
           className="imgContainer"
-          href={isMedium ? project.url : "#"}          
+          href={isMedium ? project.url : "#"}
         >
           {/*  eslint-disable-next-line @next/next/no-img-element */}
           <img src={project.img} alt={project.name} />
@@ -25,6 +26,15 @@ function Project({ project }: { project: ProjectType }) {
         <CustomLink blank className="projectLink" href={project.url}>
           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />{" "}
         </CustomLink>
+        {project.git && (
+          <CustomLink
+            blank
+            className="projectLink gitLink"
+            href={project.url}
+          >
+          <FontAwesomeIcon icon={faGithub} />
+          </CustomLink>
+        )}
         <motion.div className="textWindow">
           <motion.p className="proj-descr">{project.desc}</motion.p>
           <motion.p className="techList">

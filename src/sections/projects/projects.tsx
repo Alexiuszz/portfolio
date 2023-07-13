@@ -11,6 +11,7 @@ export interface ProjectType {
   url: string;
   img: string;
   tech: string[];
+  git?: string;
 }
 
 const myProjects: ProjectType[] = [
@@ -29,6 +30,7 @@ const myProjects: ProjectType[] = [
     url: "",
     img: "https://s3.amazonaws.com/alexius.dev/projectImgs/alexius.png",
     tech: ["Next.js", "Framer-motion", "Styled-Components"],
+    git: "https://github.com/Alexiuszz/portfolio"
   },
   {
     name: "Emissar",
@@ -43,6 +45,7 @@ const myProjects: ProjectType[] = [
       "MongoDb",
       "Google-Maps-API",
     ],
+    git: "https://github.com/Alexiuszz/Courier_Finder"
   },
   {
     name: "BrainTrainer",

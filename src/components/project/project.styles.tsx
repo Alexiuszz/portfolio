@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export const ProjectContainer = styled(motion.div)`
   width: 100%;
-  height: 50%;
+  height: 100%;
   min-height: 300px;
   ${absCenter};
   position: relative;
@@ -50,15 +50,12 @@ export const ProjectContainer = styled(motion.div)`
     aspect-ratio: 2/1;
     .projectLink {
       color: ${({ theme }) => theme.primaryFontColor};
-      font-size: 20px;
       margin-top: 5px;
       margin-left: 10%;
       transition: all.4s;
       svg {
         height: 20px;
-      }
-      &:hover {
-        svg {
+        &:hover {
           height: 26px;
           color: ${({ theme }) => theme.hoverFontColor};
         }
@@ -75,9 +72,9 @@ export const ProjectContainer = styled(motion.div)`
     width: 50%;
     background-color: ${({ theme }) => theme.tetiaryColor};
     font-size: 14px;
-    top: 100%;
+    top: 50%;
     left: 75%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 50%);
     padding: 20px;
     padding-bottom: 5px;
     border: 2px solid ${({ theme }) => theme.primaryFontColor};
@@ -95,6 +92,7 @@ export const ProjectContainer = styled(motion.div)`
   @media screen and (max-width: ${mobile}) {
     width: 95%;
     aspect-ratio: 2/1;
+    min-height: 100px;
     &:hover {
       .textWindow {
         height: 100%;
@@ -149,6 +147,8 @@ export const ProjectContainer = styled(motion.div)`
         svg {
           height: 20px;
         }
+      }.gitLink{
+        top: 25%;
       }
       &:hover {
         svg {

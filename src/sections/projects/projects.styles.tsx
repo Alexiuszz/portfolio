@@ -9,12 +9,12 @@ export const ProjectsSection = styled(motion.section)`
   flex-direction: column;
   position: relative;
   padding-top: 100px;
-  padding-bottom: 50vh;
+  padding-bottom: 54vh;
   .projects {
     height: fit-content;
     width: 100%;
     .projectContainer {
-      height: 60vh;
+      height: 62vh;
       width: 100%;
       position: relative;
     }
@@ -46,7 +46,7 @@ export const ProjectsSection = styled(motion.section)`
     .projects {
       height: fit-content;
       .projectContainer{
-        height: 40vh;
+        height: 30vh;
       }
     }
   }
