@@ -110,12 +110,11 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
     border-bottom-left-radius: 14px;
     backdrop-filter: ${({ menu }) => (menu ? "blur(15px)" : "none")};
     z-index: 10;
-
     .nav-menu-button {
       display: flex;
       position: fixed;
       top: 35px;
-      right: 30px;
+      right: 22px;
       color: ${({ theme }) => theme.primaryFontColor};
       cursor: pointer;
     }

@@ -26,6 +26,7 @@ import Particles from "react-particles";
 import {
   animate,
   motion,
+  spring,
   stagger,
   useMotionValueEvent,
   useScroll,
@@ -59,6 +60,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import LinkButton from "../LinkButton";
 import CustomCursorContext from "../CustomCursor/context/CustomCursorContext";
+import { MenuSwitch } from "../toggle/Toggle";
 interface ProjectOverview {
   id: string;
   text: string;
@@ -183,7 +185,7 @@ function Layout({ children, sectionInView }: LayoutProps) {
               <div className="emailLine" />
               <div className="emailCircle" />
             </Socials>
-            <MenuContainer menu={menu} sectionInView={sectionInView}>
+            <MenuContainer menu={menu} transition={spring} sectionInView={sectionInView}>
               <div
                 onMouseEnter={() => setType("link")}
                 onMouseLeave={() => setType("default")}
@@ -193,7 +195,7 @@ function Layout({ children, sectionInView }: LayoutProps) {
                 }}
                 className="nav-menu-button"
               >
-                M
+                <MenuSwitch on={menu}/>
               </div>
               <div className="nav-menu-items">
                 <CustomLink className="navLinks" href="#home">
