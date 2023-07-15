@@ -11,6 +11,7 @@ import Hero from "@/sections/hero/hero";
 import ExperienceSection from "@/sections/experience/experience";
 import Projects from "@/sections/projects/projects";
 import ContactSection from "@/sections/contact/contact";
+import Head from "next/head";
 
 const PageOverview = [
   {
@@ -80,12 +81,22 @@ export default function Home() {
   // });
 
   return (
-    <Layout sectionInView={sectionInView}>
-      <Hero setSection={scrollSection} />
-      <AboutSection setSection={scrollSection} />
-      <ExperienceSection setSection={scrollSection} />
-      <Projects setSection={scrollSection} />
-      <ContactSection setSection={scrollSection} />
-    </Layout>
+    <>
+    <Head>
+        <title>Alexius Nwala: Full Stack Engineer</title>
+        <link
+          rel="canonical"
+          href="https://www.alexiusnwala.com"
+          key="canonical"
+        />
+      </Head>
+      <Layout sectionInView={sectionInView}>
+        <Hero setSection={scrollSection} />
+        <AboutSection setSection={scrollSection} />
+        <ExperienceSection setSection={scrollSection} />
+        <Projects setSection={scrollSection} />
+        <ContactSection setSection={scrollSection} />
+      </Layout>
+    </>
   );
 }
