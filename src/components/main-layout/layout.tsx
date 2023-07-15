@@ -87,7 +87,7 @@ function Layout({ children, sectionInView }: LayoutProps) {
         { opacity: [0, 0, 0, 1] },
         {
           duration: 0.5,
-          delay: stagger(0.1, { startDelay: 8.0 }),
+          delay: stagger(0.1, { startDelay: 4.0 }),
           ease: [0, 0.71, 0.2, 1.01],
         }
       );
@@ -100,7 +100,7 @@ function Layout({ children, sectionInView }: LayoutProps) {
       { opacity: [0, 0, 0, .3] },
       {
         duration: 0.5,
-        delay: stagger(0.1, { startDelay: 2.8 }),
+        delay: stagger(0.1, { startDelay: 3 }),
         ease: [0, 0.71, 0.2, 1.01],
       }
     );
