@@ -19,31 +19,18 @@ const splashAnimation = {
   opacity: [0, 0, 0, 1],
 };
 const splashTransition = {
-  duration: 3,
+  duration: 2,
   times: [0, 0.4, 0.6, 1],
-  delay: 3,
+  delay: 1.8,
   ease: [0, 0.71, 0.2, 1.01],
 };
 const splashTransition2 = {
-  duration: 3,
+  duration: 1.8,
   times: [0, 0.4, 0.7, 1],
-  delay: 4,
+  delay: 2,
   ease: [0, 0.71, 0.2, 1.01],
 };
 
-const sizeVariants = {
-  mobile: {
-    opacity: [0, 1, 1, 1],
-    x: ["130%", "130%", "130%", "0%"],
-    y: ["550%", "550%", "550%", "-200%"],
-  },
-  pc: {
-    opacity: [0, 1, 1, 1],
-    x: ["250%", "250%", "250%", "0%"],
-    y: ["250%", "250%", "250%", "-200%"],
-    fontSize: ["30px", "30px", "30px", "20px"],
-  },
-};
 const Hero = ({
   setSection,
 }: {
@@ -73,10 +60,10 @@ const Hero = ({
   useEffect(() => {
     animate(
       ".heroText, .heroMe, .heroName",
-      { opacity: [0, 0, 0, 1] },
+      { opacity: [0,  1] },
       {
-        duration: 0.5,
-        delay: stagger(0.2, { startDelay: 7 }),
+        duration: 1,
+        delay: stagger(0.1, { startDelay: 3.5 }),
         ease: [0, 0.71, 0.2, 1.01],
       }
     );
@@ -114,7 +101,7 @@ const Hero = ({
           </motion.div>
           <motion.div
             animate={{
-              opacity: [0, 0, 0, 1],
+              opacity: [0, 1],
             }}
             transition={splashTransition2}
             className="heroAbout"
@@ -131,11 +118,10 @@ const Hero = ({
               I&apos;m a Fullstack Dev and Embedded Software Engineer.
             </Header>
             <Text className="heroText">
-              My expertise lies in creating outstanding systems and
-              applications for the web, and occasionally even those
-              amazing devices that keep you connected to it! I thrive
-              in building and designing things that bring the online
-              world and your gadgets to life.
+              I build outstanding systems and applications for the
+              web, and amazing devices that keep you connected to it!
+              I thrive in building and designing things that bring the
+              online world and your gadgets to life.
             </Text>
           </motion.div>
         </HeroContainer>

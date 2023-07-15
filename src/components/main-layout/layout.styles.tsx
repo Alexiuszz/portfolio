@@ -122,7 +122,7 @@ export const MenuContainer = styled(motion.div)<MenuContainerProps>`
 
       .navLinks,
       .about-button {
-        opacity: ${({ menu }) => (menu ? "1" : ".3")};
+        opacity: ${({ menu }) => (menu ? "1 !important" : ".3")};
         text-align: center;
         cursor: pointer;
         align-self: center;

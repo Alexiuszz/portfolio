@@ -93,12 +93,24 @@ function Layout({ children, sectionInView }: LayoutProps) {
       );
     }
   }, [loaded]);
+
+  useEffect(() => {
+    animate(
+      ".menu-container .navLinks, .menu-container .about-button",
+      { opacity: [0, 0, 0, .3] },
+      {
+        duration: 0.5,
+        delay: stagger(0.1, { startDelay: 2.8 }),
+        ease: [0, 0.71, 0.2, 1.01],
+      }
+    );
+  }, []);
   useEffect(() => {
     let splashTimeout: NodeJS.Timeout;
     if (loaded) {
       splashTimeout = setTimeout(() => {
         setSplash(false);
-      }, 7000);
+      }, 2000);
 
       animate(
         ".mainSplash",
@@ -106,8 +118,8 @@ function Layout({ children, sectionInView }: LayoutProps) {
           background: `radial-gradient(circle at 50%, transparent,transparent 100%, #061e16 105%, #061e16 105%)`,
         },
         {
-          delay: 3,
-          duration: 1,
+          delay: 1.5,
+          duration: 0.5,
         }
       );
       animate(
@@ -115,7 +127,7 @@ function Layout({ children, sectionInView }: LayoutProps) {
         {
           opacity: [1, 0],
         },
-        { delay: 3, duration: 0.5 }
+        { delay: 1.5, duration: 0.5 }
       );
     }
     return () => {
@@ -190,6 +202,7 @@ function Layout({ children, sectionInView }: LayoutProps) {
               menu={menu}
               transition={spring}
               sectionInView={sectionInView}
+              className="menu-container"
             >
               <div
                 onMouseEnter={() => setType("link")}
@@ -412,7 +425,7 @@ function SplashDesign() {
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: 2,
+              duration: 1.5,
               repeat: 2,
               ease: "easeInOut",
               repeatType: "loop",
@@ -420,7 +433,12 @@ function SplashDesign() {
           />
         </svg>
       </motion.svg>
-      <Image src="/assets/images/Logo.png" width={60} height={74} alt="Logo" />
+      <Image
+        src="/assets/images/Logo.png"
+        width={60}
+        height={74}
+        alt="Logo"
+      />
     </div>
   );
 }

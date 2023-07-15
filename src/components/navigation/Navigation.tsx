@@ -25,9 +25,9 @@ interface NavProps {
 }
 
 const splashTransition = {
-  duration: 3,
+  duration: 2,
   times: [0, 0.4, 0.6, 1],
-  delay: 3,
+  delay: 1.8,
   ease: [0, 0.71, 0.2, 1.01],
 };
 function Navigation({ menu, sectionInView }: NavProps) {
@@ -113,7 +113,7 @@ function Navigation({ menu, sectionInView }: NavProps) {
       { opacity: [0, 0, 0, 1] },
       {
         duration: 0.5,
-        delay: stagger(0.1, { startDelay: 6.5 }),
+        delay: stagger(0.1, { startDelay: 2.5 }),
         ease: [0, 0.71, 0.2, 1.01],
       }
     );
@@ -150,8 +150,8 @@ function Navigation({ menu, sectionInView }: NavProps) {
             height: ["75px", "50px"],
           }}
           transition={{
-            duration: 1,
-            delay: 4.5,
+            duration: 0.5,
+            delay: 2,
           }}
         >
           <RiveComponent
