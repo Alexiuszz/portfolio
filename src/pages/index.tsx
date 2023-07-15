@@ -82,12 +82,29 @@ export default function Home() {
 
   return (
     <>
-    <Head>
+      <Head>
         <title>Alexius Nwala: Full Stack Engineer</title>
         <link
           rel="canonical"
           href="https://www.alexiusnwala.com"
           key="canonical"
+        />
+        <meta
+          name="description"
+          content="Check out my portfolio, I'm currently looking for opportunites"
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content="Alexius Nwala"
+        />
+        <meta
+          property="og:description"
+          content="My portfolio website"
+        />
+        <meta
+          property="og:image"
+          content="https://alexiusnwala.com/assets/images/PortHero1.png"
         />
       </Head>
       <Layout sectionInView={sectionInView}>
