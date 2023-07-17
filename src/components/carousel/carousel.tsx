@@ -10,6 +10,7 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
+import Image from "next/image";
 
 interface ParallaxProps {
   baseVelocity?: number;
@@ -82,7 +83,7 @@ const Carousel = ({
             }}
             key={id}
           >
-            <img src={image} alt={image} />
+            <Image width={100} height={100} src={image} alt={image} />
           </motion.div>
         ))}
         {images.map((image, id) => (
@@ -94,7 +95,7 @@ const Carousel = ({
             }}
             key={id}
           >
-            <img src={image} alt={image} />
+            <Image width={100} height={100} src={image} alt={image} />
           </motion.div>
         ))}
         {images.map((image, id) => (
@@ -106,7 +107,7 @@ const Carousel = ({
             }}
             key={id}
           >
-            <img src={image} alt={image} />
+            <Image width={100} height={100} src={image} alt={image} />
           </motion.div>
         ))}
         {images.map((image, id) => (
@@ -118,7 +119,7 @@ const Carousel = ({
             }}
             key={id}
           >
-            <img src={image} alt={image} />
+            <Image width={100} height={100} src={image} alt={image} />
           </motion.div>
         ))}
       </motion.div>

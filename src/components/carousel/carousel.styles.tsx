@@ -21,7 +21,8 @@ export const GliderContainer = styled(motion.div)`
       margin-right: 10px;
       img {
         max-width: 150px;
-        height: 3rem;
+        height: 60px;
+        width: 60px;
         padding: 0 15px;
         object-fit: cover;
       }

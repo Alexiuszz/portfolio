@@ -13,9 +13,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "img.icons8.com",
         port: "",
-        pathname: "/color/30/000000/**",
+        pathname: "/color/100/000000/**",
       },
     ],
+
+    minimumCacheTTL: 600,
   },
 };
 module.exports = nextConfig;
