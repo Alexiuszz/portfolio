@@ -80,19 +80,16 @@ const AboutSection = ({
           <article>
             <p>
               <span className="bigLetter">H</span>i! my name is
-              Alexius, I&apos;m a software developer from Nigeria. I
-              hold a Bachelor&apos;s degree in Electronics Engineering
-              from the University of Nigeria Nsukka, located in Enugu,
-              Nigeria.
+              Alexius, I&apos;m a software developer from Nigeria.
             </p>
             <p>
-              currently, my primary focus revolves around building
-              captivating and aesthetically pleasing web applications
-              with a myriad technologies the core of which are React,
-              Next and NodeJS. Moreover, my background also
-              encompasses valuable expertise as an Embedded Software
-              Engineer. As of now, I am actively engaged in the
-              development of two exciting projects:{" "}
+              Currently, my focus revolves around building captivating
+              and aesthetically pleasing web applications with modern
+              web technologies the core of which are React, Next and
+              NodeJS. Moreover, my background also encompasses
+              valuable expertise as an Embedded Software Engineer. As
+              of now, I am actively engaged in the development of two
+              exciting projects:{" "}
               <CustomLink href="#" className="home-about-link">
                 Biamuta{" "}
               </CustomLink>{" "}
@@ -103,15 +100,14 @@ const AboutSection = ({
               .
             </p>
             <p>
-              One aspect that sets me apart is my insatiable passion
-              for continuous learning. I firmly believe that the
-              journey of knowledge acquisition is a lifelong pursuit,
-              and I eagerly embrace new challenges regardless of their
-              scale or complexity. Whether it&apos;s delving into
-              cutting-edge frameworks, exploring emerging
-              technologies, or expanding my proficiency in existing
-              tools, I am always driven to expand my skillset and stay
-              at the forefront of industry trends.
+              I firmly believe that the journey of knowledge
+              acquisition is a lifelong pursuit, and I eagerly embrace
+              new challenges regardless of their scale or complexity.
+              Whether it&apos;s delving into cutting-edge frameworks,
+              exploring emerging technologies, or expanding my
+              proficiency in existing tools, I am always driven to
+              expand my skillset and stay at the forefront of industry
+              trends.
             </p>
             <p>
               In summary, I thrive on continuous learning, embracing
