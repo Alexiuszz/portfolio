@@ -118,14 +118,15 @@ function Layout({ children, sectionInView }: LayoutProps) {
           background: `radial-gradient(circle at 50%, transparent,transparent 100%, #061e16 105%, #061e16 105%)`,
         },
         {
-          delay: 1.5,
-          duration: 0.5,
+          delay: 1.7,
+          duration: 0.8,
         }
       );
       animate(
         ".logoSplash",
         {
           opacity: [1, 0],
+          scale: [1,0]
         },
         { delay: 1.5, duration: 0.5 }
       );
@@ -185,13 +186,13 @@ function Layout({ children, sectionInView }: LayoutProps) {
               </CustomLink>
               <CustomLink
                 className="socialsLink"
-                href="https://twitter.com/AlexiusNwala"
+                href="https://www.linkedin.com/in/alexis-nwala"
               >
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </CustomLink>
               <CustomLink
                 className="socialsLink"
-                href="https://www.linkedin.com/in/alexis-nwala"
+                href="https://twitter.com/AlexiusNwala"
               >
                 <FontAwesomeIcon icon={faTwitter} />
               </CustomLink>
