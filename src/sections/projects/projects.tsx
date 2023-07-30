@@ -29,7 +29,7 @@ const myProjects: ProjectType[] = [
     desc: "My personal website",
     url: "https://www.alexiusnwala.com/",
     img: "https://s3.amazonaws.com/alexius.dev/projectImgs/alexius.png",
-    tech: ["Next.js", "Framer-motion", "Styled-Components"],
+    tech: ["Next.js", "Framer-motion", "Styled-Components", "Typescript"],
     git: "https://github.com/Alexiuszz/portfolio"
   },
   {
