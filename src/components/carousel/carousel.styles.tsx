@@ -1,4 +1,5 @@
 import { absCenter } from "@/styles/style_mixins";
+import { mobile } from "@/styles/style_variables";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
@@ -28,5 +29,9 @@ export const GliderContainer = styled(motion.div)`
         padding-left: 0;
       }
     }
+  }
+  @media screen and (max-width: ${mobile}){
+    width: 100vw;
+    margin-left: 5%;
   }
 `;
