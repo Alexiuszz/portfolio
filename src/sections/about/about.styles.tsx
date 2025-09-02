@@ -98,7 +98,7 @@ export const AboutSectionContainer = styled(motion.section)`
     }
     img {
       align-self: flex-start;
-      width: 200%;
+      width: 100%;
       transform: rotate(8deg);
       transition: all 0.3s;
     }

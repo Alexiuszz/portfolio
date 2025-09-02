@@ -136,7 +136,7 @@ const AboutSection = ({
             <div className="about-img-container">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <motion.img
-                src={"/assets/images/PortHero1.png"}
+                src={"/assets/images/Headshot.jpg"}
                 alt="Enyinna Nwala"
                 variants={imgVariants}
               />
