@@ -13,21 +13,9 @@ const workHistory: {
   works: string[];
 }[] = [
   {
-    company: "Mavis Computel",
-    role: "Software Engineer",
-    period: "September 2022 - till Date",
-    works: [
-      "Design and develop massive learning platform (Biamuta.com) for children, with a myriad of diverse lessons and games, with fun characters animated with rive.",
-      "Transform our characters from still images into animations using Rive, giving life to fun and interactive characters that enhanced the platform's overall appeal.",
-      "Collaborate closely with the research team to conceptualize and execute user-friendly and interactive features, keeping young learners actively engaged.",
-      "Conduct user testing and gathered feedback to iterate and improve on various modes and functionalities, further enhancing the overall user experience.",
-      "Build efficient and highly optimized components, allowing minimal loading time for a visually appealing animated mode."
-    ],
-  },
-  {
     company: "Datheron",
-    role: "Part-time Lead Software Engineer",
-    period: "April 2021 - till Date",
+    role: "Software Engineer",
+    period: "April 2019 - September 2024",
     works: [
       "Design and Engineer software solutions which include custom web apps for clients and for micro services, some of which include OdaNow, brain-trainer, Granomaly and more",
       "Contribute in the development and implementation of the user interface for OdaNow, an innovative store management tool, ensuring a seamless and intuitive user experience",
@@ -37,9 +25,21 @@ const workHistory: {
     ],
   },
   {
+    company: "Mavis Computel",
+    role: "Software Engineer",
+    period: "June 2022 - August 2024",
+    works: [
+      "Design and develop massive learning platform (Biamuta.com) for children, with a myriad of diverse lessons and games, with fun characters animated with rive.",
+      "Transform our characters from still images into animations using Rive, giving life to fun and interactive characters that enhanced the platform's overall appeal.",
+      "Collaborate closely with the research team to conceptualize and execute user-friendly and interactive features, keeping young learners actively engaged.",
+      "Conduct user testing and gathered feedback to iterate and improve on various modes and functionalities, further enhancing the overall user experience.",
+      "Build efficient and highly optimized components, allowing minimal loading time for a visually appealing animated mode."
+    ],
+  },
+  {
     company: "Innov8 Technology Hub",
     role: "Embedded Software Engineer",
-    period: "April 2022 - January 2023",
+    period: "April 2021 - June 2022",
     works: [
       "Developed and design an IOT solution for an automatic irrigation system with multi-point nodes using Embedded C, ESP32 and Blynk IOT.",
       "Enabled remote monitoring and control of the irrigation system through a user-friendly web interface, providing real-time updates to users.",
@@ -51,7 +51,7 @@ const workHistory: {
   },
   {
     company: "Cyphercrescent Limited",
-    role: "Embedded Software Engineer",
+    role: "Applied Mathematics and Software Research Intern",
     period: "August  2019 - January  2020",
     works: [
       "Acquired complete understanding of the fundamentals of computer programing with C#.",
