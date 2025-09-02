@@ -1,10 +1,5 @@
 import { AboutSectionContainer } from "@/sections/about/about.styles";
-import React, {
-  forwardRef,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { Variants, motion, useInView } from "framer-motion";
 import LinkButton from "@/components/LinkButton";
 import CustomLink from "@/components/CustomLink";
@@ -79,40 +74,16 @@ const AboutSection = ({
         >
           <article>
             <p>
-              <span className="bigLetter">H</span>i! my name is
-              Alexius, I&apos;m a software developer from Nigeria.
+              <span className="bigLetter">H</span>i! my name is Alexius.
             </p>
             <p>
-              Currently, my focus revolves around building captivating
-              and aesthetically pleasing web applications with modern
-              web technologies the core of which are React, Next and
-              NodeJS. Moreover, my background also encompasses
-              valuable expertise as an Embedded Software Engineer. As
-              of now, I am actively engaged in the development of two
-              exciting projects:{" "}
-              <CustomLink href="#" className="home-about-link">
-                Biamuta{" "}
-              </CustomLink>{" "}
-              and{" "}
-              <CustomLink href="#" className="home-about-link">
-                OdaNow{" "}
-              </CustomLink>
-              .
-            </p>
-            <p>
-              I firmly believe that the journey of knowledge
-              acquisition is a lifelong pursuit, and I eagerly embrace
-              new challenges regardless of their scale or complexity.
-              Whether it&apos;s delving into cutting-edge frameworks,
-              exploring emerging technologies, or expanding my
-              proficiency in existing tools, I am always driven to
-              expand my skillset and stay at the forefront of industry
-              trends.
-            </p>
-            <p>
-              In summary, I thrive on continuous learning, embracing
-              new challenges, and staying ahead of the curve to
-              deliver exceptional results.
+              Software Developer with 6+ years of experience designing,
+              optimising, and deploying production-ready solutions across
+              diverse domains, including IoT, EdTech, and enterprise web
+              platforms. Skilled in building scalable systems and currently
+              focused on applying AI and machine learning technologies to
+              enhance usability, streamline performance, and drive productivity
+              at scale.
             </p>
           </article>
           <LinkButton
